@@ -8,6 +8,7 @@
   <meta name="description" content="Empowering traditional and organic farmers with stress-free compliance, voice-to-text logging, and document scanning. Try SPIDER Ag free for 14 days.">
   
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="showcase.css">
 </head>
 <body>
 
@@ -109,12 +110,88 @@
           </div>
         </div>
 
-        <div class="hero-image-wrapper reveal" style="transition-delay: 0.15s;">
-          <div class="hero-image-inner">
-            <img src="assets/hero_farmer.png" alt="Iowa organic farmer standing in a green field holding a tablet displaying farm database details at golden hour sunset">
+        <div class="hero-image-wrapper reveal" style="transition-delay: 0.15s;" id="hero-swivel-container">
+          <div class="hero-image-inner hero-video-wrapper">
+            <video muted playsinline autoplay loop preload="auto" disablepictureinpicture aria-hidden="true" id="hero-swivel-video">
+              <source src="assets/3d motion/isometric farm swivel 3 (2).mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- ====================================================
+         SCROLL-TRIGGERED MOTION SHOWCASE (NATURAL FLOW)
+         ==================================================== -->
+    <section class="showcase-natural" id="showcase">
+      <div class="topo-bg"></div>
+
+      <!-- Row 1: Plot Your Farm (Centered Viewport Transition) -->
+      <div class="showcase-row centered-row" id="row-plot-farm">
+        <div class="container centered-row-inner">
+          <div class="showcase-media-center showcase-media-borderless" id="media-plot-farm-container">
+            <!-- The plotted farm video is placed here, cross-fades from the swivel video -->
+            <video muted playsinline preload="auto" id="video-plotted-farm" class="showcase-video showcase-video-borderless">
+              <source src="assets/3d motion/plotted farm.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="showcase-text-card text-card-floating" id="text-card-plot-farm">
+            <p>Plot your farm.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Plot Your Land (Alternating Grid: Text Left, Video Right) -->
+      <div class="showcase-row grid-row" id="row-plot-land">
+        <div class="container grid-2">
+          <div class="showcase-text-col text-left">
+            <div class="showcase-text-card static-card">
+              <h3>All of the information from your farm into your phone.</h3>
+              <p class="showcase-body">Map every field, plot, and parcel directly from the cab of your tractor. SPIDER Ag captures your acreage data and organizes it by crop, season, and certification status.</p>
+            </div>
+          </div>
+          <div class="showcase-media-col media-right">
+            <video muted playsinline preload="auto" id="video-plot-land" class="showcase-video showcase-video-large">
+              <source src="assets/3d motion/plot your land 3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Voice Memos (Alternating Grid: Video Left, Text Right) -->
+      <div class="showcase-row grid-row" id="row-voice-memos">
+        <div class="container grid-2">
+          <div class="showcase-media-col media-left">
+            <video muted playsinline preload="auto" id="video-voice-memos" class="showcase-video showcase-video-small">
+              <source src="assets/3d motion/voice memos 3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="showcase-text-col text-right">
+            <div class="showcase-text-card static-card">
+              <h3>Take notes with your voice, even while offline.</h3>
+              <p class="showcase-body">Dictate field observations, spray logs, and planting notes hands-free. Your voice memos are transcribed and filed automatically — no cell signal required.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4: Upload Files (Alternating Grid: Text Left, Video Right) -->
+      <div class="showcase-row grid-row" id="row-upload-files">
+        <div class="container grid-2">
+          <div class="showcase-text-col text-left">
+            <div class="showcase-text-card static-card">
+              <h3>Upload your files, certifications and records.</h3>
+              <p class="showcase-body">Snap a photo of seed tags, invoices, or inspection sheets. Our OCR engine extracts the data and files it where auditors expect to find it.</p>
+            </div>
+          </div>
+          <div class="showcase-media-col media-right">
+            <video muted playsinline preload="auto" id="video-upload-files" class="showcase-video showcase-video-large">
+              <source src="assets/3d motion/upload files 3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <!-- ----------------------------------------------------
@@ -424,6 +501,10 @@
     </div>
   </footer>
 
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="main.js"></script>
+  <script src="showcase.js"></script>
 </body>
 </html>

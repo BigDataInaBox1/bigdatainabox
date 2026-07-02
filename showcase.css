@@ -1,0 +1,334 @@
+/* ====================================================
+   MOTION SHOWCASE (NATURAL FLOW)
+   Styles for standard scrolling showcase rows
+   ==================================================== */
+
+/* ---- Hero Video Wrapper & Edge Masking ---- */
+.hero-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* Inward masking radial gradient to blend video edges seamlessly */
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+}
+
+.hero-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Scale to fit without cropping */
+  display: block;
+  background: transparent;
+}
+
+/* ---- Reset Hero Container for Floating Video ---- */
+#hero-swivel-container {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  max-width: 400px; /* Constrain size to make it smaller */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#hero-swivel-container .hero-image-inner {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  aspect-ratio: auto !important; /* Let content determine aspect ratio */
+  height: auto !important;
+}
+
+/* ---- Natural Showcase Section ---- */
+.showcase-natural {
+  background-color: var(--color-bg-chalk);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ---- Row Structures ---- */
+.showcase-row {
+  position: relative;
+  width: 100%;
+}
+
+/* Row 1: Centered video transition zone */
+.centered-row {
+  padding-top: 18rem; /* Space for hero swivel transition */
+  padding-bottom: 12rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-row-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.showcase-media-center {
+  position: relative;
+  width: 55vw;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Row 2, 3, 4: Grid Rows */
+.grid-row {
+  padding: 12rem 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden; /* Prevent off-screen slide-in from causing horizontal scroll */
+}
+
+/* ---- Media & Video Styling (Floating, Borderless) ---- */
+.showcase-video {
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  display: block;
+  background: transparent;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.showcase-media-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  will-change: transform, opacity;
+}
+
+.showcase-text-col {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  will-change: transform, opacity;
+}
+
+/* Align columns to match design flow */
+.text-left {
+  justify-content: flex-start;
+}
+
+.text-right {
+  justify-content: flex-end;
+}
+
+.media-left {
+  justify-content: flex-start;
+}
+
+.media-right {
+  justify-content: flex-end;
+}
+
+/* ---- Text Cards ---- */
+.showcase-text-card {
+  max-width: 420px;
+  padding: 2rem 2.25rem 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(41, 91, 63, 0.08);
+  border-radius: 1.25rem;
+  box-shadow:
+    0 14px 40px -10px rgba(41, 91, 63, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  z-index: 10;
+  position: relative;
+}
+
+/* Green accent bar (left edge) */
+.showcase-text-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.25rem;
+  bottom: 1.25rem;
+  width: 4px;
+  background: linear-gradient(180deg, var(--color-vibrant), var(--color-sage));
+  border-radius: 0 2px 2px 0;
+}
+
+.showcase-text-card h3 {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  color: var(--color-forest);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.75rem 0;
+}
+
+.showcase-text-card .showcase-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Legacy: keep p styling if used without h3 */
+.showcase-text-card p:only-child {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  color: var(--color-forest);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* Floating card position in Row 1 */
+.text-card-floating {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  opacity: 0;
+}
+
+/* ====================================================
+   RESPONSIVE DESIGN
+   ==================================================== */
+@media (max-width: 1024px) {
+  .centered-row {
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+  }
+  .grid-row {
+    padding: 8rem 0;
+  }
+  .showcase-media-center {
+    width: 75vw;
+  }
+  .showcase-text-card {
+    max-width: 360px;
+    padding: 1.5rem 1.75rem 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-swivel-wrapper {
+    width: 220px;
+    bottom: -80px;
+  }
+  
+  .centered-row {
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+  }
+  
+  .grid-row {
+    padding: 6rem 0;
+  }
+
+  .showcase-media-center {
+    width: 90vw;
+  }
+
+  /* Make grid elements stack naturally on mobile */
+  .showcase-row .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Order of layout: Video on top, Text below on mobile */
+  #row-plot-land .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #row-voice-memos .container {
+    display: flex;
+    flex-direction: column;
+  }
+  #row-upload-files .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .showcase-text-col {
+    justify-content: center !important;
+  }
+
+  .showcase-text-card {
+    max-width: none;
+    width: 100%;
+    padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+  }
+
+  .text-card-floating {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 2rem;
+    width: 100%;
+  }
+}
+
+/* ====================================================
+   BORDERLESS / NO-BOX VIDEO (Plotted Farm)
+   Matches hero swivel's radial gradient edge-fade mask
+   ==================================================== */
+.showcase-media-borderless {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.showcase-video-borderless {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  /* Same radial mask as hero swivel — fades edges into page bg */
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+}
+
+/* ====================================================
+   SMALLER VIDEO (Voice Memos — match other row sizes)
+   ==================================================== */
+.showcase-video-small {
+  max-width: 480px;
+}
+
+/* ====================================================
+   LARGER VIDEOS (Plot Your Land & Upload Files)
+   ==================================================== */
+.showcase-video-large {
+  max-width: 760px;
+}
+
+/* Adjust grid column ratios so video gets more space than text */
+#row-plot-land .grid-2,
+#row-upload-files .grid-2 {
+  grid-template-columns: 0.8fr 1.2fr;
+}
+
+@media (max-width: 1024px) {
+  #row-plot-land .grid-2,
+  #row-upload-files .grid-2 {
+    grid-template-columns: 1fr; /* Stack on tablet/mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-video-small,
+  .showcase-video-large {
+    max-width: 100%;
+  }
+}
