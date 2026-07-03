@@ -370,6 +370,7 @@ section {
 .btn-nav {
   justify-self: end;
   white-space: nowrap;
+  padding: 0.5rem 1.25rem !important;
 }
 
 .product-logo {
