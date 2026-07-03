@@ -23,15 +23,21 @@
     <div class="container">
       <nav class="nav-bar">
         <a href="index.html" class="logo-link">
-          <img src="assets/BDIB_Transparent-logo.avif" alt="BDIB Solutions Logo" class="logo-img">
-          BDIB Solutions
+          <img src="/bdib-transparent-logo.avif" alt="BDIB Solutions Logo" class="logo-img">
         </a>
 
         <ul class="nav-links" id="nav-links-menu">
-          <li><a href="index.html">Home</a></li>
           <li><a href="index.html#onboarding">How It Works</a></li>
           <li><a href="index.html#story">Our Story</a></li>
-          <li><a href="spider-ag.html">SPIDER Ag</a></li>
+          <li class="dropdown">
+            <a href="spider-ag.html" class="dropdown-toggle">
+              SPIDER Ag
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="https://spiderag-preprod.bdibsolutions.com/auth/">Login</a></li>
+            </ul>
+          </li>
           <li><a href="pricing-sign-up.html" class="active-nav">Pricing</a></li>
           <li><a href="index.html#contact">Contact</a></li>
           <li><a href="index.html#contact">Schedule Demo</a></li>
@@ -74,60 +80,83 @@
     <!-- ----------------------------------------------------
          PRICING HERO
          ---------------------------------------------------- -->
-    <section class="hero pricing-hero" id="top">
+    <section class="pricing-hero" id="top" style="padding-top: 8rem; padding-bottom: 1rem; min-height: calc(100vh - 80px); display: flex; align-items: center;">
       <div class="container">
         <div class="hero-content reveal text-center"
-          style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; padding-bottom: 0rem;">
-          <span class="eyebrow">Flexible Plans</span>
-          <h1>Start Your 14-Day Free Trial</h1>
-          <p class="lead">Select the plan that fits your farm. No credit card required for trial, cancel at any time.
-          </p>
+          style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; padding-bottom: 1rem;">
+          <span class="eyebrow" style="margin-bottom: 0.5rem;">Flexible Plans</span>
+          <h1 style="font-size: clamp(2.25rem, 4.5vw, 3.5rem); letter-spacing: -0.03em; margin-bottom: 0.25rem;">Start Your 14-Day Free Trial</h1>
+          <p class="lead" style="max-width: 600px; font-size: 1.05rem; opacity: 0.8; margin-bottom: 1.5rem;">Select the plan that fits your farm. No credit card required for trial, cancel at any time.</p>
         </div>
 
-        <!-- Pricing Cards Grid -->
-        <div class="pricing-grid stagger-group">
-          <!-- Monthly Card -->
-          <div class="card-shell pricing-card reveal">
-            <div class="card-core" style="display: flex; flex-direction: column; justify-content: space-between;">
-              <div>
-                <span class="eyebrow"
-                  style="margin-bottom: 0.5rem; background-color: var(--color-forest-05);">Standard</span>
-                <h3>Monthly Plan</h3>
-                <div class="price-value">$40<span>/month</span></div>
-                <p class="text-muted">Billed monthly. Perfect for flexible operational needs.</p>
 
-                <ul class="pricing-features-list">
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round">
+
+        <!-- Single Pricing Card (Double-Bezel Dark-Shell) -->
+        <div class="single-pricing-card-container reveal" style="max-width: 600px; margin: 0 auto;">
+          <div class="card-shell pricing-card dark-shell" style="border-radius: 1.75rem; padding: 0.5rem; border-color: rgba(255,255,255,0.1);">
+            <div class="card-core" style="border-radius: calc(1.75rem - 0.5rem); padding: 2rem; border-color: rgba(255,255,255,0.08);">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+                  <div>
+                    <span class="eyebrow" style="margin-bottom: 0.5rem; background-color: rgba(255,255,255,0.1); color: var(--color-white); border: 1px solid rgba(255,255,255,0.05); letter-spacing: 0.15em;">Ag-Tech Standard</span>
+                    <h3 id="billing-title" style="font-size: 1.75rem; color: var(--color-white);">Monthly Plan</h3>
+                  </div>
+                  <!-- Savings Callout -->
+                  <div class="savings-callout" id="savings-callout" style="visibility: hidden; opacity: 0; transform: translateY(10px); transition: var(--transition-fluid);">
+                    <span class="callout-pill" style="background-color: var(--color-vibrant); color: var(--color-forest); font-weight: 800; padding: 0.35rem 0.85rem; font-size: 0.8rem; box-shadow: 0 8px 24px rgba(99, 185, 109, 0.3);">Save $230/yr</span>
+                  </div>
+                </div>
+
+                <div class="price-value" id="price-display" style="font-size: clamp(2.75rem, 4.5vw, 3.5rem); color: var(--color-white); margin-bottom: 0;">$40<span class="price-interval" style="color: var(--color-vibrant); font-size: 1.1rem; margin-left: 0.2rem;">/month</span></div>
+                <p class="text-muted" id="billing-period-text" style="margin-bottom: 1.25rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">Billed monthly. Perfect for flexible operational needs.</p>
+                
+                <!-- Billing Toggle Slider (Glassmorphic) -->
+                <div class="pricing-toggle-container" style="background-color: var(--color-white); padding: 0.35rem; border-radius: 100px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.1); display: flex; margin: 0 auto 1.5rem auto; width: max-content;">
+                  <span class="toggle-label monthly-label active" id="label-monthly" style="padding: 0.35rem 1.25rem; border-radius: 100px;">Monthly</span>
+                  <label class="switch" style="margin: 0 0.5rem; display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="pricing-toggle" aria-label="Toggle billing interval">
+                    <span class="slider" style="position: relative; width: 52px; height: 28px; border-radius: 100px; background-color: var(--color-forest-10); display: block; border: 1px solid rgba(41,91,63,0.1); transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);"></span>
+                  </label>
+                  <span class="toggle-label annual-label" id="label-annual" style="padding: 0.35rem 1.25rem; border-radius: 100px;">
+                    Annual
+                    <span class="save-badge">Save 48%</span>
+                  </span>
+                </div>
+
+                <div style="height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%); margin-bottom: 1.25rem;"></div>
+
+                <ul class="pricing-features-list" style="gap: 0.85rem;">
+                  <li style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" style="color: var(--color-vibrant); width: 1.15rem; height: 1.15rem; flex-shrink: 0;">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <span>Record from the field or tractor (photos, voice notes, invoices)</span>
                   </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round">
+                  <li style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" style="color: var(--color-vibrant); width: 1.15rem; height: 1.15rem; flex-shrink: 0;">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <span>Offline Database with automated sync when connected</span>
                   </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round">
+                  <li style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" style="color: var(--color-vibrant); width: 1.15rem; height: 1.15rem; flex-shrink: 0;">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <span>Pre-loaded and custom regulatory compliance forms</span>
                   </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round">
+                  <li style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" style="color: var(--color-vibrant); width: 1.15rem; height: 1.15rem; flex-shrink: 0;">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <span>Automated time-stamps for trace-backs (Audit-Ready)</span>
                   </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round">
+                  <li style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" style="color: var(--color-vibrant); width: 1.15rem; height: 1.15rem; flex-shrink: 0;">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     <span>100% Private & Secure data cloud backup</span>
@@ -135,67 +164,9 @@
                 </ul>
               </div>
 
-              <a href="https://spiderag-preprod.bdibsolutions.com/auth/" class="btn btn-secondary"
-                style="width: 100%; justify-content: center; padding: 0.8rem 1.5rem;">
-                Select Monthly
-              </a>
-            </div>
-          </div>
-
-          <!-- Annual Card -->
-          <div class="card-shell pricing-card reveal">
-            <span class="pricing-badge">Save Over 45%</span>
-            <div class="card-core"
-              style="display: flex; flex-direction: column; justify-content: space-between; border-color: var(--color-forest-10);">
-              <div>
-                <span class="eyebrow" style="margin-bottom: 0.5rem; background-color: var(--color-forest-10);">Best
-                  Value</span>
-                <h3>Annual Plan</h3>
-                <div class="price-value">$250<span>/year</span></div>
-                <p class="text-muted">Billed annually. Most popular among established farmers.</p>
-
-                <ul class="pricing-features-list">
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span>Record from the field or tractor (photos, voice notes, invoices)</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span>Offline Database with automated sync when connected</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span>Pre-loaded and custom regulatory compliance forms</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span>Automated time-stamps for trace-backs (Audit-Ready)</span>
-                  </li>
-                  <li>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span>100% Private & Secure data cloud backup</span>
-                  </li>
-                </ul>
-              </div>
-
-              <a href="https://spiderag-preprod.bdibsolutions.com/auth/" class="btn btn-primary"
-                style="width: 100%; justify-content: center; padding: 0.8rem 1.5rem; background-color: var(--color-forest);">
-                Select Annual
+              <a href="https://spiderag-preprod.bdibsolutions.com/auth/" class="btn btn-primary" id="cta-button"
+                style="width: 100%; justify-content: center; padding: 0.85rem 1.5rem; margin-top: 1.5rem; font-size: 1rem; background-color: var(--color-vibrant); color: var(--color-forest);">
+                Select Monthly Plan
               </a>
             </div>
           </div>
@@ -211,7 +182,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/BDIB_Transparent-logo.avif" alt="BDIB Solutions Logo" class="footer-logo">
+          <img src="/bdib-transparent-logo.avif" alt="BDIB Solutions Logo" class="footer-logo">
           <p>Providing intelligent, stress-free record-keeping and data compliance for traditional and organic farmers.</p>
           <p>2625 North Loop Drive, Suite 2622<br>Ames, Iowa 50010</p>
         </div>
@@ -254,6 +225,62 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    (function() {
+      const toggle = document.getElementById('pricing-toggle');
+      const priceDisplay = document.getElementById('price-display');
+      const billingPeriodText = document.getElementById('billing-period-text');
+      const billingTitle = document.getElementById('billing-title');
+      const savingsCallout = document.getElementById('savings-callout');
+      const monthlyLabel = document.getElementById('label-monthly');
+      const annualLabel = document.getElementById('label-annual');
+      const ctaButton = document.getElementById('cta-button');
+
+      function updatePricing(isAnnual) {
+        if (isAnnual) {
+          priceDisplay.innerHTML = '$250<span class="price-interval" style="color: var(--color-vibrant); font-size: 1.1rem; margin-left: 0.2rem;">/year</span>';
+          billingPeriodText.textContent = 'Billed annually. Most popular among established farmers.';
+          billingTitle.textContent = 'Annual Plan';
+          savingsCallout.style.visibility = 'visible';
+          savingsCallout.style.opacity = '1';
+          savingsCallout.style.transform = 'translateY(0)';
+          monthlyLabel.classList.remove('active');
+          annualLabel.classList.add('active');
+          ctaButton.textContent = 'Select Annual';
+        } else {
+          priceDisplay.innerHTML = '$40<span class="price-interval" style="color: var(--color-vibrant); font-size: 1.1rem; margin-left: 0.2rem;">/month</span>';
+          billingPeriodText.textContent = 'Billed monthly. Perfect for flexible operational needs.';
+          billingTitle.textContent = 'Monthly Plan';
+          savingsCallout.style.visibility = 'hidden';
+          savingsCallout.style.opacity = '0';
+          savingsCallout.style.transform = 'translateY(5px)';
+          monthlyLabel.classList.add('active');
+          annualLabel.classList.remove('active');
+          ctaButton.textContent = 'Select Monthly';
+        }
+      }
+
+      // Handle checkbox change
+      toggle.addEventListener('change', () => {
+        updatePricing(toggle.checked);
+      });
+
+      // Handle label clicks to toggle checked state
+      monthlyLabel.addEventListener('click', () => {
+        if (toggle.checked) {
+          toggle.checked = false;
+          updatePricing(false);
+        }
+      });
+
+      annualLabel.addEventListener('click', () => {
+        if (!toggle.checked) {
+          toggle.checked = true;
+          updatePricing(true);
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>

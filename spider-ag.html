@@ -21,15 +21,21 @@
     <div class="container">
       <nav class="nav-bar">
         <a href="index.html" class="logo-link">
-          <img src="assets/BDIB_Transparent-logo.avif" alt="BDIB Solutions Logo" class="logo-img">
-          BDIB Solutions
+          <img src="/bdib-transparent-logo.avif" alt="BDIB Solutions Logo" class="logo-img">
         </a>
         
         <ul class="nav-links" id="nav-links-menu">
-          <li><a href="index.html">Home</a></li>
           <li><a href="index.html#onboarding">How It Works</a></li>
           <li><a href="index.html#story">Our Story</a></li>
-          <li><a href="spider-ag.html" class="active-nav">SPIDER Ag</a></li>
+          <li class="dropdown">
+            <a href="spider-ag.html" class="dropdown-toggle active-nav">
+              SPIDER Ag
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="https://spiderag-preprod.bdibsolutions.com/auth/">Login</a></li>
+            </ul>
+          </li>
           <li><a href="pricing-sign-up.html">Pricing</a></li>
           <li><a href="index.html#contact">Contact</a></li>
           <li><a href="index.html#contact">Schedule Demo</a></li>
@@ -75,7 +81,7 @@
     <section class="hero spider-hero" id="top">
       <div class="container">
         <div class="hero-content reveal text-center" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
-          <img src="assets/Spideraglogo.avif" alt="SPIDER Ag Logo" class="product-logo" style="height: 4rem; margin-bottom: 2rem;">
+          <img src="/spideraglogo.avif" alt="SPIDER Ag Logo" class="product-logo" style="height: 4rem; margin-bottom: 2rem;">
           <span class="eyebrow">Proprietary Software</span>
           <h1>SPIDER Ag:<br>Your Field Companion</h1>
           <p class="lead" style="margin-bottom: 2.5rem;">SPIDER Ag is a secure, innovative, two-sided platform that links organic and traditional farmers with key members of their supply chain, such as certifiers and regulators. It transforms farming into a seamless, intelligent, and profitable experience.</p>
@@ -120,7 +126,7 @@
                   <p style="color: var(--color-white); opacity: 0.9;">Visualize field boundaries, tracking audits, and compliance schedules on a single, responsive layout map.</p>
                 </div>
                 <div class="bento-mockup-wrapper">
-                  <img src="assets/spiderag_desk_mockup.png" alt="Tablet mockup displaying the SPIDER Ag software resting on a rustic oak farm desk next to a coffee mug and notebook">
+                  <img src="/spiderag-desk-mockup.png" alt="Tablet mockup displaying the SPIDER Ag software resting on a rustic oak farm desk next to a coffee mug and notebook">
                 </div>
               </div>
             </div>
@@ -212,7 +218,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/BDIB_Transparent-logo.avif" alt="BDIB Solutions Logo" class="footer-logo">
+          <img src="/bdib-transparent-logo.avif" alt="BDIB Solutions Logo" class="footer-logo">
           <p>Providing intelligent, stress-free record-keeping and data compliance for traditional and organic farmers.</p>
           <p>2625 North Loop Drive, Suite 2622<br>Ames, Iowa 50010</p>
         </div>

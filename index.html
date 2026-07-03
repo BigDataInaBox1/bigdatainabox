@@ -21,16 +21,22 @@
   <header class="header-wrapper">
     <div class="container">
       <nav class="nav-bar">
-        <a href="#top" class="logo-link">
-          <img src="assets/BDIB_Transparent-logo.avif" alt="BDIB Solutions Logo" class="logo-img">
-          BDIB Solutions
+        <a href="index.html" class="logo-link">
+          <img src="/bdib-transparent-logo.avif" alt="BDIB Solutions Logo" class="logo-img">
         </a>
         
         <ul class="nav-links" id="nav-links-menu">
-          <li><a href="index.html">Home</a></li>
           <li><a href="index.html#onboarding">How It Works</a></li>
           <li><a href="index.html#story">Our Story</a></li>
-          <li><a href="spider-ag.html">SPIDER Ag</a></li>
+          <li class="dropdown">
+            <a href="spider-ag.html" class="dropdown-toggle">
+              SPIDER Ag
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="https://spiderag-preprod.bdibsolutions.com/auth/">Login</a></li>
+            </ul>
+          </li>
           <li><a href="pricing-sign-up.html">Pricing</a></li>
           <li><a href="index.html#contact">Contact</a></li>
           <li><a href="index.html#contact">Schedule Demo</a></li>
@@ -113,7 +119,7 @@
         <div class="hero-image-wrapper reveal" style="transition-delay: 0.15s;" id="hero-swivel-container">
           <div class="hero-image-inner hero-video-wrapper">
             <video muted playsinline autoplay loop preload="auto" disablepictureinpicture aria-hidden="true" id="hero-swivel-video">
-              <source src="assets/3d motion/isometric farm swivel 3 (2).mp4" type="video/mp4">
+              <source src="/isometric-farm-swivel-3-2.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -132,7 +138,7 @@
           <div class="showcase-media-center showcase-media-borderless" id="media-plot-farm-container">
             <!-- The plotted farm video is placed here, cross-fades from the swivel video -->
             <video muted playsinline preload="auto" id="video-plotted-farm" class="showcase-video showcase-video-borderless">
-              <source src="assets/3d motion/plotted farm.mp4" type="video/mp4">
+              <source src="/plotted-farm.mp4" type="video/mp4">
             </video>
           </div>
           <div class="showcase-text-card text-card-floating" id="text-card-plot-farm">
@@ -152,7 +158,7 @@
           </div>
           <div class="showcase-media-col media-right">
             <video muted playsinline preload="auto" id="video-plot-land" class="showcase-video showcase-video-large">
-              <source src="assets/3d motion/plot your land 3.mp4" type="video/mp4">
+              <source src="/plot-your-land-3.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -163,7 +169,7 @@
         <div class="container grid-2">
           <div class="showcase-media-col media-left">
             <video muted playsinline preload="auto" id="video-voice-memos" class="showcase-video showcase-video-small">
-              <source src="assets/3d motion/voice memos 3.mp4" type="video/mp4">
+              <source src="/voice-memos-3.mp4" type="video/mp4">
             </video>
           </div>
           <div class="showcase-text-col text-right">
@@ -186,7 +192,7 @@
           </div>
           <div class="showcase-media-col media-right">
             <video muted playsinline preload="auto" id="video-upload-files" class="showcase-video showcase-video-large">
-              <source src="assets/3d motion/upload files 3.mp4" type="video/mp4">
+              <source src="/upload-files-3.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -244,7 +250,7 @@
     <section class="spider-teaser" id="spider-ag">
       <div class="container grid-2">
         <div class="teaser-content reveal">
-          <img src="assets/Spideraglogo.avif" alt="SPIDER Ag Logo" class="product-logo" style="height: 3.5rem; margin-bottom: 1.5rem;">
+          <img src="/spideraglogo.avif" alt="SPIDER Ag Logo" class="product-logo" style="height: 3.5rem; margin-bottom: 1.5rem;">
           <span class="eyebrow">Proprietary Software</span>
           <h2>SPIDER Ag: Your Field Companion</h2>
           <p class="lead">SPIDER Ag is our proprietary AI-powered data management application designed specifically for field-level agricultural reporting, certification audits, and operational insights.</p>
@@ -263,7 +269,7 @@
         <div class="teaser-image reveal" style="transition-delay: 0.15s; position: relative;">
           <div class="hero-image-wrapper">
             <div class="hero-image-inner">
-              <img src="assets/spiderag_tractor_mockup.png" alt="Tablet mockup displaying the SPIDER Ag software in a rugged case, sitting on the console of a modern tractor dashboard overlooking organic green crop fields">
+              <img src="/spiderag-tractor-mockup.png" alt="Tablet mockup displaying the SPIDER Ag software in a rugged case, sitting on the console of a modern tractor dashboard overlooking organic green crop fields">
             </div>
           </div>
         </div>
@@ -460,7 +466,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/BDIB_Transparent-logo.avif" alt="BDIB Solutions Logo" class="footer-logo">
+          <img src="/bdib-transparent-logo.avif" alt="BDIB Solutions Logo" class="footer-logo">
           <p>Providing intelligent, stress-free record-keeping and data compliance for traditional and organic farmers.</p>
           <p>2625 North Loop Drive, Suite 2622<br>Ames, Iowa 50010</p>
         </div>
