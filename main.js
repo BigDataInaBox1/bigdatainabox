@@ -24,6 +24,20 @@
     });
   }
 
+  /* ---- Hero Video: No Loop, Restart on Scroll Back ---- */
+  const heroVideo = document.getElementById('hero-video');
+  if (heroVideo) {
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          heroVideo.currentTime = 0;
+          heroVideo.play();
+        }
+      });
+    }, { threshold: 0.3 });
+    heroObserver.observe(heroVideo);
+  }
+
   /* ---- Scroll Reveal Observer ---- */
   const revealEls = document.querySelectorAll('.reveal, .reveal-right');
 
@@ -71,4 +85,44 @@
       link.classList.add('active-nav');
     }
   });
+
+  /* ---- FAQ Accordion Handler ---- */
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all others
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      
+      if (!isActive) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ---- Comparison Table Expand Handler ---- */
+  const btnExpandCompare = document.getElementById('btn-expand-compare');
+  const expandableRows = document.querySelectorAll('.expandable-row');
+  
+  if (btnExpandCompare && expandableRows.length > 0) {
+    let isExpanded = false;
+    btnExpandCompare.addEventListener('click', () => {
+      isExpanded = !isExpanded;
+      expandableRows.forEach(row => {
+        row.style.display = isExpanded ? 'table-row' : 'none';
+      });
+      btnExpandCompare.textContent = isExpanded ? 'Hide Full Comparison' : 'See Full Comparison';
+      btnExpandCompare.setAttribute('aria-expanded', isExpanded.toString());
+    });
+  }
 })();

@@ -44,7 +44,7 @@
           <!-- Nav Drawer CTA for mobile -->
           <li>
             <a href="https://spiderag-preprod.bdibsolutions.com/auth/" class="btn btn-primary btn-nav-drawer">
-              Start Free Trial
+              Free Trial
               <span class="btn-icon-wrapper">
                 <svg viewBox="0 0 24 24">
                   <line x1="7" y1="17" x2="17" y2="7" />
@@ -55,16 +55,19 @@
           </li>
         </ul>
 
-        <!-- Navbar Main CTA -->
-        <a href="pricing-sign-up.html" class="btn btn-primary btn-nav">
-          Start Free Trial
-          <span class="btn-icon-wrapper">
-            <svg viewBox="0 0 24 24">
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
-          </span>
-        </a>
+        <!-- Navbar Main CTAs -->
+        <div class="nav-actions" style="display: flex; gap: 1rem; align-items: center;">
+          <a href="https://spiderag-preprod.bdibsolutions.com/auth/" class="btn btn-secondary btn-nav" style="padding-right: 1.5rem; border-color: rgba(41,91,63,0.3);">Login</a>
+          <a href="pricing-sign-up.html" class="btn btn-primary btn-nav">
+            Free Trial
+            <span class="btn-icon-wrapper">
+              <svg viewBox="0 0 24 24">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </span>
+          </a>
+        </div>
 
         <!-- Hamburger toggle button -->
         <button class="hamburger" id="hamburger-toggle" aria-label="Toggle navigation">
@@ -99,25 +102,25 @@
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
                   <div>
                     <span class="eyebrow" style="margin-bottom: 0.5rem; background-color: rgba(255,255,255,0.1); color: var(--color-white); border: 1px solid rgba(255,255,255,0.05); letter-spacing: 0.15em;">Ag-Tech Standard</span>
-                    <h3 id="billing-title" style="font-size: 1.75rem; color: var(--color-white);">Monthly Plan</h3>
+                    <h3 id="billing-title" style="font-size: 1.75rem; color: var(--color-white);">Annual Plan</h3>
                   </div>
                   <!-- Savings Callout -->
-                  <div class="savings-callout" id="savings-callout" style="visibility: hidden; opacity: 0; transform: translateY(10px); transition: var(--transition-fluid);">
+                  <div class="savings-callout" id="savings-callout" style="visibility: visible; opacity: 1; transform: translateY(0); transition: var(--transition-fluid);">
                     <span class="callout-pill" style="background-color: var(--color-vibrant); color: var(--color-forest); font-weight: 800; padding: 0.35rem 0.85rem; font-size: 0.8rem; box-shadow: 0 8px 24px rgba(99, 185, 109, 0.3);">Save $230/yr</span>
                   </div>
                 </div>
 
-                <div class="price-value" id="price-display" style="font-size: clamp(2.75rem, 4.5vw, 3.5rem); color: var(--color-white); margin-bottom: 0;">$40<span class="price-interval" style="color: var(--color-vibrant); font-size: 1.1rem; margin-left: 0.2rem;">/month</span></div>
-                <p class="text-muted" id="billing-period-text" style="margin-bottom: 1.25rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">Billed monthly. Perfect for flexible operational needs.</p>
+                <div class="price-value" id="price-display" style="font-size: clamp(2.75rem, 4.5vw, 3.5rem); color: var(--color-white); margin-bottom: 0;">$250<span class="price-interval" style="color: var(--color-vibrant); font-size: 1.1rem; margin-left: 0.2rem;">/year</span></div>
+                <p class="text-muted" id="billing-period-text" style="margin-bottom: 1.25rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">Billed annually. Most popular among established farmers.</p>
                 
                 <!-- Billing Toggle Slider (Glassmorphic) -->
                 <div class="pricing-toggle-container" style="background-color: var(--color-white); padding: 0.35rem; border-radius: 100px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.1); display: flex; margin: 0 auto 1.5rem auto; width: max-content;">
-                  <span class="toggle-label monthly-label active" id="label-monthly" style="padding: 0.35rem 1.25rem; border-radius: 100px;">Monthly</span>
+                  <span class="toggle-label monthly-label" id="label-monthly" style="padding: 0.35rem 1.25rem; border-radius: 100px;">Monthly</span>
                   <label class="switch" style="margin: 0 0.5rem; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" id="pricing-toggle" aria-label="Toggle billing interval">
+                    <input type="checkbox" id="pricing-toggle" aria-label="Toggle billing interval" checked>
                     <span class="slider" style="position: relative; width: 52px; height: 28px; border-radius: 100px; background-color: var(--color-forest-10); display: block; border: 1px solid rgba(41,91,63,0.1); transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);"></span>
                   </label>
-                  <span class="toggle-label annual-label" id="label-annual" style="padding: 0.35rem 1.25rem; border-radius: 100px;">
+                  <span class="toggle-label annual-label active" id="label-annual" style="padding: 0.35rem 1.25rem; border-radius: 100px;">
                     Annual
                     <span class="save-badge">Save 48%</span>
                   </span>
@@ -164,9 +167,9 @@
                 </ul>
               </div>
 
-              <a href="https://spiderag-preprod.bdibsolutions.com/auth/" class="btn btn-primary" id="cta-button"
+              <a href="https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=yearly" class="btn btn-primary" id="cta-button"
                 style="width: 100%; justify-content: center; padding: 0.85rem 1.5rem; margin-top: 1.5rem; font-size: 1rem; background-color: var(--color-vibrant); color: var(--color-forest);">
-                Select Monthly Plan
+                Select Annual
               </a>
             </div>
           </div>
@@ -247,6 +250,7 @@
           monthlyLabel.classList.remove('active');
           annualLabel.classList.add('active');
           ctaButton.textContent = 'Select Annual';
+          ctaButton.href = 'https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=yearly';
         } else {
           priceDisplay.innerHTML = '$40<span class="price-interval" style="color: var(--color-vibrant); font-size: 1.1rem; margin-left: 0.2rem;">/month</span>';
           billingPeriodText.textContent = 'Billed monthly. Perfect for flexible operational needs.';
@@ -257,6 +261,7 @@
           monthlyLabel.classList.add('active');
           annualLabel.classList.remove('active');
           ctaButton.textContent = 'Select Monthly';
+          ctaButton.href = 'https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=monthly';
         }
       }
 

@@ -23,7 +23,7 @@
 }
 
 /* ---- Reset Hero Container for Floating Video ---- */
-#hero-swivel-container {
+#hero-video-container {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -33,7 +33,7 @@
   margin-right: auto;
 }
 
-#hero-swivel-container .hero-image-inner {
+#hero-video-container .hero-image-inner {
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
@@ -56,14 +56,7 @@
 }
 
 /* Row 1: Centered video transition zone */
-.centered-row {
-  padding-top: 18rem; /* Space for hero swivel transition */
-  padding-bottom: 12rem;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* (centered-row removed) */
 
 .centered-row-inner {
   position: relative;
@@ -204,10 +197,6 @@
    RESPONSIVE DESIGN
    ==================================================== */
 @media (max-width: 1024px) {
-  .centered-row {
-    padding-top: 12rem;
-    padding-bottom: 8rem;
-  }
   .grid-row {
     padding: 8rem 0;
   }
@@ -221,14 +210,9 @@
 }
 
 @media (max-width: 768px) {
-  .hero-swivel-wrapper {
+  .hero-video-wrapper {
     width: 220px;
     bottom: -80px;
-  }
-  
-  .centered-row {
-    padding-top: 10rem;
-    padding-bottom: 6rem;
   }
   
   .grid-row {
@@ -280,7 +264,7 @@
 
 /* ====================================================
    BORDERLESS / NO-BOX VIDEO (Plotted Farm)
-   Matches hero swivel's radial gradient edge-fade mask
+   Matches hero video's radial gradient edge-fade mask
    ==================================================== */
 .showcase-media-borderless {
   background: transparent !important;
@@ -294,7 +278,7 @@
   border: none !important;
   box-shadow: none !important;
   outline: none !important;
-  /* Same radial mask as hero swivel — fades edges into page bg */
+  /* Same radial mask as hero video — fades edges into page bg */
   -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
   mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
 }

@@ -95,7 +95,13 @@ p.lead {
 }
 
 .text-muted {
-  color: #777777;
+  color: #666666;
+}
+
+/* Global Focus Outline for Accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 2px;
 }
 
 a {
@@ -363,6 +369,7 @@ section {
 
 .btn-nav {
   justify-self: end;
+  white-space: nowrap;
 }
 
 .product-logo {
@@ -384,15 +391,16 @@ section {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1.75rem;
   align-items: center;
 }
 
 .nav-links a {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-charcoal);
   opacity: 0.8;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -1122,10 +1130,7 @@ section {
    STORY & TEAM SECTION
    ---------------------------------------------------- */
 .story-wrapper {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 5rem;
-  align-items: flex-start;
+  display: block;
 }
 
 .story-text h2 {
@@ -1160,29 +1165,24 @@ section {
 }
 
 .team-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 }
 
 .team-member {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 1.5rem;
 }
 
-.team-avatar {
-  width: 4rem;
-  height: 4rem;
-  background-color: var(--color-sage);
-  color: var(--color-forest);
+.team-photo {
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-headings);
-  font-weight: 800;
-  font-size: 1.25rem;
+  object-fit: cover;
   flex-shrink: 0;
   box-shadow: var(--shadow-ambient);
 }
@@ -1200,12 +1200,38 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.team-member-desc {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.team-socials {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.team-socials a {
+  color: var(--color-slate);
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+}
+
+.team-socials a:hover {
+  color: #0077B5;
+  transform: scale(1.15);
 }
 
 @media (max-width: 1024px) {
-  .story-wrapper {
+  .team-grid {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
 
@@ -1605,3 +1631,83 @@ input:checked + .slider:before {
   box-shadow: var(--shadow-button);
   display: inline-block;
 }
+
+/* ----------------------------------------------------
+   FAQ SECTION
+   ---------------------------------------------------- */
+.faq-section {
+  padding: 6rem 0;
+  background-color: var(--color-bg-chalk);
+}
+
+.faq-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.faq-item.active {
+  border-color: var(--color-sage);
+  box-shadow: 0 8px 25px rgba(41, 91, 63, 0.08);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-forest);
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  color: var(--color-vibrant);
+}
+
+.faq-chevron {
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+  color: var(--color-slate);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--color-vibrant);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.faq-answer-inner {
+  padding: 0 2rem 1.5rem 2rem;
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+

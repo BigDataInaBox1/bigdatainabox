@@ -15,29 +15,26 @@
     gsap.registerPlugin(ScrollTrigger);
 
     /* ---- Video elements ---- */
-    const swivelContainer = document.getElementById('hero-swivel-container');
-    const swivelVid = swivelContainer ? swivelContainer.querySelector('video') : null;
+    const heroContainer = document.getElementById('hero-video-container');
+    const heroVid = heroContainer ? heroContainer.querySelector('video') : null;
 
-    const plotedVid   = document.getElementById('video-plotted-farm');
     const plotLandVid = document.getElementById('video-plot-land');
     const voiceVid    = document.getElementById('video-voice-memos');
     const uploadVid   = document.getElementById('video-upload-files');
 
-    const txtPlotFarm = document.getElementById('text-card-plot-farm');
-
-    /* ---- Autoplay swivel immediately on load ---- */
-    if (swivelVid) {
-      swivelVid.play().catch(err => console.log('Autoplay blocked:', err));
+    /* ---- Autoplay hero immediately on load ---- */
+    if (heroVid) {
+      heroVid.play().catch(err => console.log('Autoplay blocked:', err));
     }
 
-    /* ---- Pause swivel video when it scrolls off screen ---- */
-    if (swivelVid && swivelContainer) {
+    /* ---- Pause hero video when it scrolls off screen ---- */
+    if (heroVid && heroContainer) {
       ScrollTrigger.create({
         trigger: '#top',
         start: 'top top',
         end: 'bottom top',
-        onLeave: () => swivelVid.pause(),
-        onEnterBack: () => swivelVid.play().catch(() => {}),
+        onLeave: () => heroVid.pause(),
+        onEnterBack: () => heroVid.play().catch(() => {}),
       });
     }
 
@@ -84,69 +81,7 @@
       };
     }
 
-    /* ============================================================
-       1. HERO SWIVEL -> CENTERED PLOTTED FARM TRANSITION
-       ============================================================ */
-    if (swivelContainer && plotedVid) {
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: '#row-plot-farm',
-          start: 'top bottom',
-          end: 'top center',
-          scrub: 0.5,
-        }
-      })
-      .to(swivelContainer, {
-        scale: 1.5,
-        x: isMobile ? 0 : '-25vw',
-        y: -120,
-        opacity: 0,
-        ease: 'none'
-      })
-      .fromTo(plotedVid, {
-        scale: 0.85,
-        opacity: 0
-      }, {
-        scale: 1,
-        opacity: 1,
-        ease: 'none'
-      }, 0);
-    }
-
-    // Slide in the "Plot your farm." text card
-    if (txtPlotFarm) {
-      gsap.fromTo(txtPlotFarm, {
-        x: '-60px',
-        opacity: 0
-      }, {
-        x: '0px',
-        opacity: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '#row-plot-farm',
-          start: 'top center',
-          end: 'center center',
-          scrub: 0.5,
-        }
-      });
-    }
-
-    /* ============================================================
-       2. PLOTTED FARM — Play once on enter, stop at last frame
-       ============================================================ */
-    if (plotedVid) {
-      plotedVid.loop = false;
-      ScrollTrigger.create({
-        trigger: '#row-plot-farm',
-        start: 'top 80%',
-        onEnter: () => {
-          plotedVid.currentTime = 0;
-          plotedVid.play().catch(err => console.log('Plotted farm play failed:', err));
-        }
-      });
-    }
 
     /* ============================================================
        3. PLOT YOUR LAND — Scroll-scrubbed slide + video
