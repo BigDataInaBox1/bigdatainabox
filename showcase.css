@@ -28,7 +28,7 @@
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
-  max-width: 400px; /* Constrain size to make it smaller */
+  max-width: 520px; /* Constrain size to make it smaller */
   margin-left: auto;
   margin-right: auto;
 }

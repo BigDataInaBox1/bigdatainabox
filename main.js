@@ -27,6 +27,7 @@
   /* ---- Hero Video: No Loop, Restart on Scroll Back ---- */
   const heroVideo = document.getElementById('hero-video');
   if (heroVideo) {
+    heroVideo.playbackRate = 0.7;
     const heroObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
