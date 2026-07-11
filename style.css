@@ -948,20 +948,23 @@ section {
 
 .compare-matrix {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   text-align: left;
 }
 
-.compare-matrix th, 
+.compare-matrix th,
 .compare-matrix td {
-  padding: 1.75rem 2rem;
+  padding: 1.5rem 2rem;
   font-family: var(--font-body);
+  vertical-align: top;
 }
 
 .compare-matrix th {
   font-family: var(--font-headings);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  padding: 1.25rem 2rem;
 }
 
 .compare-matrix tr {
@@ -972,61 +975,68 @@ section {
   border-bottom: none;
 }
 
-.compare-header-label {
-  width: 25%;
-  color: var(--color-slate);
-}
-
+/* -- Column Headers -- */
 .compare-header-old {
-  width: 37.5%;
+  width: 50%;
   color: var(--color-charcoal);
-  background-color: rgba(43, 43, 43, 0.02);
-  border-radius: 1.5rem 1.5rem 0 0;
+  background-color: rgba(43, 43, 43, 0.03);
+  border-radius: 1.25rem 0 0 0;
 }
 
 .compare-header-bdib {
-  width: 37.5%;
-  color: var(--color-forest);
-  background-color: rgba(99, 185, 109, 0.06);
-  border-radius: 1.5rem 1.5rem 0 0;
+  width: 50%;
+  color: var(--color-white);
+  background-color: var(--color-forest);
+  border-radius: 0 1.25rem 0 0;
 }
 
+/* -- Cell Styles -- */
 .compare-cell-old {
   background-color: rgba(43, 43, 43, 0.02);
-  color: #666666;
+  color: #666;
 }
 
 .compare-cell-bdib {
-  background-color: rgba(99, 185, 109, 0.06);
-  font-weight: 600;
+  background-color: rgba(41, 91, 63, 0.04);
+  color: var(--color-charcoal);
+}
+
+/* Bottom row rounding */
+.compare-matrix tbody tr:last-child .compare-cell-old,
+.compare-matrix tbody tr:last-child:not(.expandable-row) ~ .expandable-row:last-child .compare-cell-old {
+  border-radius: 0 0 0 1.25rem;
+}
+
+.compare-matrix tbody tr:last-child .compare-cell-bdib,
+.compare-matrix tbody tr:last-child:not(.expandable-row) ~ .expandable-row:last-child .compare-cell-bdib {
+  border-radius: 0 0 1.25rem 0;
+}
+
+/* -- Feature Label & Value -- */
+.compare-feature-label {
+  display: block;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-slate);
+  margin-bottom: 0.35rem;
+}
+
+.compare-cell-bdib .compare-feature-label {
   color: var(--color-forest);
 }
 
-.compare-matrix tr:last-child .compare-cell-old {
-  border-radius: 0 0 1.5rem 1.5rem;
+.compare-value {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-.compare-matrix tr:last-child .compare-cell-bdib {
-  border-radius: 0 0 1.5rem 1.5rem;
-}
-
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 100px;
-}
-
-.status-badge.red {
-  background-color: rgba(220, 38, 38, 0.08);
-  color: #DC2626;
-}
-
-.status-badge.green {
-  background-color: rgba(22, 163, 74, 0.08);
-  color: #16A34A;
+.compare-cell-bdib .compare-value {
+  font-weight: 600;
+  color: var(--color-charcoal);
 }
 
 /* ----------------------------------------------------
