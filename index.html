@@ -334,73 +334,70 @@
     </section>
 
     <!-- ----------------------------------------------------
-         PREZI-STYLE INTERACTIVE INFOGRAPHIC SECTION
+         PREZI-STYLE FULL-SCREEN SCROLL INFOGRAPHIC SECTION
          ---------------------------------------------------- -->
-    <section class="infographic-section" id="interactive-infographic">
-      <div class="container">
-        <div class="section-intro reveal text-center" style="max-width: 800px; margin: 0 auto 3rem;">
-          <span class="eyebrow">Interactive Ecosystem</span>
-          <h2>The Connected Farm Data Blueprint</h2>
-          <p class="lead">Click any glowing data node pin on the farm map below to zoom into that operational domain and reveal real-time intelligence.</p>
+    <section class="infographic-section-fullscreen" id="interactive-infographic">
+      <!-- Floating Full-Screen Title Header -->
+      <div class="prezi-floating-header">
+        <h2 class="prezi-main-title">SPIDER Ag Connects Your Farm</h2>
+      </div>
+
+      <div class="prezi-viewport-wrapper" id="prezi-viewport">
+        <div class="prezi-canvas" id="prezi-canvas">
+          <img src="/assets/infographic/infographic.png" alt="Connected Farm Data Ecosystem Aerial Map" class="prezi-map-img">
+          
+          <!-- Pin 1: Water Drop / Soil Sensors (Top Left) -->
+          <button class="prezi-pin" style="top: 13%; left: 16%;" data-pin="4" aria-label="Measure Real Field Conditions">
+            <span class="pin-label">Real Field Conditions</span>
+          </button>
+
+          <!-- Pin 2: Sprout / Field Earnings (Center) -->
+          <button class="prezi-pin" style="top: 38%; left: 45%;" data-pin="1" aria-label="Know What Each Field Truly Earns">
+            <span class="pin-label">Field Net Earnings</span>
+          </button>
+
+          <!-- Pin 3: Clipboard / Operator Story (Top Right) -->
+          <button class="prezi-pin" style="top: 20%; left: 68%;" data-pin="3" aria-label="Preserve the Story Behind the Numbers">
+            <span class="pin-label">Field Diary &amp; Story</span>
+          </button>
+
+          <!-- Pin 4: Shield / Better Decisions (Bottom Left) -->
+          <button class="prezi-pin" style="top: 72%; left: 19%;" data-pin="5" aria-label="Make Better Decisions Faster">
+            <span class="pin-label">Better Decisions Faster</span>
+          </button>
+
+          <!-- Pin 5: Tractor / Connected Systems (Bottom Right) -->
+          <button class="prezi-pin" style="top: 68%; left: 83%;" data-pin="2" aria-label="Connect Your Farm Systems">
+            <span class="pin-label">Connected Systems</span>
+          </button>
         </div>
 
-        <div class="prezi-viewport-wrapper reveal" id="prezi-viewport">
-          <div class="prezi-canvas" id="prezi-canvas">
-            <img src="/assets/infographic/infographic.png" alt="Connected Farm Data Ecosystem Aerial Map" class="prezi-map-img">
-            
-            <!-- Pin 1: Water Drop / Soil Sensors (Top Left) -->
-            <button class="prezi-pin" style="top: 13%; left: 16%;" data-pin="4" aria-label="Measure Real Field Conditions">
-              <span class="pin-label">Real Field Conditions</span>
+        <!-- Prezi Detail Glassmorphism Card Overlay -->
+        <div class="prezi-card-overlay" id="prezi-card-overlay" aria-hidden="true">
+          <div class="prezi-card" id="prezi-card">
+            <button class="prezi-card-close" id="prezi-card-close" aria-label="Reset View">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
 
-            <!-- Pin 2: Sprout / Field Earnings (Center) -->
-            <button class="prezi-pin" style="top: 38%; left: 45%;" data-pin="1" aria-label="Know What Each Field Truly Earns">
-              <span class="pin-label">Field Net Earnings</span>
-            </button>
+            <div class="prezi-card-media">
+              <img id="prezi-card-img" src="" alt="Infographic detail view">
+            </div>
 
-            <!-- Pin 3: Clipboard / Operator Story (Top Right) -->
-            <button class="prezi-pin" style="top: 20%; left: 68%;" data-pin="3" aria-label="Preserve the Story Behind the Numbers">
-              <span class="pin-label">Field Diary &amp; Story</span>
-            </button>
+            <div class="prezi-card-body">
+              <div class="prezi-step-tag" id="prezi-step-tag">Field Net Profitability</div>
+              <h3 id="prezi-card-title">Know What Each Field Truly Earns</h3>
+              <p id="prezi-card-desc">Combine crop performance with labor, rent, depreciation, and financial logs to calculate real profitability.</p>
 
-            <!-- Pin 4: Shield / Better Decisions (Bottom Left) -->
-            <button class="prezi-pin" style="top: 72%; left: 19%;" data-pin="5" aria-label="Make Better Decisions Faster">
-              <span class="pin-label">Better Decisions Faster</span>
-            </button>
-
-            <!-- Pin 5: Tractor / Connected Systems (Bottom Right) -->
-            <button class="prezi-pin" style="top: 68%; left: 83%;" data-pin="2" aria-label="Connect Your Farm Systems">
-              <span class="pin-label">Connected Systems</span>
-            </button>
-          </div>
-
-          <!-- Prezi Detail Glassmorphism Card Overlay -->
-          <div class="prezi-card-overlay" id="prezi-card-overlay" aria-hidden="true">
-            <div class="prezi-card" id="prezi-card">
-              <button class="prezi-card-close" id="prezi-card-close" aria-label="Reset View">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              </button>
-
-              <div class="prezi-card-media">
-                <img id="prezi-card-img" src="" alt="Infographic detail view">
-              </div>
-
-              <div class="prezi-card-body">
-                <div class="prezi-step-tag" id="prezi-step-tag">Step 01</div>
-                <h3 id="prezi-card-title">Know What Each Field Truly Earns</h3>
-                <p id="prezi-card-desc">Combine crop performance with labor, rent, depreciation, and financial logs to calculate real profitability.</p>
-
-                <div class="prezi-card-nav">
-                  <button class="btn btn-secondary btn-sm" id="prezi-prev-pin">
-                    &larr; Prev Node
-                  </button>
-                  <button class="btn btn-primary btn-sm" id="prezi-next-pin">
-                    Next Node &rarr;
-                  </button>
-                  <button class="btn btn-secondary btn-sm" id="prezi-reset-view" style="margin-left: auto;">
-                    Reset Map &circlearrowleft;
-                  </button>
-                </div>
+              <div class="prezi-card-nav">
+                <button class="btn btn-secondary btn-sm" id="prezi-prev-pin">
+                  &larr; Prev Node
+                </button>
+                <button class="btn btn-primary btn-sm" id="prezi-next-pin">
+                  Next Node &rarr;
+                </button>
+                <button class="btn btn-secondary btn-sm" id="prezi-reset-view" style="margin-left: auto;">
+                  Reset Map &circlearrowleft;
+                </button>
               </div>
             </div>
           </div>

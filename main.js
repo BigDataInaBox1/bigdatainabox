@@ -516,7 +516,7 @@
     const originY = Math.min(78, Math.max(22, data.origin.y));
 
     preziCanvas.style.transformOrigin = `${originX}% ${originY}%`;
-    preziCanvas.style.transform = 'scale(1.72)';
+    preziCanvas.style.transform = 'scale(2.1)';
 
     if (preziImg) {
       preziImg.onerror = function() {
@@ -576,7 +576,43 @@
       activatePreziPin(nextId);
     });
   }
+
+  /* GSAP ScrollTrigger Scroll-Driven Pin Sequence */
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const infographicSec = document.getElementById('interactive-infographic');
+    if (infographicSec) {
+      ScrollTrigger.create({
+        trigger: infographicSec,
+        start: 'top top',
+        end: '+=3200',
+        pin: true,
+        scrub: 0.8,
+        onUpdate: (self) => {
+          const progress = self.progress;
+
+          if (progress < 0.08) {
+            if (activePinId !== null) resetPreziView();
+          } else if (progress >= 0.08 && progress < 0.25) {
+            if (activePinId !== 1) activatePreziPin(1);
+          } else if (progress >= 0.25 && progress < 0.45) {
+            if (activePinId !== 2) activatePreziPin(2);
+          } else if (progress >= 0.45 && progress < 0.65) {
+            if (activePinId !== 3) activatePreziPin(3);
+          } else if (progress >= 0.65 && progress < 0.82) {
+            if (activePinId !== 4) activatePreziPin(4);
+          } else if (progress >= 0.82 && progress < 0.94) {
+            if (activePinId !== 5) activatePreziPin(5);
+          } else if (progress >= 0.94) {
+            if (activePinId !== null) resetPreziView();
+          }
+        }
+      });
+    }
+  }
 })();
+
 
 
 

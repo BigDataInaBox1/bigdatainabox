@@ -2398,32 +2398,58 @@ input:checked + .slider:before {
 }
 
 /* ----------------------------------------------------
-   PREZI-STYLE INTERACTIVE INFOGRAPHIC PRESENTATION
+   PREZI-STYLE FULL-SCREEN SCROLL INFOGRAPHIC SECTION
    ---------------------------------------------------- */
-.infographic-section {
-  padding: 6rem 0;
-  background: linear-gradient(180deg, rgba(248, 248, 245, 0.9) 0%, rgba(238, 242, 235, 0.95) 50%, rgba(248, 248, 245, 0.9) 100%);
+.infographic-section-fullscreen {
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
+  background: #0D1612;
+  color: var(--color-white);
+}
+
+/* Floating Full-Screen Title Bar */
+.prezi-floating-header {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  text-align: center;
+  pointer-events: none;
+  width: max-content;
+  max-width: 90vw;
+}
+
+.prezi-main-title {
+  font-family: var(--font-headings);
+  font-size: clamp(1.4rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  background: rgba(15, 23, 18, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.85rem 2.5rem;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.01em;
 }
 
 .prezi-viewport-wrapper {
   position: relative;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  border-radius: 24px;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  margin: 0;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 25px 60px -15px rgba(27, 48, 36, 0.25);
-  border: 2px solid rgba(41, 91, 63, 0.15);
-  background: #111814;
-  aspect-ratio: 16 / 9;
-}
-
-@media (max-width: 768px) {
-  .prezi-viewport-wrapper {
-    aspect-ratio: 4 / 3;
-  }
+  border: none;
+  box-shadow: none;
+  background: #0D1612;
 }
 
 .prezi-canvas {
@@ -2433,7 +2459,7 @@ input:checked + .slider:before {
   width: 100%;
   height: 100%;
   transform-origin: 50% 50%;
-  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform-origin 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform-origin 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, transform-origin;
 }
 
@@ -2448,8 +2474,8 @@ input:checked + .slider:before {
 .prezi-pin {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -2460,44 +2486,44 @@ input:checked + .slider:before {
   justify-content: flex-end;
   padding: 0;
   outline: none;
-  transition: transform 0.25s ease;
+  transition: transform 0.3s ease;
 }
 
 .prezi-pin:hover {
-  transform: translate(-50%, -50%) scale(1.08);
+  transform: translate(-50%, -50%) scale(1.12);
 }
 
 .pin-label {
   position: relative;
   z-index: 2;
   font-family: var(--font-headings);
-  font-size: 0.725rem;
+  font-size: 0.875rem;
   font-weight: 800;
   color: #FFFFFF;
-  background: rgba(15, 23, 18, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 0.35rem 0.75rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 23, 18, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.45rem 0.95rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
   pointer-events: none;
-  margin-top: 76px; /* Moved lower on the Y level below the pinhead artwork */
+  margin-top: 85px; /* Positioned cleanly under the pinhead artwork */
   transition: all 0.25s ease;
 }
 
 .prezi-pin:hover .pin-label {
-  background: rgba(41, 91, 63, 0.95);
-  border-color: rgba(99, 185, 109, 0.8);
-  box-shadow: 0 6px 20px rgba(41, 91, 63, 0.5);
+  background: rgba(41, 91, 63, 0.96);
+  border-color: rgba(99, 185, 109, 0.9);
+  box-shadow: 0 8px 24px rgba(41, 91, 63, 0.6);
 }
 
 .prezi-pin.is-active .pin-label {
-  background: rgba(15, 23, 18, 0.95);
-  border: 2px solid #FFD700;
+  background: rgba(15, 23, 18, 0.96);
+  border: 2.5px solid #FFD700;
   color: #FFD700;
-  box-shadow: 0 0 24px rgba(255, 215, 0, 0.6);
+  box-shadow: 0 0 28px rgba(255, 215, 0, 0.7);
 }
 
 /* Centered Glassmorphism Prezi Detail Card Overlay */
@@ -2505,13 +2531,13 @@ input:checked + .slider:before {
   position: absolute;
   inset: 0;
   z-index: 50;
-  background: rgba(15, 23, 18, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(12, 20, 15, 0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
-  justify-content: center; /* Centered in the middle of the map viewport */
-  padding: 1.5rem;
+  justify-content: center; /* Centered in middle of full-screen map */
+  padding: 2rem;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s ease;
@@ -2526,16 +2552,16 @@ input:checked + .slider:before {
 
 .prezi-card {
   position: relative;
-  width: 480px;
-  max-width: 92%;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 22px;
+  width: 540px;
+  max-width: 92vw;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 26px;
   overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  transform: scale(0.9);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  transform: scale(0.92);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -2547,10 +2573,10 @@ input:checked + .slider:before {
 
 .prezi-card-close {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 36px;
-  height: 36px;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0,0,0,0.12);
@@ -2560,19 +2586,19 @@ input:checked + .slider:before {
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
   transition: all 0.25s ease;
 }
 
 .prezi-card-close:hover {
   background: var(--color-forest);
   color: var(--color-white);
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 .prezi-card-media {
   width: 100%;
-  height: 200px;
+  height: 230px;
   overflow: hidden;
   position: relative;
   background: var(--color-charcoal);
@@ -2586,27 +2612,27 @@ input:checked + .slider:before {
 }
 
 .prezi-card-body {
-  padding: 1.5rem 1.75rem;
+  padding: 1.75rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .prezi-step-tag {
   font-family: var(--font-headings);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-forest);
-  background: rgba(41, 91, 63, 0.1);
-  padding: 0.25rem 0.65rem;
-  border-radius: 12px;
+  background: rgba(41, 91, 63, 0.12);
+  padding: 0.3rem 0.75rem;
+  border-radius: 14px;
   width: fit-content;
 }
 
 .prezi-card-body h3 {
-  font-size: 1.3rem;
+  font-size: 1.45rem;
   font-weight: 800;
   color: var(--color-forest);
   line-height: 1.3;
@@ -2614,16 +2640,16 @@ input:checked + .slider:before {
 
 .prezi-card-body p {
   color: #333333;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
 .prezi-card-nav {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.6rem;
   align-items: center;
   margin-top: 0.5rem;
-  padding-top: 0.85rem;
+  padding-top: 1rem;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -2637,6 +2663,7 @@ input:checked + .slider:before {
 .topo-bg {
   display: none !important;
 }
+
 
 
 
