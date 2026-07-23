@@ -202,6 +202,34 @@
       </div>
     </section>
 
+    <!-- Spider Ag Lightbox Modal (SEPARATE from Gallery Lightbox) -->
+    <div class="spider-lightbox" id="spider-lightbox" aria-hidden="true" role="dialog" aria-label="Enlarged SPIDER Ag Image">
+      <div class="spider-lightbox-overlay" id="spider-lightbox-overlay"></div>
+      <div class="spider-lightbox-content">
+        <button class="spider-lightbox-close" id="spider-lightbox-close" aria-label="Close enlarged view">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <button class="spider-lightbox-nav spider-lightbox-prev" id="spider-lightbox-prev" aria-label="Previous image">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <button class="spider-lightbox-nav spider-lightbox-next" id="spider-lightbox-next" aria-label="Next image">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <img class="spider-lightbox-img" id="spider-lightbox-img" src="" alt="Enlarged SPIDER Ag view">
+        <div class="spider-lightbox-caption" id="spider-lightbox-caption"></div>
+      </div>
+    </div>
+
     <!-- ----------------------------------------------------
          PREZI-STYLE FULL-SCREEN SCROLL INFOGRAPHIC SECTION
          ---------------------------------------------------- -->

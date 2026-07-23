@@ -447,12 +447,73 @@
       });
     }
 
-    spiderSlides.forEach((slide) => {
+    /* ---- Dedicated Spider Ag Lightbox (completely separate from gallery) ---- */
+    const spiderLightbox = document.getElementById('spider-lightbox');
+    const spiderLbOverlay = document.getElementById('spider-lightbox-overlay');
+    const spiderLbClose = document.getElementById('spider-lightbox-close');
+    const spiderLbImg = document.getElementById('spider-lightbox-img');
+    const spiderLbCaption = document.getElementById('spider-lightbox-caption');
+    const spiderLbPrev = document.getElementById('spider-lightbox-prev');
+    const spiderLbNext = document.getElementById('spider-lightbox-next');
+
+    let spiderLbIdx = 0;
+    let isSpiderLbOpen = false;
+
+    const spiderImages = Array.from(spiderSlides).map(slide => {
+      const img = slide.querySelector('img');
+      return { src: img ? img.src : '', alt: img ? img.alt : '' };
+    }).filter(item => item.src);
+
+    function updateSpiderLb(idx) {
+      if (spiderImages.length === 0) return;
+      spiderLbIdx = (idx + spiderImages.length) % spiderImages.length;
+      const item = spiderImages[spiderLbIdx];
+      if (spiderLbImg) { spiderLbImg.src = item.src; spiderLbImg.alt = item.alt; }
+      if (spiderLbCaption) spiderLbCaption.textContent = item.alt;
+    }
+
+    function openSpiderLb(idx) {
+      if (!spiderLightbox || !spiderLbImg) return;
+      updateSpiderLb(idx);
+      spiderLightbox.classList.add('is-open');
+      spiderLightbox.setAttribute('aria-hidden', 'false');
+      isSpiderLbOpen = true;
+      stopSpiderTimer();
+    }
+
+    function closeSpiderLb() {
+      if (!spiderLightbox) return;
+      spiderLightbox.classList.remove('is-open');
+      spiderLightbox.setAttribute('aria-hidden', 'true');
+      isSpiderLbOpen = false;
+      startSpiderTimer();
+    }
+
+    if (spiderLbOverlay) spiderLbOverlay.addEventListener('click', closeSpiderLb);
+    if (spiderLbClose) spiderLbClose.addEventListener('click', closeSpiderLb);
+    if (spiderLbNext) spiderLbNext.addEventListener('click', (e) => { e.stopPropagation(); updateSpiderLb(spiderLbIdx + 1); });
+    if (spiderLbPrev) spiderLbPrev.addEventListener('click', (e) => { e.stopPropagation(); updateSpiderLb(spiderLbIdx - 1); });
+
+    document.addEventListener('keydown', (e) => {
+      if (!isSpiderLbOpen) return;
+      if (e.key === 'Escape') closeSpiderLb();
+      if (e.key === 'ArrowRight') updateSpiderLb(spiderLbIdx + 1);
+      if (e.key === 'ArrowLeft') updateSpiderLb(spiderLbIdx - 1);
+    });
+
+    if (spiderLightbox) {
+      let sTouchStart = 0;
+      spiderLightbox.addEventListener('touchstart', (e) => { sTouchStart = e.changedTouches[0].screenX; }, { passive: true });
+      spiderLightbox.addEventListener('touchend', (e) => {
+        const diff = e.changedTouches[0].screenX - sTouchStart;
+        if (diff < -35) updateSpiderLb(spiderLbIdx + 1);
+        else if (diff > 35) updateSpiderLb(spiderLbIdx - 1);
+      }, { passive: true });
+    }
+
+    spiderSlides.forEach((slide, idx) => {
       slide.addEventListener('click', () => {
-        const img = slide.querySelector('img');
-        if (img && typeof openLightbox === 'function') {
-          openLightbox(img.src, img.alt);
-        }
+        openSpiderLb(idx);
       });
     });
 
