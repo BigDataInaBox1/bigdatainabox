@@ -2768,38 +2768,54 @@ input:checked + .slider:before {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Comparison Section (deep forest green + white topo) --- */
+/* --- Comparison Section ("Ditch the Notebook" - White background + Green Topo + Gradient Fade) --- */
 .comparison-section.has-topo-bg {
-  background: linear-gradient(180deg, #1B4332 0%, #234D3A 100%);
+  background: #FFFFFF !important;
   padding: 6.5rem 0;
-  color: #FFFFFF;
+  color: var(--color-charcoal) !important;
+}
+
+.comparison-section.has-topo-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/topography_pattern.png');
+  background-repeat: repeat;
+  background-size: 900px auto;
+  opacity: 0.16;
+  filter: invert(21%) sepia(34%) saturate(1215%) hue-rotate(102deg) brightness(96%) contrast(92%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
 }
 
 .comparison-section.has-topo-bg .compare-intro h2 {
-  color: #FFFFFF;
+  color: var(--color-forest) !important;
 }
 
 .comparison-section.has-topo-bg .compare-intro .lead {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-charcoal) !important;
 }
 
 .comparison-section.has-topo-bg .compare-intro .eyebrow {
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  color: var(--color-gold) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(41, 91, 63, 0.08) !important;
+  color: var(--color-forest) !important;
+  border-color: rgba(41, 91, 63, 0.2) !important;
 }
 
 .compare-matrix-wrapper {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(41, 91, 63, 0.14) !important;
   border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
 
-/* --- Hidden Costs / Painpoints (deep forest green + white topo) --- */
+/* --- Hidden Costs / Painpoints (deep forest green + white topo + high-contrast text) --- */
 .painpoints-section.has-topo-bg {
-  background: linear-gradient(180deg, #234D3A 0%, #1B4332 100%);
+  background: linear-gradient(180deg, #1B4332 0%, #234D3A 100%);
   padding: 6.5rem 0;
   color: #FFFFFF;
 }
@@ -2809,31 +2825,47 @@ input:checked + .slider:before {
 }
 
 .painpoints-section.has-topo-bg .section-intro .lead {
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .painpoints-section.has-topo-bg .section-intro .eyebrow {
   background-color: rgba(255, 255, 255, 0.15) !important;
   color: var(--color-gold) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 .painpoints-section.has-topo-bg .interactive-card {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
-  color: #FFFFFF;
+  background: rgba(12, 32, 22, 0.65) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.24) !important;
+  color: #FFFFFF !important;
 }
 
 .painpoints-section.has-topo-bg .card-title {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
+  font-weight: 800;
 }
 
 .painpoints-section.has-topo-bg .card-badge {
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--color-gold);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: var(--color-gold) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.painpoints-section.has-topo-bg .card-reveal-teaser {
+  color: var(--color-gold) !important;
+}
+
+.painpoints-section.has-topo-bg .teaser-chevron {
+  stroke: var(--color-gold) !important;
+}
+
+.painpoints-section.has-topo-bg .card-reveal-content p {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 400;
+  line-height: 1.65;
+  border-top: 1px dashed rgba(255, 255, 255, 0.3) !important;
 }
 
 /* ----------------------------------------------------
