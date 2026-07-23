@@ -651,7 +651,6 @@
         end: '+=1600',
         pin: true,
         pinSpacing: true,
-        anticipatePin: 1,
         scrub: 0.5,
         onLeave: () => {
           resetPreziView();
@@ -662,19 +661,19 @@
         onUpdate: (self) => {
           const progress = self.progress;
 
-          if (progress < 0.08) {
+          if (progress < 0.14) {
             if (activePinId !== null) resetPreziView();
-          } else if (progress >= 0.08 && progress < 0.25) {
+          } else if (progress >= 0.14 && progress < 0.30) {
             if (activePinId !== 1) activatePreziPin(1);
-          } else if (progress >= 0.25 && progress < 0.45) {
+          } else if (progress >= 0.30 && progress < 0.48) {
             if (activePinId !== 2) activatePreziPin(2);
-          } else if (progress >= 0.45 && progress < 0.65) {
+          } else if (progress >= 0.48 && progress < 0.66) {
             if (activePinId !== 3) activatePreziPin(3);
-          } else if (progress >= 0.65 && progress < 0.82) {
+          } else if (progress >= 0.66 && progress < 0.84) {
             if (activePinId !== 4) activatePreziPin(4);
-          } else if (progress >= 0.82 && progress < 0.94) {
+          } else if (progress >= 0.84 && progress < 0.95) {
             if (activePinId !== 5) activatePreziPin(5);
-          } else if (progress >= 0.94) {
+          } else if (progress >= 0.95) {
             if (activePinId !== null) resetPreziView();
           }
         }
