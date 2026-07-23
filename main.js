@@ -468,35 +468,35 @@
       title: 'Know What Each Field Truly Earns',
       desc: 'Combine crop performance with labor, rent, depreciation, and financial logs to calculate real profitability.',
       img: '/assets/infographic/pin1_earnings.png',
-      zoom: { scale: 2.2, x: 5, y: 12 }
+      origin: { x: 45, y: 38 }
     },
     2: {
       step: 'Step 02',
       title: 'Connect Your Farm Systems',
       desc: 'Bring machinery data, spray records, and software platforms into one unified database.',
       img: '/assets/infographic/pin2_connected.png',
-      zoom: { scale: 2.2, x: -32, y: -18 }
+      origin: { x: 78, y: 68 }
     },
     3: {
       step: 'Step 03',
       title: 'Preserve the Story Behind the Numbers',
       desc: 'Turn operator notes and field observations into structured insights that explain failures, delays, and unusual results.',
       img: '/assets/infographic/pin3_story.png',
-      zoom: { scale: 2.2, x: -18, y: 28 }
+      origin: { x: 68, y: 22 }
     },
     4: {
       step: 'Step 04',
       title: 'Measure Real Field Conditions',
       desc: 'Use localized weather stations and soil sensors to capture conditions that distant forecasts and machine displays miss.',
       img: '/assets/infographic/pin4_truth.png',
-      zoom: { scale: 2.2, x: 32, y: 35 }
+      origin: { x: 22, y: 18 }
     },
     5: {
       step: 'Step 05',
       title: 'Make Better Decisions Faster',
       desc: 'Transform soil, machinery, weather, financial, and field data into clear reports that show where to improve.',
       img: '/assets/infographic/pin5_decisions.png',
-      zoom: { scale: 2.2, x: 28, y: -22 }
+      origin: { x: 22, y: 72 }
     }
   };
 
@@ -512,7 +512,11 @@
       p.classList.toggle('is-active', parseInt(p.getAttribute('data-pin'), 10) === activePinId);
     });
 
-    preziCanvas.style.transform = `scale(${data.zoom.scale}) translate(${data.zoom.x}%, ${data.zoom.y}%)`;
+    const originX = Math.min(78, Math.max(22, data.origin.x));
+    const originY = Math.min(78, Math.max(22, data.origin.y));
+
+    preziCanvas.style.transformOrigin = `${originX}% ${originY}%`;
+    preziCanvas.style.transform = 'scale(1.72)';
 
     if (preziImg) preziImg.src = data.img;
     if (preziTag) preziTag.textContent = data.step;
@@ -529,7 +533,8 @@
     activePinId = null;
     preziPins.forEach(p => p.classList.remove('is-active'));
     if (preziCanvas) {
-      preziCanvas.style.transform = 'scale(1) translate(0%, 0%)';
+      preziCanvas.style.transformOrigin = '50% 50%';
+      preziCanvas.style.transform = 'scale(1)';
     }
     if (preziCardOverlay) {
       preziCardOverlay.classList.remove('is-active');
