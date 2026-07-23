@@ -447,6 +447,125 @@
     updateSpiderSlides();
     startSpiderTimer();
   }
+
+  /* ---- Prezi-Style Interactive Infographic Controller ---- */
+  const preziPins = document.querySelectorAll('.prezi-pin');
+  const preziCanvas = document.getElementById('prezi-canvas');
+  const preziCardOverlay = document.getElementById('prezi-card-overlay');
+  const preziCardClose = document.getElementById('prezi-card-close');
+  const preziResetBtn = document.getElementById('prezi-reset-view');
+  const preziPrevPin = document.getElementById('prezi-prev-pin');
+  const preziNextPin = document.getElementById('prezi-next-pin');
+
+  const preziImg = document.getElementById('prezi-card-img');
+  const preziTag = document.getElementById('prezi-step-tag');
+  const preziTitle = document.getElementById('prezi-card-title');
+  const preziDesc = document.getElementById('prezi-card-desc');
+
+  const infographicData = {
+    1: {
+      step: 'Step 01',
+      title: 'Know What Each Field Truly Earns',
+      desc: 'Combine crop performance with labor, rent, depreciation, and financial logs to calculate real profitability.',
+      img: '/assets/infographic/pin1_earnings.png',
+      zoom: { scale: 2.2, x: 5, y: 12 }
+    },
+    2: {
+      step: 'Step 02',
+      title: 'Connect Your Farm Systems',
+      desc: 'Bring machinery data, spray records, and software platforms into one unified database.',
+      img: '/assets/infographic/pin2_connected.png',
+      zoom: { scale: 2.2, x: -32, y: -18 }
+    },
+    3: {
+      step: 'Step 03',
+      title: 'Preserve the Story Behind the Numbers',
+      desc: 'Turn operator notes and field observations into structured insights that explain failures, delays, and unusual results.',
+      img: '/assets/infographic/pin3_story.png',
+      zoom: { scale: 2.2, x: -18, y: 28 }
+    },
+    4: {
+      step: 'Step 04',
+      title: 'Measure Real Field Conditions',
+      desc: 'Use localized weather stations and soil sensors to capture conditions that distant forecasts and machine displays miss.',
+      img: '/assets/infographic/pin4_truth.png',
+      zoom: { scale: 2.2, x: 32, y: 35 }
+    },
+    5: {
+      step: 'Step 05',
+      title: 'Make Better Decisions Faster',
+      desc: 'Transform soil, machinery, weather, financial, and field data into clear reports that show where to improve.',
+      img: '/assets/infographic/pin5_decisions.png',
+      zoom: { scale: 2.2, x: 28, y: -22 }
+    }
+  };
+
+  let activePinId = null;
+
+  function activatePreziPin(pinId) {
+    const data = infographicData[pinId];
+    if (!data || !preziCanvas) return;
+
+    activePinId = parseInt(pinId, 10);
+
+    preziPins.forEach(p => {
+      p.classList.toggle('is-active', parseInt(p.getAttribute('data-pin'), 10) === activePinId);
+    });
+
+    preziCanvas.style.transform = `scale(${data.zoom.scale}) translate(${data.zoom.x}%, ${data.zoom.y}%)`;
+
+    if (preziImg) preziImg.src = data.img;
+    if (preziTag) preziTag.textContent = data.step;
+    if (preziTitle) preziTitle.textContent = data.title;
+    if (preziDesc) preziDesc.textContent = data.desc;
+
+    if (preziCardOverlay) {
+      preziCardOverlay.classList.add('is-active');
+      preziCardOverlay.setAttribute('aria-hidden', 'false');
+    }
+  }
+
+  function resetPreziView() {
+    activePinId = null;
+    preziPins.forEach(p => p.classList.remove('is-active'));
+    if (preziCanvas) {
+      preziCanvas.style.transform = 'scale(1) translate(0%, 0%)';
+    }
+    if (preziCardOverlay) {
+      preziCardOverlay.classList.remove('is-active');
+      preziCardOverlay.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  preziPins.forEach(pin => {
+    pin.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const pinId = pin.getAttribute('data-pin');
+      activatePreziPin(pinId);
+    });
+  });
+
+  if (preziCardClose) preziCardClose.addEventListener('click', resetPreziView);
+  if (preziResetBtn) preziResetBtn.addEventListener('click', resetPreziView);
+
+  if (preziPrevPin) {
+    preziPrevPin.addEventListener('click', () => {
+      if (!activePinId) return activatePreziPin(1);
+      let prevId = activePinId - 1;
+      if (prevId < 1) prevId = 5;
+      activatePreziPin(prevId);
+    });
+  }
+
+  if (preziNextPin) {
+    preziNextPin.addEventListener('click', () => {
+      if (!activePinId) return activatePreziPin(1);
+      let nextId = activePinId + 1;
+      if (nextId > 5) nextId = 1;
+      activatePreziPin(nextId);
+    });
+  }
 })();
+
 
 
