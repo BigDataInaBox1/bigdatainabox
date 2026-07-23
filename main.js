@@ -518,7 +518,13 @@
     preziCanvas.style.transformOrigin = `${originX}% ${originY}%`;
     preziCanvas.style.transform = 'scale(1.72)';
 
-    if (preziImg) preziImg.src = data.img;
+    if (preziImg) {
+      preziImg.onerror = function() {
+        this.onerror = null;
+        this.src = `/infographic/${data.img.split('/').pop()}`;
+      };
+      preziImg.src = data.img;
+    }
     if (preziTag) preziTag.textContent = data.step;
     if (preziTitle) preziTitle.textContent = data.title;
     if (preziDesc) preziDesc.textContent = data.desc;
