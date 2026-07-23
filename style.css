@@ -2427,14 +2427,14 @@ input:checked + .slider:before {
 
 .prezi-main-title {
   font-family: var(--font-headings);
-  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+  font-size: clamp(1.05rem, 2vw, 1.55rem);
   font-weight: 700;
   color: #FFFFFF;
   background: rgba(15, 23, 18, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 0.45rem 1.35rem;
-  border-radius: 30px;
+  padding: 0.55rem 1.6rem;
+  border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   letter-spacing: 0.01em;
@@ -2712,7 +2712,7 @@ input:checked + .slider:before {
 }
 
 /* ----------------------------------------------------
-   SUBTLE TOPOGRAPHY PATTERN TEXTURE OVERLAY
+   TOPOGRAPHY CONTOUR TEXTURE OVERLAY (DARK GREEN + WHITE LINES)
    ---------------------------------------------------- */
 .has-topo-bg {
   position: relative;
@@ -2725,9 +2725,9 @@ input:checked + .slider:before {
   inset: 0;
   background-image: url('/assets/topography_pattern.png');
   background-repeat: repeat;
-  background-size: 480px auto;
-  opacity: 0.38;
-  mix-blend-mode: multiply;
+  background-size: 400px auto;
+  opacity: 0.18;
+  filter: invert(1) brightness(2);
   pointer-events: none;
   z-index: 1;
 }
@@ -2737,49 +2737,103 @@ input:checked + .slider:before {
   z-index: 2;
 }
 
-/* Specific Section Topography Theme Adjustments */
+/* --- Partner to Profit (deep forest green + white topo) --- */
 .partner-cta-section.has-topo-bg {
-  background: linear-gradient(135deg, #EEF4F0 0%, #DFE8E2 100%);
+  background: linear-gradient(160deg, #1B4332 0%, #295B3F 50%, #1B4332 100%);
   padding: 6.5rem 0;
-  border-top: 1px solid rgba(41, 91, 63, 0.15);
-  border-bottom: 1px solid rgba(41, 91, 63, 0.15);
+  color: #FFFFFF;
+}
+
+.partner-cta-section.has-topo-bg h2 {
+  color: #FFFFFF;
+}
+
+.partner-cta-section.has-topo-bg .partner-cta-subtext {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.partner-cta-section.has-topo-bg .eyebrow {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: var(--color-gold) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .partner-cta-box {
-  background: rgba(255, 255, 255, 0.82) !important;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(41, 91, 63, 0.18) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 28px;
   padding: 4rem 2.5rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
+/* --- Comparison Section (deep forest green + white topo) --- */
 .comparison-section.has-topo-bg {
-  background: linear-gradient(180deg, #F4F8F5 0%, #E6EFE9 100%);
+  background: linear-gradient(180deg, #1B4332 0%, #234D3A 100%);
   padding: 6.5rem 0;
+  color: #FFFFFF;
+}
+
+.comparison-section.has-topo-bg .compare-intro h2 {
+  color: #FFFFFF;
+}
+
+.comparison-section.has-topo-bg .compare-intro .lead {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.comparison-section.has-topo-bg .compare-intro .eyebrow {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: var(--color-gold) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .compare-matrix-wrapper {
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(41, 91, 63, 0.18) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
   border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
 
+/* --- Hidden Costs / Painpoints (deep forest green + white topo) --- */
 .painpoints-section.has-topo-bg {
-  background: linear-gradient(180deg, #F4F8F5 0%, #E6EFE9 100%);
+  background: linear-gradient(180deg, #234D3A 0%, #1B4332 100%);
   padding: 6.5rem 0;
+  color: #FFFFFF;
 }
 
-.painpoints-section .interactive-card {
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(41, 91, 63, 0.16) !important;
+.painpoints-section.has-topo-bg .section-intro h2 {
+  color: #FFFFFF;
+}
+
+.painpoints-section.has-topo-bg .section-intro .lead {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.painpoints-section.has-topo-bg .section-intro .eyebrow {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: var(--color-gold) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.painpoints-section.has-topo-bg .interactive-card {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  color: #FFFFFF;
+}
+
+.painpoints-section.has-topo-bg .card-title {
+  color: #FFFFFF;
+}
+
+.painpoints-section.has-topo-bg .card-badge {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-gold);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ----------------------------------------------------
