@@ -2768,27 +2768,45 @@ input:checked + .slider:before {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Comparison Section ("Ditch the Notebook" - White background + Green Topo + Gradient Fade) --- */
+/* --- Comparison Section ("Ditch the Notebook" - White background + Bold Green Topo Texture + Top/Bottom Fade) --- */
 .comparison-section.has-topo-bg {
   background: #FFFFFF !important;
   padding: 6.5rem 0;
   color: var(--color-charcoal) !important;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Green Topographic Lines Overlay */
 .comparison-section.has-topo-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('/assets/topography_pattern.png');
-  background-repeat: repeat;
-  background-size: 900px auto;
-  opacity: 0.16;
-  filter: invert(21%) sepia(34%) saturate(1215%) hue-rotate(102deg) brightness(96%) contrast(92%);
-  mix-blend-mode: multiply;
+  background-color: var(--color-forest); /* Exact brand forest green #295B3F */
+  -webkit-mask-image: url('/assets/topography_pattern.png');
+  mask-image: url('/assets/topography_pattern.png');
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-size: 750px auto;
+  mask-size: 750px auto;
+  opacity: 0.45; /* High visibility - bold green topographic contour lines */
   pointer-events: none;
   z-index: 1;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+/* Top & Bottom Smooth Fade Overlay */
+.comparison-section.has-topo-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, 
+    #FFFFFF 0%, 
+    rgba(255, 255, 255, 0) 18%, 
+    rgba(255, 255, 255, 0) 82%, 
+    #FFFFFF 100%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
 .comparison-section.has-topo-bg .compare-intro h2 {
