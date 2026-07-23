@@ -3188,14 +3188,50 @@ input:checked + .slider:before {
   letter-spacing: -0.01em;
 }
 
-.partners-logo-grid {
+.partners-logo-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.partners-logo-row {
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.partners-row-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 3rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.partners-row-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 3rem 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .partners-row-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .partners-row-top {
+    grid-template-columns: 1fr;
+  }
+  .partners-row-bottom {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
 
 .partner-logo-item {
@@ -3205,6 +3241,7 @@ input:checked + .slider:before {
   padding: 0.75rem 1.25rem;
   transition: transform 0.3s ease, filter 0.3s ease;
   max-width: 220px;
+  width: 100%;
 }
 
 .partner-logo-item:hover {
