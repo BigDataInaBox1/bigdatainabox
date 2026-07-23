@@ -2698,6 +2698,18 @@ input:checked + .slider:before {
   -webkit-text-fill-color: transparent;
 }
 
+.gallery-intro {
+  text-align: center !important;
+  margin: 0 auto 2.5rem !important;
+  width: 100%;
+}
+
+.gallery-intro h2 {
+  text-align: center !important;
+  margin: 0 auto !important;
+  display: block;
+}
+
 /* ----------------------------------------------------
    TRUSTED BY & SUPPORTED BY PARTNERS SECTION
    ---------------------------------------------------- */
