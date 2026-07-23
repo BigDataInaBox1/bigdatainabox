@@ -2710,6 +2710,54 @@ input:checked + .slider:before {
   display: block;
 }
 
+/* Lightbox Modal Arrows & Responsive Styling */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(15, 23, 18, 0.85);
+  border: 1px.5px solid rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 120;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease;
+}
+
+.lightbox-nav:hover {
+  background: var(--color-forest);
+  border-color: #86EFAC;
+  color: #86EFAC;
+  transform: translateY(-50%) scale(1.12);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .lightbox-nav {
+    width: 44px;
+    height: 44px;
+  }
+  .lightbox-prev {
+    left: 10px;
+  }
+  .lightbox-next {
+    right: 10px;
+  }
+}
+
 /* ----------------------------------------------------
    TRUSTED BY & SUPPORTED BY PARTNERS SECTION
    ---------------------------------------------------- */
