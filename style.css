@@ -2415,7 +2415,7 @@ input:checked + .slider:before {
 /* Floating Full-Screen Title Bar */
 .prezi-floating-header {
   position: absolute;
-  top: 6.25rem; /* Positioned cleanly below fixed navbar */
+  top: 7.5rem; /* Centered between navbar and info box */
   left: 50%;
   transform: translateX(-50%);
   z-index: 60;
@@ -2725,7 +2725,7 @@ input:checked + .slider:before {
   inset: 0;
   background-image: url('/assets/topography_pattern.png');
   background-repeat: repeat;
-  background-size: 400px auto;
+  background-size: 900px auto;
   opacity: 0.18;
   filter: invert(1) brightness(2);
   pointer-events: none;
@@ -3026,22 +3026,7 @@ input:checked + .slider:before {
 }
 
 .spider-carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(41, 91, 63, 0.2);
-  color: var(--color-forest);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  transition: all 0.25s ease;
+  display: none;
 }
 
 .spider-carousel-arrow:hover {
