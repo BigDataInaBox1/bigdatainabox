@@ -267,6 +267,73 @@
     </section>
 
     <!-- ----------------------------------------------------
+         SPIDER AG TEASER SECTION (MOVED HIGHER UP + CAROUSEL)
+         ---------------------------------------------------- -->
+    <section class="spider-teaser" id="spider-ag">
+      <div class="container grid-2">
+        <div class="teaser-content reveal">
+          <img src="/assets/officialspideraglogo.png" alt="SPIDER Ag Logo" class="product-logo" style="height: 3.5rem; margin-bottom: 1.5rem;">
+          <span class="eyebrow">Proprietary Software</span>
+          <h2>SPIDER Ag: Your Field Companion</h2>
+          <p class="lead">SPIDER Ag is our proprietary AI-powered data management application designed specifically for field-level agricultural reporting, certification audits, and operational insights.</p>
+          <div style="margin-top: 2rem;">
+            <a href="spider-ag.html" class="btn btn-primary">
+              Explore SPIDER Ag Features
+              <span class="btn-icon-wrapper">
+                <svg viewBox="0 0 24 24">
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="teaser-image reveal" style="transition-delay: 0.15s; position: relative;">
+          <div class="spider-carousel-wrapper" id="spider-carousel">
+            <button class="spider-carousel-arrow spider-carousel-prev" id="spider-prev-btn" aria-label="Previous Image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            
+            <div class="spider-carousel-track" id="spider-carousel-track">
+              <!-- Image 1 -->
+              <div class="spider-slide active">
+                <img src="/assets/spiderag pics/spiderag_tractor_mockup.png" alt="SPIDER Ag on tractor console in organic crop field" loading="lazy">
+                <div class="spider-slide-caption">In-Cab Tractor Console View</div>
+              </div>
+              <!-- Image 2 -->
+              <div class="spider-slide">
+                <img src="/assets/spiderag pics/spiderag_desk_mockup.png" alt="SPIDER Ag farm management desk setup" loading="lazy">
+                <div class="spider-slide-caption">Farm Office &amp; Desktop Station</div>
+              </div>
+              <!-- Image 3 -->
+              <div class="spider-slide">
+                <img src="/assets/spiderag pics/ui task calendar.png" alt="SPIDER Ag operations and task calendar interface" loading="lazy">
+                <div class="spider-slide-caption">Operations &amp; Task Calendar UI</div>
+              </div>
+              <!-- Image 4 -->
+              <div class="spider-slide">
+                <img src="/assets/Spiderag interface.JPG" alt="SPIDER Ag field data analytics interface" loading="lazy">
+                <div class="spider-slide-caption">Field Analytics &amp; Reporting Dashboard</div>
+              </div>
+              <!-- Image 5 -->
+              <div class="spider-slide">
+                <img src="/assets/spiderag mobile.avif" alt="SPIDER Ag mobile companion app view" loading="lazy">
+                <div class="spider-slide-caption">Mobile Handheld Field Companion</div>
+              </div>
+            </div>
+
+            <button class="spider-carousel-arrow spider-carousel-next" id="spider-next-btn" aria-label="Next Image">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            
+            <div class="spider-carousel-dots" id="spider-carousel-dots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------
          PARTNER TO PROFIT CTA BANNER
          ---------------------------------------------------- -->
     <section class="partner-cta-section" id="partner-to-profit">
@@ -367,6 +434,21 @@
         <div class="gallery-dots" id="gallery-dots"></div>
       </div>
     </section>
+
+    <!-- Lightbox Modal for Gallery Image Expansion -->
+    <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-label="Enlarged Image View">
+      <div class="lightbox-overlay" id="lightbox-overlay"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close enlarged view">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Enlarged gallery view">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+    </div>
     <!-- ----------------------------------------------------
          COMPARISON MATRIX SECTION
          ---------------------------------------------------- -->
@@ -496,39 +578,7 @@
     </section>
 
     <!-- ----------------------------------------------------
-         SPIDER AG SHOWCASE (Bento Grid Layout)
-         ---------------------------------------------------- -->
-    <!-- ----------------------------------------------------
-         SPIDER AG TEASER SECTION
-         ---------------------------------------------------- -->
-    <section class="spider-teaser" id="spider-ag">
-      <div class="container grid-2">
-        <div class="teaser-content reveal">
-          <img src="/assets/officialspideraglogo.png" alt="SPIDER Ag Logo" class="product-logo" style="height: 3.5rem; margin-bottom: 1.5rem;">
-          <span class="eyebrow">Proprietary Software</span>
-          <h2>SPIDER Ag: Your Field Companion</h2>
-          <p class="lead">SPIDER Ag is our proprietary AI-powered data management application designed specifically for field-level agricultural reporting, certification audits, and operational insights.</p>
-          <div style="margin-top: 2rem;">
-            <a href="spider-ag.html" class="btn btn-primary">
-              Explore SPIDER Ag Features
-              <span class="btn-icon-wrapper">
-                <svg viewBox="0 0 24 24">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div class="teaser-image reveal" style="transition-delay: 0.15s; position: relative;">
-          <div class="hero-image-wrapper">
-            <div class="hero-image-inner">
-              <img src="/spiderag-tractor-mockup.png" alt="Tablet mockup displaying the SPIDER Ag software in a rugged case, sitting on the console of a modern tractor dashboard overlooking organic green crop fields">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+         SPIDER AG SHOWCASE (Bento Grid Layouon>
 
     <!-- ----------------------------------------------------
          ONBOARDING TIMELINE
