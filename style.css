@@ -2754,15 +2754,123 @@ input:checked + .slider:before {
   filter: grayscale(0%) contrast(110%);
 }
 
+/* ----------------------------------------------------
+   COMPARISON MATRIX SECTION (ADA & ACCESSIBILITY UPGRADE)
+   ---------------------------------------------------- */
+.comparison-section {
+  padding: 6rem 0;
+  background-color: #F9FAFB;
+  position: relative;
+  z-index: 5;
+}
+
+.compare-matrix-wrapper {
+  max-width: 1050px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #FFFFFF;
+}
+
+.compare-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.compare-matrix th {
+  padding: 1.6rem 2.25rem;
+  font-family: var(--font-headings);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.compare-header-old {
+  background-color: #374151;
+  color: #FFFFFF;
+  width: 50%;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.compare-header-bdib {
+  background-color: #1B3B2B;
+  color: #FFFFFF;
+  width: 50%;
+}
+
+.compare-matrix td {
+  padding: 1.6rem 2.25rem;
+  vertical-align: top;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.compare-cell-old {
+  background-color: #F9FAFB;
+  border-right: 1px solid #E5E7EB;
+}
+
+.compare-cell-bdib {
+  background-color: #F0FDF4;
+}
+
+.compare-feature-label {
+  display: block;
+  font-family: var(--font-headings);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4B5563;
+  margin-bottom: 0.55rem;
+}
+
+.compare-cell-bdib .compare-feature-label {
+  color: #065F46;
+}
+
+.compare-value {
+  display: block;
+  font-size: 1.18rem;
+  line-height: 1.65;
+  color: #111827;
+  font-weight: 500;
+}
+
+.compare-cell-old .compare-value {
+  color: #374151;
+}
+
+.compare-cell-bdib .compare-value {
+  color: #064E3B;
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
-  .partners-logo-grid {
-    gap: 2rem 2.5rem;
+  .compare-matrix th,
+  .compare-matrix td {
+    padding: 1.25rem 1.25rem;
   }
-  .partner-logo-img {
-    max-height: 50px;
-    max-width: 140px;
+  .compare-matrix th {
+    font-size: 1.2rem;
+  }
+  .compare-value {
+    font-size: 1.05rem;
   }
 }
+
+/* Global Focus-Visible Outline for ADA Compliance */
+:focus-visible {
+  outline: 3px solid #295B3F !important;
+  outline-offset: 3px !important;
+}
+
+a, button {
+  touch-action: manipulation;
+}
+
 
 
 
