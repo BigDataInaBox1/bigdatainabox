@@ -648,9 +648,17 @@
       ScrollTrigger.create({
         trigger: infographicSec,
         start: 'top top',
-        end: '+=1700',
+        end: '+=1600',
         pin: true,
-        scrub: 0.8,
+        pinSpacing: true,
+        anticipatePin: 1,
+        scrub: 0.5,
+        onLeave: () => {
+          resetPreziView();
+        },
+        onLeaveBack: () => {
+          resetPreziView();
+        },
         onUpdate: (self) => {
           const progress = self.progress;
 
