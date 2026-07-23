@@ -2448,8 +2448,8 @@ input:checked + .slider:before {
 .prezi-pin {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -2458,47 +2458,13 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding-bottom: 4px;
+  padding: 0;
   outline: none;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
 .prezi-pin:hover {
-  transform: translate(-50%, -50%) scale(1.12);
-}
-
-.pin-beacon {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: rgba(99, 185, 109, 0.85);
-  border: 2px solid #FFFFFF;
-  box-shadow: 0 0 16px rgba(99, 185, 109, 0.9);
-  pointer-events: none;
-}
-
-.pin-beacon::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 2px solid var(--color-vibrant);
-  animation: beaconPulse 2.2s infinite ease-out;
-}
-
-@keyframes beaconPulse {
-  0% {
-    transform: scale(0.6);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.2);
-    opacity: 0;
-  }
+  transform: translate(-50%, -50%) scale(1.08);
 }
 
 .pin-label {
@@ -2511,18 +2477,27 @@ input:checked + .slider:before {
   background: rgba(15, 23, 18, 0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  padding: 0.3rem 0.65rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
   pointer-events: none;
-  margin-top: 50px; /* Positioned cleanly under the pinhead logo */
+  margin-top: 58px; /* Positioned cleanly under the pinhead logo artwork */
+  transition: all 0.25s ease;
 }
 
-.prezi-pin.is-active .pin-beacon {
-  background: #FFD700;
-  box-shadow: 0 0 28px #FFD700;
+.prezi-pin:hover .pin-label {
+  background: rgba(41, 91, 63, 0.95);
+  border-color: rgba(99, 185, 109, 0.8);
+  box-shadow: 0 6px 20px rgba(41, 91, 63, 0.5);
+}
+
+.prezi-pin.is-active .pin-label {
+  background: rgba(15, 23, 18, 0.95);
+  border: 2px solid #FFD700;
+  color: #FFD700;
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.6);
 }
 
 /* Centered Glassmorphism Prezi Detail Card Overlay */
