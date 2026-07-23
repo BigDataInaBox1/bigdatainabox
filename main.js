@@ -464,35 +464,35 @@
 
   const infographicData = {
     1: {
-      step: 'Step 01',
+      step: 'Field Net Profitability',
       title: 'Know What Each Field Truly Earns',
       desc: 'Combine crop performance with labor, rent, depreciation, and financial logs to calculate real profitability.',
       img: '/assets/infographic/pin1_earnings.png',
       origin: { x: 45, y: 38 }
     },
     2: {
-      step: 'Step 02',
+      step: 'Connected Systems',
       title: 'Connect Your Farm Systems',
       desc: 'Bring machinery data, spray records, and software platforms into one unified database.',
       img: '/assets/infographic/pin2_connected.png',
       origin: { x: 78, y: 68 }
     },
     3: {
-      step: 'Step 03',
+      step: 'Field Diary & Story',
       title: 'Preserve the Story Behind the Numbers',
       desc: 'Turn operator notes and field observations into structured insights that explain failures, delays, and unusual results.',
       img: '/assets/infographic/pin3_story.png',
       origin: { x: 68, y: 22 }
     },
     4: {
-      step: 'Step 04',
+      step: 'Real Field Conditions',
       title: 'Measure Real Field Conditions',
       desc: 'Use localized weather stations and soil sensors to capture conditions that distant forecasts and machine displays miss.',
       img: '/assets/infographic/pin4_truth.png',
       origin: { x: 22, y: 18 }
     },
     5: {
-      step: 'Step 05',
+      step: 'Decision Intelligence',
       title: 'Make Better Decisions Faster',
       desc: 'Transform soil, machinery, weather, financial, and field data into clear reports that show where to improve.',
       img: '/assets/infographic/pin5_decisions.png',
