@@ -2689,6 +2689,9 @@ input:checked + .slider:before {
   font-weight: 600;
   color: var(--color-vibrant);
   letter-spacing: -0.01em;
+  line-height: 1.35;
+  padding-bottom: 0.35rem; /* Prevents descenders like 'g' from being clipped */
+  padding-right: 0.15em;
   display: inline-block;
   background: linear-gradient(135deg, var(--color-vibrant) 0%, var(--color-forest) 100%);
   -webkit-background-clip: text;
