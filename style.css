@@ -2664,6 +2664,76 @@ input:checked + .slider:before {
   display: none !important;
 }
 
+/* ----------------------------------------------------
+   TRUSTED BY & SUPPORTED BY PARTNERS SECTION
+   ---------------------------------------------------- */
+.trust-section {
+  padding: 5.5rem 0;
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 5;
+}
+
+.trust-title {
+  text-align: center;
+  font-family: var(--font-headings);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: var(--color-forest);
+  margin-bottom: 3rem;
+  letter-spacing: -0.01em;
+}
+
+.partners-logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.partner-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  max-width: 220px;
+}
+
+.partner-logo-item:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.partner-logo-img {
+  max-height: 65px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  filter: grayscale(15%) contrast(105%);
+  transition: filter 0.3s ease;
+}
+
+.partner-logo-item:hover .partner-logo-img {
+  filter: grayscale(0%) contrast(110%);
+}
+
+@media (max-width: 768px) {
+  .partners-logo-grid {
+    gap: 2rem 2.5rem;
+  }
+  .partner-logo-img {
+    max-height: 50px;
+    max-width: 140px;
+  }
+}
+
+
 
 
 
