@@ -27,7 +27,6 @@
   /* ---- Hero Video: No Loop, Restart on Scroll Back ---- */
   const heroVideo = document.getElementById('hero-video');
   if (heroVideo) {
-    heroVideo.playbackRate = 0.7;
     const heroObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -126,4 +125,164 @@
       btnExpandCompare.setAttribute('aria-expanded', isExpanded.toString());
     });
   }
+
+  /* ---- Interactive Reveal Cards (Click/Tap Handler for Mobile) ---- */
+  const interactiveCards = document.querySelectorAll('.interactive-card');
+  interactiveCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const isAlreadyActive = card.classList.contains('is-active');
+      interactiveCards.forEach(c => c.classList.remove('is-active'));
+      if (!isAlreadyActive) {
+        card.classList.add('is-active');
+      }
+    });
+  });
+
+  /* ---- 3D Coverflow Gallery Carousel ---- */
+  const galleryTrack = document.getElementById('gallery-track');
+  const gallerySlides = document.querySelectorAll('.gallery-slide');
+  const prevBtn = document.getElementById('gallery-prev-btn');
+  const nextBtn = document.getElementById('gallery-next-btn');
+  const dotsContainer = document.getElementById('gallery-dots');
+
+  if (galleryTrack && gallerySlides.length > 0) {
+    let currentIndex = 0;
+    const totalSlides = gallerySlides.length;
+    let autoSlideTimer = null;
+
+    // Create pagination dots
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      gallerySlides.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = `gallery-dot ${idx === 0 ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+        dot.addEventListener('click', () => {
+          goToSlide(idx);
+          resetAutoSlide();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateSlidePositions() {
+      gallerySlides.forEach((slide, idx) => {
+        slide.classList.remove('slide-center', 'slide-left', 'slide-right', 'slide-far-left', 'slide-far-right');
+
+        let diff = idx - currentIndex;
+        if (diff < -Math.floor(totalSlides / 2)) diff += totalSlides;
+        if (diff > Math.floor(totalSlides / 2)) diff -= totalSlides;
+
+        if (diff === 0) {
+          slide.classList.add('slide-center');
+        } else if (diff === -1 || (currentIndex === 0 && idx === totalSlides - 1)) {
+          slide.classList.add('slide-left');
+        } else if (diff === 1 || (currentIndex === totalSlides - 1 && idx === 0)) {
+          slide.classList.add('slide-right');
+        } else if (diff < -1) {
+          slide.classList.add('slide-far-left');
+        } else {
+          slide.classList.add('slide-far-right');
+        }
+      });
+
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.gallery-dot');
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === currentIndex);
+        });
+      }
+    }
+
+    function goToSlide(index) {
+      currentIndex = (index + totalSlides) % totalSlides;
+      updateSlidePositions();
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+      });
+    }
+
+    gallerySlides.forEach((slide) => {
+      slide.addEventListener('click', () => {
+        if (slide.classList.contains('slide-left')) {
+          prevSlide();
+          resetAutoSlide();
+        } else if (slide.classList.contains('slide-right')) {
+          nextSlide();
+          resetAutoSlide();
+        }
+      });
+    });
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoSlideTimer = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoSlide() {
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+    }
+
+    function resetAutoSlide() {
+      stopAutoSlide();
+      startAutoSlide();
+    }
+
+    const galleryWrapper = document.querySelector('.coverflow-stage-wrapper');
+    if (galleryWrapper) {
+      galleryWrapper.addEventListener('mouseenter', stopAutoSlide);
+      galleryWrapper.addEventListener('mouseleave', startAutoSlide);
+    }
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (galleryWrapper) {
+      galleryWrapper.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoSlide();
+      }, { passive: true });
+
+      galleryWrapper.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoSlide();
+      }, { passive: true });
+    }
+
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      if (swipeDistance < -40) {
+        nextSlide();
+      } else if (swipeDistance > 40) {
+        prevSlide();
+      }
+    }
+
+    updateSlidePositions();
+    startAutoSlide();
+  }
 })();
+
