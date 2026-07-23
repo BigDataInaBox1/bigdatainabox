@@ -468,35 +468,35 @@
       title: 'Know What Each Field Truly Earns',
       desc: 'Combine crop performance with labor, rent, depreciation, and financial logs to calculate real profitability.',
       img: '/assets/infographic/pin1_earnings.png',
-      origin: { x: 45, y: 38 }
+      origin: { x: 47, y: 42 }
     },
     2: {
       step: 'Connected Systems',
       title: 'Connect Your Farm Systems',
       desc: 'Bring machinery data, spray records, and software platforms into one unified database.',
       img: '/assets/infographic/pin2_connected.png',
-      origin: { x: 78, y: 68 }
+      origin: { x: 85, y: 72 }
     },
     3: {
       step: 'Field Diary & Story',
       title: 'Preserve the Story Behind the Numbers',
       desc: 'Turn operator notes and field observations into structured insights that explain failures, delays, and unusual results.',
       img: '/assets/infographic/pin3_story.png',
-      origin: { x: 68, y: 22 }
+      origin: { x: 68, y: 20 }
     },
     4: {
       step: 'Real Field Conditions',
       title: 'Measure Real Field Conditions',
       desc: 'Use localized weather stations and soil sensors to capture conditions that distant forecasts and machine displays miss.',
       img: '/assets/infographic/pin4_truth.png',
-      origin: { x: 22, y: 18 }
+      origin: { x: 16, y: 13 }
     },
     5: {
       step: 'Decision Intelligence',
       title: 'Make Better Decisions Faster',
       desc: 'Transform soil, machinery, weather, financial, and field data into clear reports that show where to improve.',
       img: '/assets/infographic/pin5_decisions.png',
-      origin: { x: 22, y: 72 }
+      origin: { x: 22, y: 76 }
     }
   };
 
@@ -512,11 +512,11 @@
       p.classList.toggle('is-active', parseInt(p.getAttribute('data-pin'), 10) === activePinId);
     });
 
-    const originX = Math.min(78, Math.max(22, data.origin.x));
-    const originY = Math.min(78, Math.max(22, data.origin.y));
+    const originX = Math.min(85, Math.max(15, data.origin.x));
+    const originY = Math.min(80, Math.max(15, data.origin.y));
 
     preziCanvas.style.transformOrigin = `${originX}% ${originY}%`;
-    preziCanvas.style.transform = 'scale(2.1)';
+    preziCanvas.style.transform = 'scale(2.35)';
 
     if (preziImg) {
       preziImg.onerror = function() {
@@ -559,6 +559,17 @@
   if (preziCardClose) preziCardClose.addEventListener('click', resetPreziView);
   if (preziResetBtn) preziResetBtn.addEventListener('click', resetPreziView);
 
+  const preziSkipMap = document.getElementById('prezi-skip-map');
+  if (preziSkipMap) {
+    preziSkipMap.addEventListener('click', () => {
+      resetPreziView();
+      const nextSec = document.getElementById('partner-to-profit') || document.getElementById('onboarding');
+      if (nextSec) {
+        nextSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
   if (preziPrevPin) {
     preziPrevPin.addEventListener('click', () => {
       if (!activePinId) return activatePreziPin(1);
@@ -586,7 +597,7 @@
       ScrollTrigger.create({
         trigger: infographicSec,
         start: 'top top',
-        end: '+=3200',
+        end: '+=1700',
         pin: true,
         scrub: 0.8,
         onUpdate: (self) => {

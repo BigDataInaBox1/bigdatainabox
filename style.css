@@ -2414,7 +2414,7 @@ input:checked + .slider:before {
 /* Floating Full-Screen Title Bar */
 .prezi-floating-header {
   position: absolute;
-  top: 2rem;
+  top: 7rem; /* Positioned cleanly below fixed navbar */
   left: 50%;
   transform: translateX(-50%);
   z-index: 60;
@@ -2552,8 +2552,8 @@ input:checked + .slider:before {
 
 .prezi-card {
   position: relative;
-  width: 540px;
-  max-width: 92vw;
+  width: 620px;
+  max-width: 94vw;
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -2575,8 +2575,8 @@ input:checked + .slider:before {
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0,0,0,0.12);
@@ -2598,7 +2598,7 @@ input:checked + .slider:before {
 
 .prezi-card-media {
   width: 100%;
-  height: 230px;
+  height: 260px;
   overflow: hidden;
   position: relative;
   background: var(--color-charcoal);
@@ -2612,27 +2612,27 @@ input:checked + .slider:before {
 }
 
 .prezi-card-body {
-  padding: 1.75rem 2rem;
+  padding: 2rem 2.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.9rem;
 }
 
 .prezi-step-tag {
   font-family: var(--font-headings);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-forest);
   background: rgba(41, 91, 63, 0.12);
-  padding: 0.3rem 0.75rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 14px;
   width: fit-content;
 }
 
 .prezi-card-body h3 {
-  font-size: 1.45rem;
+  font-size: 1.65rem;
   font-weight: 800;
   color: var(--color-forest);
   line-height: 1.3;
@@ -2640,8 +2640,8 @@ input:checked + .slider:before {
 
 .prezi-card-body p {
   color: #333333;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.65;
 }
 
 .prezi-card-nav {
@@ -2662,6 +2662,37 @@ input:checked + .slider:before {
 /* Hide duplicate topo-bg elements to prevent background overlapping bugs */
 .topo-bg {
   display: none !important;
+}
+
+/* ----------------------------------------------------
+   HERO TYPOGRAPHIC HIERARCHY
+   ---------------------------------------------------- */
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title-main {
+  font-family: var(--font-headings);
+  font-size: clamp(2.1rem, 4.2vw, 3.6rem);
+  font-weight: 800;
+  color: var(--color-forest);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.hero-title-accent {
+  font-family: var(--font-headings);
+  font-size: clamp(1.4rem, 2.8vw, 2.1rem);
+  font-weight: 600;
+  color: var(--color-vibrant);
+  letter-spacing: -0.01em;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-vibrant) 0%, var(--color-forest) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ----------------------------------------------------
