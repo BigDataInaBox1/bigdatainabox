@@ -384,7 +384,7 @@
 
   /* ---- SPIDER Ag Feature Carousel Controller ---- */
   const spiderCarouselTrack = document.getElementById('spider-carousel-track');
-  const spiderSlides = spiderCarouselTrack ? spiderCarouselTrack.querySelectorAll('.spider-slide') : [];
+  const spiderSlides = spiderCarouselTrack ? spiderCarouselTrack.querySelectorAll('.gallery-slide') : [];
   const spiderPrevBtn = document.getElementById('spider-prev-btn');
   const spiderNextBtn = document.getElementById('spider-next-btn');
   const spiderDotsContainer = document.getElementById('spider-carousel-dots');
@@ -398,7 +398,7 @@
       spiderDotsContainer.innerHTML = '';
       spiderSlides.forEach((_, idx) => {
         const dot = document.createElement('button');
-        dot.className = `spider-dot ${idx === 0 ? 'active' : ''}`;
+        dot.className = `gallery-dot ${idx === 0 ? 'active' : ''}`;
         dot.setAttribute('aria-label', `Go to SPIDER Ag slide ${idx + 1}`);
         dot.addEventListener('click', () => {
           goToSpiderSlide(idx);
@@ -410,14 +410,14 @@
 
     function updateSpiderSlides() {
       spiderSlides.forEach((slide, idx) => {
-        slide.classList.remove('slide-center', 'slide-left', 'slide-right', 'slide-far-left', 'slide-far-right', 'active');
+        slide.classList.remove('slide-center', 'slide-left', 'slide-right', 'slide-far-left', 'slide-far-right');
 
         let diff = idx - spiderIndex;
         if (diff < -Math.floor(totalSpiderSlides / 2)) diff += totalSpiderSlides;
         if (diff > Math.floor(totalSpiderSlides / 2)) diff -= totalSpiderSlides;
 
         if (diff === 0) {
-          slide.classList.add('slide-center', 'active');
+          slide.classList.add('slide-center');
         } else if (diff === -1 || (spiderIndex === 0 && idx === totalSpiderSlides - 1)) {
           slide.classList.add('slide-left');
         } else if (diff === 1 || (spiderIndex === totalSpiderSlides - 1 && idx === 0)) {
@@ -430,7 +430,7 @@
       });
 
       if (spiderDotsContainer) {
-        const dots = spiderDotsContainer.querySelectorAll('.spider-dot');
+        const dots = spiderDotsContainer.querySelectorAll('.gallery-dot');
         dots.forEach((dot, idx) => {
           dot.classList.toggle('active', idx === spiderIndex);
         });
