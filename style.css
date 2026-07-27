@@ -2455,29 +2455,29 @@ input:checked + .slider:before {
 }
 
 .spider-carousel-dots {
-  position: absolute;
-  bottom: 14px;
-  right: 16px;
   display: flex;
-  gap: 0.4rem;
-  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  position: static;
 }
 
 .spider-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(41, 91, 63, 0.25);
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 0;
 }
 
 .spider-dot.active {
-  width: 20px;
+  width: 26px;
   border-radius: 10px;
-  background: var(--color-vibrant);
+  background: var(--color-forest);
 }
 
 /* ----------------------------------------------------
