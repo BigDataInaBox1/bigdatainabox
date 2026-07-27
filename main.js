@@ -384,7 +384,7 @@
 
   /* ---- SPIDER Ag Feature Carousel Controller ---- */
   const spiderCarouselTrack = document.getElementById('spider-carousel-track');
-  const spiderSlides = spiderCarouselTrack ? spiderCarouselTrack.querySelectorAll('.spider-slide') : [];
+  const spiderSlides = spiderCarouselTrack ? spiderCarouselTrack.querySelectorAll('.gallery-slide') : [];
   const spiderPrevBtn = document.getElementById('spider-prev-btn');
   const spiderNextBtn = document.getElementById('spider-next-btn');
   const spiderDotsContainer = document.getElementById('spider-carousel-dots');
@@ -398,7 +398,7 @@
       spiderDotsContainer.innerHTML = '';
       spiderSlides.forEach((_, idx) => {
         const dot = document.createElement('button');
-        dot.className = `spider-dot ${idx === 0 ? 'active' : ''}`;
+        dot.className = `gallery-dot ${idx === 0 ? 'active' : ''}`;
         dot.setAttribute('aria-label', `Go to SPIDER Ag slide ${idx + 1}`);
         dot.addEventListener('click', () => {
           goToSpiderSlide(idx);
@@ -430,7 +430,7 @@
       });
 
       if (spiderDotsContainer) {
-        const dots = spiderDotsContainer.querySelectorAll('.spider-dot');
+        const dots = spiderDotsContainer.querySelectorAll('.gallery-dot');
         dots.forEach((dot, idx) => {
           dot.classList.toggle('active', idx === spiderIndex);
         });
