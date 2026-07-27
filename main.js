@@ -747,6 +747,33 @@
       activatePreziPin(nextId);
     });
   }
+
+  // Dismiss/close active pin card when clicking off of an open node or card tile
+  document.addEventListener('click', (e) => {
+    if (!activePinId) return;
+    
+    const preziCard = document.getElementById('prezi-card');
+    const isClickInsideCard = preziCard && preziCard.contains(e.target);
+    const isClickOnPin = Array.from(preziPins).some(pin => pin.contains(e.target));
+
+    if (!isClickInsideCard && !isClickOnPin) {
+      resetPreziView();
+    }
+  });
+
+  // Touch dismissal support for mobile devices
+  document.addEventListener('touchstart', (e) => {
+    if (!activePinId) return;
+
+    const preziCard = document.getElementById('prezi-card');
+    const targetEl = e.target;
+    const isClickInsideCard = preziCard && preziCard.contains(targetEl);
+    const isClickOnPin = Array.from(preziPins).some(pin => pin.contains(targetEl));
+
+    if (!isClickInsideCard && !isClickOnPin) {
+      resetPreziView();
+    }
+  }, { passive: true });
 })();
 
 
