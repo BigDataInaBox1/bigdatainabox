@@ -2296,50 +2296,72 @@ input:checked + .slider:before {
 }
 
 .spider-carousel-track {
-  position: relative;
+  display: flex;
+  gap: 0.5rem;
   width: 100%;
-  height: 420px;
+  height: 480px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background: rgba(15, 23, 18, 0.95);
+  border-radius: 18px;
   overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .spider-carousel-track {
-    height: 300px;
+    height: 340px;
+    gap: 0.3rem;
+    padding: 0.35rem;
   }
 }
 
 .spider-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  position: relative;
+  flex: 1;
+  min-width: 32px;
   height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease, visibility 0.65s ease;
-  transform: translateX(100%);
-  cursor: zoom-in;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: flex 0.65s cubic-bezier(0.25, 1, 0.3, 1), 
+              opacity 0.45s ease, 
+              transform 0.45s cubic-bezier(0.25, 1, 0.3, 1), 
+              border-color 0.45s ease;
+  transform: scale(0.98);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
+}
+
+.spider-slide:hover {
+  opacity: 0.85;
+  transform: scale(0.99);
+  border-color: rgba(99, 185, 109, 0.6);
 }
 
 .spider-slide.active {
+  flex: 5.5; /* Active slide expands wide (~65-70% of track width) */
   opacity: 1;
   visibility: visible;
-  transform: translateX(0);
+  transform: scale(1);
+  border: 2px solid var(--color-vibrant);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
   z-index: 2;
+  cursor: zoom-in;
 }
 
-.spider-slide.slide-prev {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-100%);
-  z-index: 1;
+.spider-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  pointer-events: none;
+  transition: transform 0.65s ease;
 }
 
-.spider-slide.slide-next {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(100%);
-  z-index: 1;
+.spider-slide.active img {
+  transform: scale(1.02);
 }
 
 .compare-eyebrow-accent {

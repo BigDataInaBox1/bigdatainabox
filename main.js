@@ -410,14 +410,7 @@
 
     function updateSpiderSlides() {
       spiderSlides.forEach((slide, idx) => {
-        slide.classList.remove('active', 'slide-prev', 'slide-next');
-        if (idx === spiderIndex) {
-          slide.classList.add('active');
-        } else if (idx < spiderIndex) {
-          slide.classList.add('slide-prev');
-        } else {
-          slide.classList.add('slide-next');
-        }
+        slide.classList.toggle('active', idx === spiderIndex);
       });
       if (spiderDotsContainer) {
         const dots = spiderDotsContainer.querySelectorAll('.spider-dot');
@@ -519,8 +512,14 @@
     }
 
     spiderSlides.forEach((slide, idx) => {
-      slide.addEventListener('click', () => {
-        openSpiderLb(idx);
+      slide.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (spiderIndex === idx) {
+          openSpiderLb(idx);
+        } else {
+          goToSpiderSlide(idx);
+          resetSpiderTimer();
+        }
       });
     });
 
