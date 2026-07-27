@@ -2309,8 +2309,8 @@ input:checked + .slider:before {
 
 .spider-slide {
   position: absolute;
-  width: 78%;
-  max-width: 540px;
+  width: 68%;
+  max-width: 480px;
   height: 100%;
   border-radius: 18px;
   overflow: hidden;
@@ -2332,7 +2332,7 @@ input:checked + .slider:before {
   display: block;
 }
 
-/* Slide Coverflow Position States - Sits tucked compressed behind center slide (25% peeking out) */
+/* Slide Coverflow Position States - Peeking side cards tucked behind center slide */
 .spider-slide.slide-center {
   opacity: 1;
   transform: translateX(0) scale(1);
@@ -2344,8 +2344,8 @@ input:checked + .slider:before {
 
 .spider-slide.slide-left {
   opacity: 0.5;
-  transform: translateX(-16%) scale(0.88);
-  z-index: 2; /* Sits strictly behind center slide z-index 5 */
+  transform: translateX(-40%) scale(0.82);
+  z-index: 3;
   cursor: pointer;
   pointer-events: auto;
   filter: brightness(0.82);
@@ -2353,8 +2353,8 @@ input:checked + .slider:before {
 
 .spider-slide.slide-right {
   opacity: 0.5;
-  transform: translateX(16%) scale(0.88);
-  z-index: 2; /* Sits strictly behind center slide z-index 5 */
+  transform: translateX(40%) scale(0.82);
+  z-index: 3;
   cursor: pointer;
   pointer-events: auto;
   filter: brightness(0.82);
@@ -2362,13 +2362,13 @@ input:checked + .slider:before {
 
 .spider-slide.slide-far-left {
   opacity: 0;
-  transform: translateX(-40%) scale(0.65);
+  transform: translateX(-75%) scale(0.6);
   z-index: 1;
 }
 
 .spider-slide.slide-far-right {
   opacity: 0;
-  transform: translateX(40%) scale(0.65);
+  transform: translateX(75%) scale(0.6);
   z-index: 1;
 }
 
