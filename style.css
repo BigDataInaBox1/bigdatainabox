@@ -2343,15 +2343,18 @@ input:checked + .slider:before {
 }
 
 .compare-eyebrow-accent {
-  background: rgba(41, 91, 63, 0.12);
+  background: rgba(41, 91, 63, 0.15);
   color: var(--color-vibrant);
-  border: 1px solid rgba(41, 91, 63, 0.3);
-  padding: 0.35rem 1rem;
-  border-radius: 20px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  border: 1.5px solid rgba(41, 91, 63, 0.4);
+  padding: 0.55rem 1.4rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 15px rgba(41, 91, 63, 0.15);
 }
 
 .spider-slide img {
