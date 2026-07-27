@@ -623,19 +623,13 @@
 
   function activatePreziPin(pinId) {
     const data = infographicData[pinId];
-    if (!data || !preziCanvas) return;
+    if (!data) return;
 
     activePinId = parseInt(pinId, 10);
 
     preziPins.forEach(p => {
       p.classList.toggle('is-active', parseInt(p.getAttribute('data-pin'), 10) === activePinId);
     });
-
-    const originX = Math.min(85, Math.max(15, data.origin.x));
-    const originY = Math.min(80, Math.max(15, data.origin.y));
-
-    preziCanvas.style.transformOrigin = `${originX}% ${originY}%`;
-    preziCanvas.style.transform = 'scale(2.35)';
 
     if (preziImg) {
       preziImg.onerror = function() {
@@ -657,10 +651,6 @@
   function resetPreziView() {
     activePinId = null;
     preziPins.forEach(p => p.classList.remove('is-active'));
-    if (preziCanvas) {
-      preziCanvas.style.transformOrigin = '50% 50%';
-      preziCanvas.style.transform = 'scale(1)';
-    }
     if (preziCardOverlay) {
       preziCardOverlay.classList.remove('is-active');
       preziCardOverlay.setAttribute('aria-hidden', 'true');
