@@ -410,8 +410,25 @@
 
     function updateSpiderSlides() {
       spiderSlides.forEach((slide, idx) => {
-        slide.classList.toggle('active', idx === spiderIndex);
+        slide.classList.remove('slide-center', 'slide-left', 'slide-right', 'slide-far-left', 'slide-far-right', 'active');
+
+        let diff = idx - spiderIndex;
+        if (diff < -Math.floor(totalSpiderSlides / 2)) diff += totalSpiderSlides;
+        if (diff > Math.floor(totalSpiderSlides / 2)) diff -= totalSpiderSlides;
+
+        if (diff === 0) {
+          slide.classList.add('slide-center', 'active');
+        } else if (diff === -1 || (spiderIndex === 0 && idx === totalSpiderSlides - 1)) {
+          slide.classList.add('slide-left');
+        } else if (diff === 1 || (spiderIndex === totalSpiderSlides - 1 && idx === 0)) {
+          slide.classList.add('slide-right');
+        } else if (diff < -1) {
+          slide.classList.add('slide-far-left');
+        } else {
+          slide.classList.add('slide-far-right');
+        }
       });
+
       if (spiderDotsContainer) {
         const dots = spiderDotsContainer.querySelectorAll('.spider-dot');
         dots.forEach((dot, idx) => {
@@ -512,12 +529,14 @@
     }
 
     spiderSlides.forEach((slide, idx) => {
-      slide.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (spiderIndex === idx) {
+      slide.addEventListener('click', () => {
+        if (slide.classList.contains('slide-center')) {
           openSpiderLb(idx);
-        } else {
-          goToSpiderSlide(idx);
+        } else if (slide.classList.contains('slide-left')) {
+          prevSpiderSlide();
+          resetSpiderTimer();
+        } else if (slide.classList.contains('slide-right')) {
+          nextSpiderSlide();
           resetSpiderTimer();
         }
       });
