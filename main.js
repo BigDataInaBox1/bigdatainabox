@@ -660,7 +660,7 @@
   preziPins.forEach(pin => {
     const pinId = pin.getAttribute('data-pin');
 
-    // Let text card show when mouse hovers over icon/pin
+    // Show card popover when mouse hovers over icon/pin
     pin.addEventListener('mouseenter', () => {
       activatePreziPin(pinId);
     });
@@ -671,6 +671,64 @@
       activatePreziPin(pinId);
     });
   });
+
+  // Fade out card when user hovers off the interactive map section
+  const infographicSec = document.getElementById('interactive-infographic');
+  if (infographicSec) {
+    infographicSec.addEventListener('mouseleave', () => {
+      resetPreziView();
+    });
+  }
+
+  // Card Close & Reset View Buttons
+  if (preziCardClose) {
+    preziCardClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      resetPreziView();
+    });
+  }
+
+  if (preziResetBtn) {
+    preziResetBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      resetPreziView();
+    });
+  }
+
+  // Skip Map Button
+  const preziSkipMap = document.getElementById('prezi-skip-map');
+  if (preziSkipMap) {
+    preziSkipMap.addEventListener('click', (e) => {
+      e.stopPropagation();
+      resetPreziView();
+      const nextSec = document.getElementById('partner-to-profit') || document.getElementById('onboarding');
+      if (nextSec) {
+        nextSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // Prev Node Button
+  if (preziPrevPin) {
+    preziPrevPin.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!activePinId) return activatePreziPin(1);
+      let prevId = activePinId - 1;
+      if (prevId < 1) prevId = 5;
+      activatePreziPin(prevId);
+    });
+  }
+
+  // Next Node Button
+  if (preziNextPin) {
+    preziNextPin.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!activePinId) return activatePreziPin(1);
+      let nextId = activePinId + 1;
+      if (nextId > 5) nextId = 1;
+      activatePreziPin(nextId);
+    });
+  }
 })();
 
 
