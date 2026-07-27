@@ -7,7 +7,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         spiderAg: resolve(__dirname, 'spider-ag.html'),
-        pricing: resolve(__dirname, 'pricing-sign-up.html')
+        pricing: resolve(__dirname, 'pricing-sign-up.html'),
+        scheduleDemo: resolve(__dirname, 'schedule-demo.html')
       }
     }
   }
