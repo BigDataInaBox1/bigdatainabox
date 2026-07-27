@@ -410,7 +410,14 @@
 
     function updateSpiderSlides() {
       spiderSlides.forEach((slide, idx) => {
-        slide.classList.toggle('active', idx === spiderIndex);
+        slide.classList.remove('active', 'slide-prev', 'slide-next');
+        if (idx === spiderIndex) {
+          slide.classList.add('active');
+        } else if (idx < spiderIndex) {
+          slide.classList.add('slide-prev');
+        } else {
+          slide.classList.add('slide-next');
+        }
       });
       if (spiderDotsContainer) {
         const dots = spiderDotsContainer.querySelectorAll('.spider-dot');
@@ -661,86 +668,19 @@
   }
 
   preziPins.forEach(pin => {
+    const pinId = pin.getAttribute('data-pin');
+
+    // Let text card show when mouse hovers over icon/pin
+    pin.addEventListener('mouseenter', () => {
+      activatePreziPin(pinId);
+    });
+
+    // Also support click for touch screens / direct selection
     pin.addEventListener('click', (e) => {
       e.stopPropagation();
-      const pinId = pin.getAttribute('data-pin');
       activatePreziPin(pinId);
     });
   });
-
-  if (preziCardClose) preziCardClose.addEventListener('click', resetPreziView);
-  if (preziResetBtn) preziResetBtn.addEventListener('click', resetPreziView);
-
-  const preziSkipMap = document.getElementById('prezi-skip-map');
-  if (preziSkipMap) {
-    preziSkipMap.addEventListener('click', () => {
-      resetPreziView();
-      const nextSec = document.getElementById('partner-to-profit') || document.getElementById('onboarding');
-      if (nextSec) {
-        nextSec.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  }
-
-  if (preziPrevPin) {
-    preziPrevPin.addEventListener('click', () => {
-      if (!activePinId) return activatePreziPin(1);
-      let prevId = activePinId - 1;
-      if (prevId < 1) prevId = 5;
-      activatePreziPin(prevId);
-    });
-  }
-
-  if (preziNextPin) {
-    preziNextPin.addEventListener('click', () => {
-      if (!activePinId) return activatePreziPin(1);
-      let nextId = activePinId + 1;
-      if (nextId > 5) nextId = 1;
-      activatePreziPin(nextId);
-    });
-  }
-
-  /* GSAP ScrollTrigger Scroll-Driven Pin Sequence */
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const infographicSec = document.getElementById('interactive-infographic');
-    if (infographicSec) {
-      ScrollTrigger.create({
-        trigger: infographicSec,
-        start: 'top top',
-        end: '+=1600',
-        pin: true,
-        pinSpacing: true,
-        scrub: 0.5,
-        onLeave: () => {
-          resetPreziView();
-        },
-        onLeaveBack: () => {
-          resetPreziView();
-        },
-        onUpdate: (self) => {
-          const progress = self.progress;
-
-          if (progress < 0.14) {
-            if (activePinId !== null) resetPreziView();
-          } else if (progress >= 0.14 && progress < 0.30) {
-            if (activePinId !== 1) activatePreziPin(1);
-          } else if (progress >= 0.30 && progress < 0.48) {
-            if (activePinId !== 2) activatePreziPin(2);
-          } else if (progress >= 0.48 && progress < 0.66) {
-            if (activePinId !== 3) activatePreziPin(3);
-          } else if (progress >= 0.66 && progress < 0.84) {
-            if (activePinId !== 4) activatePreziPin(4);
-          } else if (progress >= 0.84 && progress < 0.95) {
-            if (activePinId !== 5) activatePreziPin(5);
-          } else if (progress >= 0.95) {
-            if (activePinId !== null) resetPreziView();
-          }
-        }
-      });
-    }
-  }
 })();
 
 
