@@ -426,28 +426,28 @@
 
   <main>
     <!-- ----------------------------------------------------
-         SCHEDULE HERO & CONTACT FORM
+         SCHEDULE HERO & STREAMLINED CONTACT FORM
          ---------------------------------------------------- -->
     <section class="schedule-hero" id="top">
       <div class="container">
-        <div class="reveal" style="max-width: 760px; margin: 0 auto 2.5rem;">
-          <span class="eyebrow">Book a Personalized Walkthrough</span>
+        <div class="reveal" style="max-width: 700px; margin: 0 auto 2.5rem;">
+          <span class="eyebrow">Get In Touch</span>
           <h1 style="font-size: clamp(2.25rem, 4.5vw, 3.5rem); letter-spacing: -0.03em; margin-bottom: 0.75rem;">Schedule a Demo</h1>
-          <p class="lead" style="max-width: 620px; font-size: 1.05rem; opacity: 0.85;">
-            Fill out the form below to request a 1-on-1 demo of SPIDER Ag tailored to your farm operations. All requests are sent directly to <strong>info@bdibsolutions.com</strong>.
+          <p class="lead" style="max-width: 580px; font-size: 1.05rem; opacity: 0.85;">
+            Send us a message below and we'll reach out to schedule a live walkthrough of SPIDER Ag. All messages go directly to <strong>info@bdibsolutions.com</strong>.
           </p>
         </div>
 
         <!-- Contact Form Card -->
         <div class="demo-form-wrapper reveal" id="demo-form-container">
           <div class="demo-form-header">
-            <h2>Request Your Customized Demo</h2>
-            <p>We'll walk you through SPIDER Ag's voice logging, field mapping, compliance tools, and mobile app.</p>
+            <h2>Send Us a Message</h2>
+            <p>Fill in your details below and our team will get in touch with you shortly.</p>
           </div>
 
           <div class="form-success-banner" id="form-success-banner">
-            <h4>✓ Demo Request Received!</h4>
-            <p>Your details have been pre-filled and sent to <strong>info@bdibsolutions.com</strong>. One of our team members will reach out shortly to confirm your demo time.</p>
+            <h4>✓ Message Sent!</h4>
+            <p>Thank you for reaching out. Your message has been sent to <strong>info@bdibsolutions.com</strong> and our team will respond soon.</p>
           </div>
 
           <form id="schedule-demo-form" action="mailto:info@bdibsolutions.com" method="POST" enctype="text/plain">
@@ -473,59 +473,19 @@
 
               <!-- Farm / Company Name -->
               <div class="form-group">
-                <label for="demo-farm">Farm / Organization Name *</label>
+                <label for="demo-farm">Farm / Company Name *</label>
                 <input type="text" id="demo-farm" name="Farm Name" placeholder="e.g. Heartland Valley Farms" required>
               </div>
 
-              <!-- Farm Size / Operation Type -->
-              <div class="form-group">
-                <label for="demo-acres">Acreage / Operations Size</label>
-                <select id="demo-acres" name="Operation Size">
-                  <option value="Under 500 Acres">Under 500 Acres</option>
-                  <option value="500 - 2,000 Acres" selected>500 – 2,000 Acres</option>
-                  <option value="2,000+ Acres">2,000+ Acres</option>
-                  <option value="Organic / Specialty Crops">Organic / Specialty Crops</option>
-                  <option value="Ag Consultant / Certifier">Ag Consultant / Certifier</option>
-                </select>
-              </div>
-
-              <!-- Preferred Team Member -->
-              <div class="form-group">
-                <label for="demo-team-member">Preferred Team Member</label>
-                <select id="demo-team-member" name="Preferred Team Member">
-                  <option value="Any Available Team Member">Any Available Team Member</option>
-                  <option value="Dr. Sree Nilakanta">Dr. Sree Nilakanta (Founder · Strategy & AI)</option>
-                  <option value="Dr. Srini Reddy">Dr. Srini Reddy (Ag Biotech & Regulatory)</option>
-                  <option value="Hari Sarma">Hari Sarma (HR & Supply Chain Operations)</option>
-                  <option value="Caroline">Caroline (Customer Success & Onboarding)</option>
-                  <option value="Rema">Rema (Product Specialist & Demos)</option>
-                </select>
-              </div>
-
-              <!-- Preferred Date & Time -->
-              <div class="form-group">
-                <label for="demo-date">Preferred Demo Date</label>
-                <input type="date" id="demo-date" name="Preferred Date">
-              </div>
-
-              <div class="form-group">
-                <label for="demo-time">Preferred Time Window</label>
-                <select id="demo-time" name="Preferred Time Window">
-                  <option value="Morning (8 AM - 12 PM CT)">Morning (8 AM - 12 PM CT)</option>
-                  <option value="Afternoon (12 PM - 4 PM CT)" selected>Afternoon (12 PM - 4 PM CT)</option>
-                  <option value="Evening (4 PM - 7 PM CT)">Evening (4 PM - 7 PM CT)</option>
-                </select>
-              </div>
-
-              <!-- Message / Demo Focus -->
+              <!-- Message -->
               <div class="form-group full-width">
-                <label for="demo-message">What would you like to see in your demo? (Optional)</label>
-                <textarea id="demo-message" name="Demo Notes" placeholder="Tell us about your crops, compliance goals, or questions about SPIDER Ag..."></textarea>
+                <label for="demo-message">Message *</label>
+                <textarea id="demo-message" name="Message" placeholder="Write your message or demo questions here..." required></textarea>
               </div>
 
               <!-- Submit Button -->
               <button type="submit" class="btn btn-primary btn-submit-demo">
-                Submit &amp; Schedule Demo
+                Send Message &amp; Schedule Demo
                 <span class="btn-icon-wrapper">
                   <svg viewBox="0 0 24 24">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -537,108 +497,10 @@
             </div>
           </form>
         </div>
-      </div>
-    </section>
 
-    <!-- ----------------------------------------------------
-         TEAM MEMBER DIRECT SELECTION LIST
-         ---------------------------------------------------- -->
-    <section style="padding-top: 0; padding-bottom: 6rem;">
-      <div class="container">
-        <div class="team-section-header reveal">
-          <h3>Or Choose a Specific Team Member</h3>
-          <p style="color: #666; max-width: 540px; margin: 0.25rem auto 0; font-size: 0.95rem;">
-            Click below to select your team contact. This will highlight them in your demo request.
-          </p>
-        </div>
-
-        <div class="team-list stagger-group">
-
-          <!-- Dr. Sree Nilakanta -->
-          <div class="team-card reveal" id="card-sree">
-            <img src="/assets/team-sree.jpg" alt="Dr. Sree Nilakanta" class="team-card-photo">
-            <div class="team-card-body">
-              <h3>Dr. Sree Nilakanta</h3>
-              <div class="team-card-role">Founder · Strategy &amp; Technology</div>
-              <p class="team-card-bio">Four decades of expertise in business analytics, AI, and knowledge management. Dr. Nilakanta leads BDiB's strategic vision and technology direction.</p>
-            </div>
-            <div class="team-card-action">
-              <button type="button" class="btn-schedule select-team-btn" data-team="Dr. Sree Nilakanta">
-                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                Schedule with Dr. Sree
-              </button>
-            </div>
-          </div>
-
-          <!-- Dr. Srini Reddy -->
-          <div class="team-card reveal" id="card-srini">
-            <img src="/assets/team-srini.jpg" alt="Dr. Srini Reddy" class="team-card-photo">
-            <div class="team-card-body">
-              <h3>Dr. Srini Reddy</h3>
-              <div class="team-card-role">Founding Member · Agriculture &amp; Regulatory Expert</div>
-              <p class="team-card-bio">30 years in agricultural biotech and regulatory processes. Dr. Reddy helps farmers navigate organic certification and embrace new ag-technologies.</p>
-            </div>
-            <div class="team-card-action">
-              <button type="button" class="btn-schedule select-team-btn" data-team="Dr. Srini Reddy">
-                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                Schedule with Dr. Srini
-              </button>
-            </div>
-          </div>
-
-          <!-- Hari Sarma -->
-          <div class="team-card reveal" id="card-hari">
-            <img src="/assets/team-hari.jpg" alt="Hari Sarma" class="team-card-photo">
-            <div class="team-card-body">
-              <h3>Hari Sarma</h3>
-              <div class="team-card-role">Founding Member · HR &amp; Finance</div>
-              <p class="team-card-bio">30 years in IT, supply chain operations, and project management. Hari drives strategic business development and leverages technology for innovation and growth.</p>
-            </div>
-            <div class="team-card-action">
-              <button type="button" class="btn-schedule select-team-btn" data-team="Hari Sarma">
-                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                Schedule with Hari
-              </button>
-            </div>
-          </div>
-
-          <!-- Caroline -->
-          <div class="team-card reveal" id="card-caroline">
-            <div class="team-card-photo" style="background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-forest) 100%); display: flex; align-items: center; justify-content: center; font-family: var(--font-headings); font-weight: 800; font-size: 1.6rem; color: var(--color-white);">C</div>
-            <div class="team-card-body">
-              <h3>Caroline</h3>
-              <div class="team-card-role">Customer Success &amp; Onboarding</div>
-              <p class="team-card-bio">Dedicated customer success specialist ensuring your farm setup and onboarding runs seamlessly.</p>
-            </div>
-            <div class="team-card-action">
-              <button type="button" class="btn-schedule select-team-btn" data-team="Caroline">
-                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                Schedule with Caroline
-              </button>
-            </div>
-          </div>
-
-          <!-- Rema -->
-          <div class="team-card reveal" id="card-rema">
-            <div class="team-card-photo" style="background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-slate) 100%); display: flex; align-items: center; justify-content: center; font-family: var(--font-headings); font-weight: 800; font-size: 1.6rem; color: var(--color-white);">R</div>
-            <div class="team-card-body">
-              <h3>Rema</h3>
-              <div class="team-card-role">Product Specialist &amp; Demos</div>
-              <p class="team-card-bio">Product demonstration expert helping growers extract maximum value from SPIDER Ag workflows.</p>
-            </div>
-            <div class="team-card-action">
-              <button type="button" class="btn-schedule select-team-btn" data-team="Rema">
-                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                Schedule with Rema
-              </button>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Bottom CTA -->
-        <div class="schedule-bottom-cta reveal">
-          <p>Prefer direct email? Send your demo questions directly to our team:</p>
+        <!-- Bottom Email Contact Callout -->
+        <div class="schedule-bottom-cta reveal" style="padding-top: 1rem; padding-bottom: 4rem;">
+          <p>Or send an email directly to:</p>
           <a href="mailto:info@bdibsolutions.com?subject=Demo%20Request">info@bdibsolutions.com</a>
         </div>
       </div>
@@ -649,30 +511,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       const demoForm = document.getElementById('schedule-demo-form');
       const successBanner = document.getElementById('form-success-banner');
-      const teamSelect = document.getElementById('demo-team-member');
-      const selectTeamBtns = document.querySelectorAll('.select-team-btn');
 
-      // Click handler for team member buttons to pre-select team member & scroll to form
-      selectTeamBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const memberName = btn.getAttribute('data-team');
-          if (teamSelect && memberName) {
-            for (let i = 0; i < teamSelect.options.length; i++) {
-              if (teamSelect.options[i].value.includes(memberName)) {
-                teamSelect.selectedIndex = i;
-                break;
-              }
-            }
-          }
-          const formContainer = document.getElementById('demo-form-container');
-          if (formContainer) {
-            formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            document.getElementById('demo-name')?.focus();
-          }
-        });
-      });
-
-      // Submit handler to construct mailto: link to info@bdibsolutions.com & show success feedback
+      // Submit handler to construct mailto link & show success message
       if (demoForm) {
         demoForm.addEventListener('submit', (e) => {
           e.preventDefault();
@@ -681,26 +521,17 @@
           const email = document.getElementById('demo-email')?.value || '';
           const phone = document.getElementById('demo-phone')?.value || 'N/A';
           const farm = document.getElementById('demo-farm')?.value || '';
-          const acres = document.getElementById('demo-acres')?.value || '';
-          const team = document.getElementById('demo-team-member')?.value || '';
-          const date = document.getElementById('demo-date')?.value || 'Flexible';
-          const time = document.getElementById('demo-time')?.value || '';
-          const notes = document.getElementById('demo-message')?.value || 'N/A';
+          const message = document.getElementById('demo-message')?.value || '';
 
           const subject = encodeURIComponent(`SPIDER Ag Demo Request – ${name} (${farm})`);
           const body = encodeURIComponent(
             `Hello BDIB Solutions Team,\n\n` +
             `I would like to schedule a demo of SPIDER Ag.\n\n` +
-            `--- DEMO REQUEST DETAILS ---\n` +
             `Full Name: ${name}\n` +
             `Email: ${email}\n` +
             `Phone: ${phone}\n` +
-            `Farm / Organization: ${farm}\n` +
-            `Operation Size: ${acres}\n` +
-            `Preferred Team Member: ${team}\n` +
-            `Preferred Date: ${date}\n` +
-            `Preferred Time Window: ${time}\n\n` +
-            `Demo Goals & Notes:\n${notes}\n\n` +
+            `Farm / Company Name: ${farm}\n\n` +
+            `Message:\n${message}\n\n` +
             `Thank you!`
           );
 
