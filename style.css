@@ -3467,7 +3467,7 @@ a, button {
    SPIDER AG MOBILE APP & FIELD CONNECTIVITY SECTION
    ==================================================== */
 .mobile-app-connectivity-section {
-  padding: 0.5rem 0;
+  padding: 0;
   background: linear-gradient(145deg, #163B2B 0%, #0F281D 60%, #091912 100%);
   color: #FFFFFF;
   position: relative;
