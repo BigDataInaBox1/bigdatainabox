@@ -3489,8 +3489,8 @@ a, button {
 
 .mobile-app-grid {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 3rem;
+  grid-template-columns: minmax(300px, 340px) 1fr;
+  gap: 3.5rem;
   align-items: center;
 }
 
@@ -3509,7 +3509,7 @@ a, button {
 
 .mobile-app-text-col h2 {
   color: #FFFFFF;
-  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
   font-weight: 800;
   line-height: 1.25;
   margin-bottom: 0.85rem;
@@ -3518,9 +3518,9 @@ a, button {
 
 .mobile-app-text-col p.lead {
   color: #E2E8F0;
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 1.75rem !important;
 }
 
 /* Phone Mockup Layout */
@@ -3529,30 +3529,35 @@ a, button {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1.5rem 1rem;
 }
 
 .phone-mockup-wrapper {
   position: relative;
-  width: 230px;
-  max-width: 80vw;
+  width: 330px;
+  max-width: 85vw;
 }
 
 .phone-3d-frame {
   position: relative;
   width: 100%;
   z-index: 15;
+  perspective: 1000px;
 }
 
 .phone-3d-screen {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 18px 38px rgba(0, 0, 0, 0.65));
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: rotate(-12deg) rotateY(6deg);
+  transform-origin: center center;
+  filter: drop-shadow(-15px 25px 45px rgba(0, 0, 0, 0.7));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
 }
 
 .phone-3d-screen:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: rotate(-10deg) rotateY(4deg) translateY(-8px) scale(1.02);
+  filter: drop-shadow(-20px 30px 55px rgba(0, 0, 0, 0.8));
 }
 
 /* Secondary Floating Device Preview Card */
