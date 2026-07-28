@@ -612,6 +612,8 @@ section {
 
 .hero-content {
   z-index: 2;
+  max-width: 540px;
+  width: 100%;
 }
 
 .hero h1 {
@@ -639,8 +641,9 @@ section {
 }
 
 .hero .container.grid-2 {
-  grid-template-columns: 1fr 2.2fr;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 3.5rem;
   align-items: center;
 }
 
@@ -651,8 +654,8 @@ section {
   padding: 0;
   background-color: transparent;
   border: none;
-  width: 140%;
-  max-width: 1100px;
+  width: 135%;
+  margin-left: -5%;
 }
 
 .hero-image-inner {
@@ -664,16 +667,16 @@ section {
   background: transparent;
 }
 
-/* 25% Top, Bottom, and Edge Gradient Overlay into #F8F8F5 */
+/* Gradient Dissolve Overlay: 10% Top Fade & 20% Bottom Fade into #F8F8F5 background */
 .hero-image-inner::after {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
   background: 
-    linear-gradient(to bottom, #F8F8F5 0%, rgba(248, 248, 245, 0.85) 15%, transparent 25%),
-    linear-gradient(to top, #F8F8F5 0%, rgba(248, 248, 245, 0.85) 15%, transparent 25%),
-    radial-gradient(ellipse 85% 75% at 50% 50%, transparent 40%, rgba(248, 248, 245, 0.65) 70%, #F8F8F5 98%);
+    linear-gradient(to bottom, #F8F8F5 0%, rgba(248, 248, 245, 0.85) 6%, transparent 10%),
+    linear-gradient(to top, #F8F8F5 0%, rgba(248, 248, 245, 0.88) 12%, rgba(248, 248, 245, 0.45) 16%, transparent 20%),
+    radial-gradient(ellipse 90% 80% at 50% 50%, transparent 42%, rgba(248, 248, 245, 0.6) 72%, #F8F8F5 99%);
   z-index: 3;
 }
 
@@ -682,8 +685,8 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 25%, #000 75%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 25%, #000 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 80%, transparent 100%);
   transition: transform 0.4s ease;
 }
 
