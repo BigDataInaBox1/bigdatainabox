@@ -673,16 +673,15 @@ section {
   background: transparent;
 }
 
-/* Gradient Dissolve Overlay: 10% Top Fade & 20% Bottom Fade into #F8F8F5 background */
+/* Bottom and Outer Edge Gradient Dissolve Overlay into #F8F8F5 (Top fade removed for maximum top clarity) */
 .hero-image-inner::after {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
   background: 
-    linear-gradient(to bottom, #F8F8F5 0%, rgba(248, 248, 245, 0.8) 6%, transparent 10%),
-    linear-gradient(to top, #F8F8F5 0%, rgba(248, 248, 245, 0.85) 12%, rgba(248, 248, 245, 0.4) 16%, transparent 20%),
-    radial-gradient(ellipse 90% 80% at 50% 50%, transparent 45%, rgba(248, 248, 245, 0.6) 75%, #F8F8F5 99%);
+    linear-gradient(to top, #F8F8F5 0%, rgba(248, 248, 245, 0.85) 12%, rgba(248, 248, 245, 0.3) 18%, transparent 25%),
+    radial-gradient(ellipse 92% 85% at 50% 50%, transparent 55%, rgba(248, 248, 245, 0.5) 80%, #F8F8F5 99%);
   z-index: 3;
 }
 
@@ -691,15 +690,15 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
-  transform: scale(1.45);
+  transform: scale(2.25);
   transform-origin: center center;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 78%, transparent 100%);
   transition: transform 0.4s ease;
 }
 
 .hero-video-wrapper video:hover {
-  transform: scale(1.48);
+  transform: scale(2.28);
 }
 
 @media (max-width: 1024px) {
