@@ -639,39 +639,41 @@ section {
 }
 
 .hero .container.grid-2 {
-  grid-template-columns: 1fr 1.25fr;
-  gap: 3rem;
+  grid-template-columns: 1fr 1.75fr;
+  gap: 2rem;
   align-items: center;
 }
 
 .hero-image-wrapper {
   position: relative;
   z-index: 2;
-  border-radius: 2.5rem;
+  border-radius: 0;
   padding: 0;
   background-color: transparent;
   border: none;
-  width: 100%;
+  width: 112%;
+  max-width: 850px;
 }
 
 .hero-image-inner {
   position: relative;
-  border-radius: 2.5rem;
   overflow: hidden;
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/9.5;
   width: 100%;
   border: none;
   background: transparent;
 }
 
-/* Outer Gradient Overlay to dissolve edges seamlessly into #F8F8F5 background */
+/* Heavy Top, Bottom, and Outer Gradient Dissolve Overlay into #F8F8F5 */
 .hero-image-inner::after {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  border-radius: 2.5rem;
-  background: radial-gradient(ellipse 88% 88% at 50% 50%, transparent 48%, rgba(248, 248, 245, 0.45) 72%, #F8F8F5 99%);
+  background: 
+    linear-gradient(to bottom, #F8F8F5 0%, rgba(248, 248, 245, 0.8) 20%, transparent 42%),
+    linear-gradient(to top, #F8F8F5 0%, rgba(248, 248, 245, 0.88) 25%, rgba(248, 248, 245, 0.45) 45%, transparent 65%),
+    radial-gradient(ellipse 88% 82% at 50% 50%, transparent 35%, rgba(248, 248, 245, 0.6) 68%, #F8F8F5 98%);
   z-index: 3;
 }
 
@@ -680,9 +682,8 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 2.5rem;
-  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, #000 55%, rgba(0, 0, 0, 0.75) 80%, transparent 100%);
-  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, #000 55%, rgba(0, 0, 0, 0.75) 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 68%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 68%, transparent 100%);
   transition: transform 0.4s ease;
 }
 
