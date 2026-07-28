@@ -3467,7 +3467,7 @@ a, button {
    SPIDER AG MOBILE APP & FIELD CONNECTIVITY SECTION
    ==================================================== */
 .mobile-app-connectivity-section {
-  padding: 3.5rem 0;
+  padding: 2rem 0;
   background: linear-gradient(145deg, #163B2B 0%, #0F281D 60%, #091912 100%);
   color: #FFFFFF;
   position: relative;
@@ -3489,8 +3489,8 @@ a, button {
 
 .mobile-app-grid {
   display: grid;
-  grid-template-columns: minmax(300px, 340px) 1fr;
-  gap: 3.5rem;
+  grid-template-columns: minmax(310px, 350px) 1fr;
+  gap: 3rem;
   align-items: center;
 }
 
@@ -3502,25 +3502,28 @@ a, button {
   background: rgba(16, 185, 129, 0.16);
   color: #A7F3D0;
   border: 1px solid rgba(16, 185, 129, 0.3);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
   display: inline-block;
   font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 100px;
 }
 
 .mobile-app-text-col h2 {
   color: #FFFFFF;
-  font-size: clamp(1.75rem, 3.2vw, 2.4rem);
+  font-size: clamp(2.1rem, 3.8vw, 3rem);
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.18;
   margin-bottom: 0.85rem;
   letter-spacing: -0.02em;
 }
 
 .mobile-app-text-col p.lead {
   color: #E2E8F0;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin-bottom: 1.75rem !important;
+  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+  line-height: 1.58;
+  margin-bottom: 1.5rem !important;
 }
 
 /* Phone Mockup Layout */
@@ -3529,7 +3532,7 @@ a, button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: 0.75rem 0.5rem;
 }
 
 .phone-mockup-wrapper {
