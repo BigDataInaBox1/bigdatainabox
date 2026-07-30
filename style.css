@@ -665,6 +665,7 @@ section {
   width: 100%;
   max-width: 640px;
   justify-self: center;
+  transform: translateY(-1.75rem);
 }
 
 .hero-image-inner {
