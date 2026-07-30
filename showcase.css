@@ -36,11 +36,6 @@
   object-fit: contain; /* Scale to fit without cropping */
   display: block;
   background: transparent;
-  transition: transform 0.4s ease;
-}
-
-.hero-video-wrapper video:hover {
-  transform: scale(1.02);
 }
 
 /* ---- Reset Hero Container for Floating Video ---- */

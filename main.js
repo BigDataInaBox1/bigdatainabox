@@ -24,7 +24,7 @@
     });
   }
 
-  /* ---- Hero Video: No Loop, Restart on Scroll Back ---- */
+  /* ---- Hero Video: Playback Controls & Hover Slo-Mo ---- */
   const heroVideo = document.getElementById('hero-video');
   if (heroVideo) {
     const heroObserver = new IntersectionObserver((entries) => {
@@ -36,6 +36,15 @@
       });
     }, { threshold: 0.3 });
     heroObserver.observe(heroVideo);
+
+    // Hover slo-mo effect: slow down playback to 0.35x on hover, return to 1.0x on leave
+    const videoTarget = heroVideo.closest('.hero-video-wrapper') || heroVideo;
+    videoTarget.addEventListener('mouseenter', () => {
+      heroVideo.playbackRate = 0.35;
+    });
+    videoTarget.addEventListener('mouseleave', () => {
+      heroVideo.playbackRate = 1.0;
+    });
   }
 
   /* ---- Scroll Reveal Observer ---- */
