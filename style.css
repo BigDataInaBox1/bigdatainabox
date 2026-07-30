@@ -612,16 +612,21 @@ section {
 
 .hero-content {
   z-index: 2;
-  max-width: 550px;
+  max-width: 660px;
   width: 100%;
   justify-self: start;
 }
 
 .hero h1 {
-  font-size: clamp(2.3rem, 4vw, 3.2rem);
+  font-size: clamp(2.2rem, 3.6vw, 3.1rem);
   line-height: 1.15;
   margin-bottom: 1.5rem;
   letter-spacing: -0.025em;
+}
+
+.hero-title-main,
+.hero-title-accent {
+  display: block;
 }
 
 .hero p {
