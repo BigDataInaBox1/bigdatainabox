@@ -650,8 +650,8 @@ section {
 
 .hero .container.grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -663,7 +663,7 @@ section {
   background-color: transparent;
   border: none;
   width: 100%;
-  max-width: 760px;
+  max-width: 950px;
   justify-self: center;
   transform: translateY(-3.25rem);
 }
