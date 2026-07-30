@@ -50,7 +50,7 @@
   box-shadow: none !important;
   padding: 0 !important;
   width: 100% !important;
-  max-width: 900px !important; /* Large commanding hero graphic */
+  max-width: 640px !important; /* Sleek, balanced hero graphic size */
   margin-left: auto;
   margin-right: auto;
 }

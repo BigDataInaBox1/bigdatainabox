@@ -612,8 +612,9 @@ section {
 
 .hero-content {
   z-index: 2;
-  max-width: 580px;
+  max-width: 550px;
   width: 100%;
+  justify-self: start;
 }
 
 .hero h1 {
@@ -649,8 +650,8 @@ section {
 
 .hero .container.grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -662,7 +663,8 @@ section {
   background-color: transparent;
   border: none;
   width: 100%;
-  max-width: 900px;
+  max-width: 640px;
+  justify-self: center;
 }
 
 .hero-image-inner {
