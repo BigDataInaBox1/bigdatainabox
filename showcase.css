@@ -50,10 +50,10 @@
   box-shadow: none !important;
   padding: 0 !important;
   width: 100% !important;
-  max-width: 640px !important; /* Sleek, balanced hero graphic size */
+  max-width: 760px !important; /* Prominent hero graphic size */
   margin-left: auto;
   margin-right: auto;
-  transform: translateY(-1.75rem);
+  transform: translateY(-3.25rem);
 }
 
 #hero-video-container .hero-image-inner {
