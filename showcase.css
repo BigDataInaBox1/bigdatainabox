@@ -9,9 +9,25 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  /* Inward masking radial gradient to blend video edges seamlessly */
-  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
-  mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 95%);
+  border-radius: 20px;
+  /* Inward masking radial gradient to blend video edges & corners seamlessly */
+  -webkit-mask-image: radial-gradient(ellipse 92% 88% at 50% 50%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(ellipse 92% 88% at 50% 50%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0) 100%);
+}
+
+.hero-video-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: 
+    radial-gradient(ellipse 90% 86% at 50% 50%, transparent 45%, rgba(248, 248, 245, 0.45) 72%, rgba(248, 248, 245, 0.95) 94%, #F8F8F5 100%),
+    linear-gradient(to top, #F8F8F5 0%, rgba(248, 248, 245, 0.4) 10%, transparent 22%),
+    linear-gradient(to bottom, #F8F8F5 0%, rgba(248, 248, 245, 0.4) 10%, transparent 22%),
+    linear-gradient(to right, #F8F8F5 0%, rgba(248, 248, 245, 0.3) 8%, transparent 18%),
+    linear-gradient(to left, #F8F8F5 0%, rgba(248, 248, 245, 0.3) 8%, transparent 18%);
+  z-index: 3;
 }
 
 .hero-video-wrapper video {
@@ -20,6 +36,11 @@
   object-fit: contain; /* Scale to fit without cropping */
   display: block;
   background: transparent;
+  transition: transform 0.4s ease;
+}
+
+.hero-video-wrapper video:hover {
+  transform: scale(1.02);
 }
 
 /* ---- Reset Hero Container for Floating Video ---- */
@@ -28,7 +49,8 @@
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
-  max-width: 520px; /* Constrain size to make it smaller */
+  width: 100% !important;
+  max-width: 900px !important; /* Large commanding hero graphic */
   margin-left: auto;
   margin-right: auto;
 }
