@@ -450,7 +450,7 @@
             <p>Thank you for reaching out. Your message has been sent to <strong>info@bdibsolutions.com</strong> and our team will respond soon.</p>
           </div>
 
-          <form id="schedule-demo-form" action="https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y" method="POST">
+          <form id="schedule-demo-form" action="https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y" method="POST" target="ziframe_787725" onsubmit="return false;">
             <div class="form-grid">
               
               <!-- Name -->
@@ -499,7 +499,7 @@
         </div>
 
         <!-- Hidden Zoho Forms iFrame for submission & tracking -->
-        <iframe id="ziframe_787725" aria-label="Contact" frameborder="0" style="display:none;width:0;height:0;border:none;" src='https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y'></iframe>
+        <iframe id="ziframe_787725" name="ziframe_787725" aria-label="Contact" frameborder="0" style="display:none;width:0;height:0;border:none;" src='https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y'></iframe>
 
         <script type="text/javascript">
         (function() {
@@ -550,10 +550,11 @@
       const demoForm = document.getElementById('schedule-demo-form');
       const successBanner = document.getElementById('form-success-banner');
 
-      // Submit handler to send message to Zoho Forms and display success message
+      // Submit handler to send message to Zoho Forms seamlessly in the background
       if (demoForm) {
         demoForm.addEventListener('submit', (e) => {
           e.preventDefault();
+          e.stopPropagation();
 
           const fullName = document.getElementById('demo-name')?.value.trim() || '';
           const email = document.getElementById('demo-email')?.value.trim() || '';
@@ -584,43 +585,14 @@
             zfFrame.src = zohoPrefillUrl;
           }
 
-          // Build hidden form for POST transmission to Zoho Forms
-          let zohoHiddenForm = document.getElementById('zoho-post-form');
-          if (!zohoHiddenForm) {
-            zohoHiddenForm = document.createElement('form');
-            zohoHiddenForm.id = 'zoho-post-form';
-            zohoHiddenForm.target = 'ziframe_787725';
-            zohoHiddenForm.method = 'POST';
-            zohoHiddenForm.action = 'https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y';
-            zohoHiddenForm.style.display = 'none';
-            document.body.appendChild(zohoHiddenForm);
-          }
-
-          zohoHiddenForm.innerHTML = `
-            <input type="hidden" name="formName" value="Contact">
-            <input type="hidden" name="formPerma" value="WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y">
-            <input type="hidden" name="SingleLine1" value="${farm.replace(/"/g, '&quot;')}">
-            <input type="hidden" name="SingleLine2" value="SPIDER Ag Demo Request - ${farm.replace(/"/g, '&quot;')}">
-            <input type="hidden" name="Name_First" value="${firstName.replace(/"/g, '&quot;')}">
-            <input type="hidden" name="Name_Last" value="${lastName.replace(/"/g, '&quot;')}">
-            <input type="hidden" name="Email" value="${email.replace(/"/g, '&quot;')}">
-            <input type="hidden" name="PhoneNumber" value="${phone.replace(/"/g, '&quot;')}">
-            <input type="hidden" name="MultiLine" value="${message.replace(/"/g, '&quot;')}">
-          `;
-
-          try {
-            zohoHiddenForm.submit();
-          } catch (err) {
-            console.log('Zoho POST fallback:', err);
-          }
-
-          // Display success banner on page
+          // Display success banner on page without navigating away
           if (successBanner) {
             successBanner.style.display = 'block';
             successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
 
           demoForm.reset();
+          return false;
         });
       }
     });
