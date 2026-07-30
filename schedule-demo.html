@@ -498,6 +498,44 @@
           </form>
         </div>
 
+        <!-- Hidden Zoho Forms iFrame for submission & tracking -->
+        <iframe id="ziframe_787725" aria-label="Contact" frameborder="0" style="display:none;width:0;height:0;border:none;" src='https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y'></iframe>
+
+        <script type="text/javascript">
+        (function() {
+          try {
+            var zf_frame = document.getElementById("ziframe_787725");
+            var ifrmSrc = zf_frame.src;
+               
+                if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
+                    var rfr = window.location.href;
+                   
+                    try {
+                        rfr = window.self !== window.top ?
+                            window.top.location.href :
+                            (/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
+                    } catch (e) {}
+                   
+                    if (rfr && rfr !== "") {
+                        if (rfr.length > 1800) {
+                            var queryIndex = rfr.indexOf('?');
+                            if (queryIndex > -1) {
+                                rfr = rfr.substring(0, queryIndex);
+                            }
+                            if (rfr.length > 1800) {
+                                rfr = rfr.substring(0, 1800);
+                            }
+                        }
+                        ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
+                    }
+                }
+                if (zf_frame.src !== ifrmSrc) {
+                    zf_frame.src = ifrmSrc;
+                }
+          } catch (e) {}
+        })();
+        </script>
+
         <!-- Bottom Email Contact Callout -->
         <div class="schedule-bottom-cta reveal" style="padding-top: 1rem; padding-bottom: 4rem;">
           <p>Or send an email directly to:</p>
@@ -512,38 +550,77 @@
       const demoForm = document.getElementById('schedule-demo-form');
       const successBanner = document.getElementById('form-success-banner');
 
-      // Submit handler to construct mailto link & show success message
+      // Submit handler to send message to Zoho Forms and display success message
       if (demoForm) {
         demoForm.addEventListener('submit', (e) => {
           e.preventDefault();
 
-          const name = document.getElementById('demo-name')?.value || '';
-          const email = document.getElementById('demo-email')?.value || '';
-          const phone = document.getElementById('demo-phone')?.value || 'N/A';
-          const farm = document.getElementById('demo-farm')?.value || '';
-          const message = document.getElementById('demo-message')?.value || '';
+          const fullName = document.getElementById('demo-name')?.value.trim() || '';
+          const email = document.getElementById('demo-email')?.value.trim() || '';
+          const phone = document.getElementById('demo-phone')?.value.trim() || '';
+          const farm = document.getElementById('demo-farm')?.value.trim() || '';
+          const message = document.getElementById('demo-message')?.value.trim() || '';
 
-          const subject = encodeURIComponent(`SPIDER Ag Demo Request – ${name} (${farm})`);
-          const body = encodeURIComponent(
-            `Hello BDIB Solutions Team,\n\n` +
-            `I would like to schedule a demo of SPIDER Ag.\n\n` +
-            `Full Name: ${name}\n` +
-            `Email: ${email}\n` +
-            `Phone: ${phone}\n` +
-            `Farm / Company Name: ${farm}\n\n` +
-            `Message:\n${message}\n\n` +
-            `Thank you!`
-          );
+          // Parse first & last name
+          const nameParts = fullName.split(' ');
+          const firstName = nameParts[0] || '';
+          const lastName = nameParts.slice(1).join(' ') || nameParts[0] || '';
 
-          // Open mailto link target to info@bdibsolutions.com
-          const mailtoUrl = `mailto:info@bdibsolutions.com?subject=${subject}&body=${body}`;
-          window.location.href = mailtoUrl;
+          // Update Zoho iframe source with pre-filled submission parameters & referrer
+          const zfFrame = document.getElementById('ziframe_787725');
+          const baseSrc = zfFrame ? zfFrame.src : 'https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y';
+          const sep = baseSrc.indexOf('?') > -1 ? '&' : '?';
+
+          const zohoPrefillUrl = `${baseSrc}${sep}` +
+            `SingleLine1=${encodeURIComponent(farm)}` +
+            `&SingleLine2=${encodeURIComponent('SPIDER Ag Demo Request - ' + farm)}` +
+            `&Name_First=${encodeURIComponent(firstName)}` +
+            `&Name_Last=${encodeURIComponent(lastName)}` +
+            `&Email=${encodeURIComponent(email)}` +
+            `&PhoneNumber=${encodeURIComponent(phone)}` +
+            `&MultiLine=${encodeURIComponent(message)}`;
+
+          if (zfFrame) {
+            zfFrame.src = zohoPrefillUrl;
+          }
+
+          // Build hidden form for POST transmission to Zoho Forms
+          let zohoHiddenForm = document.getElementById('zoho-post-form');
+          if (!zohoHiddenForm) {
+            zohoHiddenForm = document.createElement('form');
+            zohoHiddenForm.id = 'zoho-post-form';
+            zohoHiddenForm.target = 'ziframe_787725';
+            zohoHiddenForm.method = 'POST';
+            zohoHiddenForm.action = 'https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y';
+            zohoHiddenForm.style.display = 'none';
+            document.body.appendChild(zohoHiddenForm);
+          }
+
+          zohoHiddenForm.innerHTML = `
+            <input type="hidden" name="formName" value="Contact">
+            <input type="hidden" name="formPerma" value="WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y">
+            <input type="hidden" name="SingleLine1" value="${farm.replace(/"/g, '&quot;')}">
+            <input type="hidden" name="SingleLine2" value="SPIDER Ag Demo Request - ${farm.replace(/"/g, '&quot;')}">
+            <input type="hidden" name="Name_First" value="${firstName.replace(/"/g, '&quot;')}">
+            <input type="hidden" name="Name_Last" value="${lastName.replace(/"/g, '&quot;')}">
+            <input type="hidden" name="Email" value="${email.replace(/"/g, '&quot;')}">
+            <input type="hidden" name="PhoneNumber" value="${phone.replace(/"/g, '&quot;')}">
+            <input type="hidden" name="MultiLine" value="${message.replace(/"/g, '&quot;')}">
+          `;
+
+          try {
+            zohoHiddenForm.submit();
+          } catch (err) {
+            console.log('Zoho POST fallback:', err);
+          }
 
           // Display success banner on page
           if (successBanner) {
             successBanner.style.display = 'block';
             successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
+
+          demoForm.reset();
         });
       }
     });
