@@ -611,9 +611,9 @@ section {
 }
 
 .hero-content {
-  z-index: 2;
-  max-width: 720px;
-  width: 100%;
+  z-index: 5;
+  max-width: 800px;
+  width: 110%;
   justify-self: start;
 }
 
@@ -659,7 +659,7 @@ section {
 
 .hero .container.grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 1.5rem;
   align-items: center;
 }
