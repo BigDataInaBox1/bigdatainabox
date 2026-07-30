@@ -24,7 +24,7 @@
     });
   }
 
-  /* ---- Hero Video: Playback Controls & Hover Slo-Mo ---- */
+  /* ---- Hero Video: Playback Controls & Hover Pause ---- */
   const heroVideo = document.getElementById('hero-video');
   if (heroVideo) {
     const heroObserver = new IntersectionObserver((entries) => {
@@ -37,13 +37,13 @@
     }, { threshold: 0.3 });
     heroObserver.observe(heroVideo);
 
-    // Hover slo-mo effect: slow down playback to 0.35x on hover, return to 1.0x on leave
+    // Hover pause effect: pause video on hover, resume playback on leave
     const videoTarget = heroVideo.closest('.hero-video-wrapper') || heroVideo;
     videoTarget.addEventListener('mouseenter', () => {
-      heroVideo.playbackRate = 0.35;
+      heroVideo.pause();
     });
     videoTarget.addEventListener('mouseleave', () => {
-      heroVideo.playbackRate = 1.0;
+      heroVideo.play().catch(() => {});
     });
   }
 
