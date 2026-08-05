@@ -393,7 +393,7 @@
           </li>
           <li><a href="pricing-sign-up.html">Pricing</a></li>
 
-          <li><a href="schedule-demo.html" class="active-nav">Schedule Demo</a></li>
+          <li><a href="schedule-demo.html" class="active-nav" data-open-demo-modal>Schedule Demo</a></li>
           <!-- Nav Drawer CTA for mobile -->
           <li>
             <a href="pricing-sign-up.html" class="btn btn-primary btn-nav-drawer">
@@ -439,102 +439,49 @@
         </div>
 
         <!-- Contact Form Card -->
-        <div class="demo-form-wrapper reveal" id="demo-form-container">
+        <div class="demo-form-wrapper reveal" id="demo-form-container" style="padding: 2.5rem 1.5rem 1.5rem;">
           <div class="demo-form-header">
             <h2>Send Us a Message</h2>
             <p>Fill in your details below and our team will get in touch with you shortly.</p>
           </div>
 
-          <div class="form-success-banner" id="form-success-banner">
-            <h4>✓ Message Sent!</h4>
-            <p>Thank you for reaching out. Your message has been sent to <strong>info@bdibsolutions.com</strong> and our team will respond soon.</p>
-          </div>
+          <iframe id="ziframe_787725" aria-label="Contact" frameborder="0" style="height:550px;width:100%;border:none;border-radius:12px;" src='https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y'></iframe>
 
-          <form id="schedule-demo-form" action="https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y" method="POST" target="ziframe_787725" onsubmit="return false;">
-            <div class="form-grid">
-              
-              <!-- Name -->
-              <div class="form-group">
-                <label for="demo-name">Full Name *</label>
-                <input type="text" id="demo-name" name="Full Name" placeholder="e.g. John Deere" required>
-              </div>
-
-              <!-- Email -->
-              <div class="form-group">
-                <label for="demo-email">Email Address *</label>
-                <input type="email" id="demo-email" name="Email Address" placeholder="you@farm.com" required>
-              </div>
-
-              <!-- Phone -->
-              <div class="form-group">
-                <label for="demo-phone">Phone Number</label>
-                <input type="tel" id="demo-phone" name="Phone Number" placeholder="(515) 555-0199">
-              </div>
-
-              <!-- Farm / Company Name -->
-              <div class="form-group">
-                <label for="demo-farm">Farm / Company Name *</label>
-                <input type="text" id="demo-farm" name="Farm Name" placeholder="e.g. Heartland Valley Farms" required>
-              </div>
-
-              <!-- Message -->
-              <div class="form-group full-width">
-                <label for="demo-message">Message *</label>
-                <textarea id="demo-message" name="Message" placeholder="Write your message or demo questions here..." required></textarea>
-              </div>
-
-              <!-- Submit Button -->
-              <button type="submit" class="btn btn-primary btn-submit-demo">
-                Send Message
-                <span class="btn-icon-wrapper">
-                  <svg viewBox="0 0 24 24">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                  </svg>
-                </span>
-              </button>
-
-            </div>
-          </form>
+          <script type="text/javascript">
+          (function() {
+            try {
+              var zf_frame = document.getElementById("ziframe_787725");
+              var ifrmSrc = zf_frame.src;
+                 
+                  if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
+                      var rfr = window.location.href;
+                     
+                      try {
+                          rfr = window.self !== window.top ?
+                              window.top.location.href :
+                              (/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
+                      } catch (e) {}
+                     
+                      if (rfr && rfr !== "") {
+                          if (rfr.length > 1800) {
+                              var queryIndex = rfr.indexOf('?');
+                              if (queryIndex > -1) {
+                                  rfr = rfr.substring(0, queryIndex);
+                              }
+                              if (rfr.length > 1800) {
+                                  rfr = rfr.substring(0, 1800);
+                              }
+                          }
+                          ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
+                      }
+                  }
+                  if (zf_frame.src !== ifrmSrc) {
+                      zf_frame.src = ifrmSrc;
+                  }
+            } catch (e) {}
+          })();
+          </script>
         </div>
-
-        <!-- Hidden Zoho Forms iFrame for submission & tracking -->
-        <iframe id="ziframe_787725" name="ziframe_787725" aria-label="Contact" frameborder="0" style="display:none;width:0;height:0;border:none;" src='https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y'></iframe>
-
-        <script type="text/javascript">
-        (function() {
-          try {
-            var zf_frame = document.getElementById("ziframe_787725");
-            var ifrmSrc = zf_frame.src;
-               
-                if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
-                    var rfr = window.location.href;
-                   
-                    try {
-                        rfr = window.self !== window.top ?
-                            window.top.location.href :
-                            (/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
-                    } catch (e) {}
-                   
-                    if (rfr && rfr !== "") {
-                        if (rfr.length > 1800) {
-                            var queryIndex = rfr.indexOf('?');
-                            if (queryIndex > -1) {
-                                rfr = rfr.substring(0, queryIndex);
-                            }
-                            if (rfr.length > 1800) {
-                                rfr = rfr.substring(0, 1800);
-                            }
-                        }
-                        ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
-                    }
-                }
-                if (zf_frame.src !== ifrmSrc) {
-                    zf_frame.src = ifrmSrc;
-                }
-          } catch (e) {}
-        })();
-        </script>
 
         <!-- Bottom Email Contact Callout -->
         <div class="schedule-bottom-cta reveal" style="padding-top: 1rem; padding-bottom: 4rem;">
@@ -544,59 +491,6 @@
       </div>
     </section>
   </main>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const demoForm = document.getElementById('schedule-demo-form');
-      const successBanner = document.getElementById('form-success-banner');
-
-      // Submit handler to send message to Zoho Forms seamlessly in the background
-      if (demoForm) {
-        demoForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-
-          const fullName = document.getElementById('demo-name')?.value.trim() || '';
-          const email = document.getElementById('demo-email')?.value.trim() || '';
-          const phone = document.getElementById('demo-phone')?.value.trim() || '';
-          const farm = document.getElementById('demo-farm')?.value.trim() || '';
-          const message = document.getElementById('demo-message')?.value.trim() || '';
-
-          // Parse first & last name
-          const nameParts = fullName.split(' ');
-          const firstName = nameParts[0] || '';
-          const lastName = nameParts.slice(1).join(' ') || nameParts[0] || '';
-
-          // Update Zoho iframe source with pre-filled submission parameters & referrer
-          const zfFrame = document.getElementById('ziframe_787725');
-          const baseSrc = zfFrame ? zfFrame.src : 'https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y';
-          const sep = baseSrc.indexOf('?') > -1 ? '&' : '?';
-
-          const zohoPrefillUrl = `${baseSrc}${sep}` +
-            `SingleLine1=${encodeURIComponent(farm)}` +
-            `&SingleLine2=${encodeURIComponent('SPIDER Ag Demo Request - ' + farm)}` +
-            `&Name_First=${encodeURIComponent(firstName)}` +
-            `&Name_Last=${encodeURIComponent(lastName)}` +
-            `&Email=${encodeURIComponent(email)}` +
-            `&PhoneNumber=${encodeURIComponent(phone)}` +
-            `&MultiLine=${encodeURIComponent(message)}`;
-
-          if (zfFrame) {
-            zfFrame.src = zohoPrefillUrl;
-          }
-
-          // Display success banner on page without navigating away
-          if (successBanner) {
-            successBanner.style.display = 'block';
-            successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-
-          demoForm.reset();
-          return false;
-        });
-      }
-    });
-  </script>
 
   <!-- ----------------------------------------------------
        FOOTER

@@ -783,6 +783,117 @@
       resetPreziView();
     }
   }, { passive: true });
+
+  /* ---- Schedule Demo Modal Handler ---- */
+  (function setupDemoModal() {
+    let modal = document.getElementById('schedule-demo-modal');
+
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'schedule-demo-modal';
+      modal.className = 'demo-modal-overlay';
+      modal.setAttribute('aria-hidden', 'true');
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-labelledby', 'demo-modal-title');
+      
+      modal.innerHTML = `
+        <div class="demo-modal-backdrop" id="demo-modal-backdrop"></div>
+        <div class="demo-modal-container">
+          <button type="button" class="demo-modal-close" id="demo-modal-close" aria-label="Close Schedule Demo Modal">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <div class="demo-modal-header">
+            <span class="demo-modal-eyebrow">BDIB Solutions</span>
+            <h3 id="demo-modal-title" class="demo-modal-title">Schedule a Live Demo</h3>
+            <p class="demo-modal-subtitle">Request a personalized walkthrough of SPIDER Ag with our farm data experts.</p>
+          </div>
+          <div class="demo-modal-body">
+            <div class="demo-modal-loader" id="demo-modal-loader">
+              <div class="spinner"></div>
+            </div>
+            <iframe id="modal_ziframe_787725" name="modal_ziframe_787725" aria-label="Contact" frameborder="0" style="height:550px;width:100%;border:none;border-radius:12px;" src="https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y"></iframe>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+
+    const iframe = document.getElementById('modal_ziframe_787725');
+    const loader = document.getElementById('demo-modal-loader');
+    const closeBtn = document.getElementById('demo-modal-close');
+    const backdrop = document.getElementById('demo-modal-backdrop');
+
+    if (iframe && loader) {
+      iframe.addEventListener('load', () => {
+        loader.style.display = 'none';
+      });
+    }
+
+    function applyZohoReferrer(frameEl) {
+      if (!frameEl) return;
+      try {
+        var ifrmSrc = frameEl.src;
+        if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
+          var rfr = window.location.href;
+          try {
+            rfr = window.self !== window.top ?
+              window.top.location.href :
+              (/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
+          } catch (e) {}
+
+          if (rfr && rfr !== "") {
+            if (rfr.length > 1800) {
+              var queryIndex = rfr.indexOf('?');
+              if (queryIndex > -1) {
+                rfr = rfr.substring(0, queryIndex);
+              }
+              if (rfr.length > 1800) {
+                rfr = rfr.substring(0, 1800);
+              }
+            }
+            ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
+          }
+        }
+        if (frameEl.src !== ifrmSrc) {
+          frameEl.src = ifrmSrc;
+        }
+      } catch (e) {}
+    }
+
+    function openModal() {
+      applyZohoReferrer(iframe);
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-open-demo-modal], .btn-schedule-demo, .js-open-demo-modal');
+      if (trigger) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+        e.preventDefault();
+        openModal();
+      }
+    });
+  })();
 })();
 
 
