@@ -799,7 +799,7 @@
       modal.innerHTML = `
         <div class="demo-modal-backdrop" id="demo-modal-backdrop"></div>
         <div class="demo-modal-container">
-          <button type="button" class="demo-modal-close" id="demo-modal-close" aria-label="Close Schedule Demo Modal">
+          <button type="button" class="demo-modal-close" id="demo-modal-close" aria-label="Close Contact Us Modal">
             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -807,8 +807,8 @@
           </button>
           <div class="demo-modal-header">
             <span class="demo-modal-eyebrow">BDIB Solutions</span>
-            <h3 id="demo-modal-title" class="demo-modal-title">Schedule a Live Demo</h3>
-            <p class="demo-modal-subtitle">Request a personalized walkthrough of SPIDER Ag with our farm data experts.</p>
+            <h3 id="demo-modal-title" class="demo-modal-title">Contact Us</h3>
+            <p class="demo-modal-subtitle">Send us a message and our team will get in touch with you shortly.</p>
           </div>
           <div class="demo-modal-body">
             <div class="demo-modal-loader" id="demo-modal-loader">
@@ -886,7 +886,7 @@
     });
 
     document.addEventListener('click', (e) => {
-      const trigger = e.target.closest('[data-open-demo-modal], .btn-schedule-demo, .js-open-demo-modal');
+      const trigger = e.target.closest('[data-open-contact-modal], [data-open-demo-modal], .btn-contact-us, .btn-schedule-demo, .js-open-contact-modal, .js-open-demo-modal');
       if (trigger) {
         if (e.metaKey || e.ctrlKey || e.shiftKey) return;
         e.preventDefault();
