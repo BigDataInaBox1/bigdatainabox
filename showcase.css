@@ -228,9 +228,37 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 0;
+    padding-top: 6.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero .container.grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-content {
+    order: 1;
+  }
+
+  #hero-video-container {
+    order: 2;
+    width: min(100%, 420px) !important;
+    max-width: 100% !important;
+    margin: 0.5rem auto 0 !important;
+    transform: none !important;
+  }
+
   .hero-video-wrapper {
-    width: 220px;
-    bottom: -80px;
+    width: 100%;
+    height: auto;
+    bottom: auto;
+  }
+
+  .scroll-down-indicator {
+    display: none;
   }
   
   .grid-row {

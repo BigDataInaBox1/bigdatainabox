@@ -13,6 +13,7 @@
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navLinks.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', navLinks.classList.contains('active').toString());
     });
 
     // Close drawer when a nav link is tapped
@@ -20,11 +21,12 @@
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navLinks.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
-  /* ---- Hero Video: Playback Controls & Hover Pause ---- */
+  /* ---- Hero Video: Playback Controls ---- */
   const heroVideo = document.getElementById('hero-video');
   if (heroVideo) {
     const heroObserver = new IntersectionObserver((entries) => {
@@ -37,14 +39,15 @@
     }, { threshold: 0.3 });
     heroObserver.observe(heroVideo);
 
-    // Hover pause effect: pause video on hover, resume playback on leave
-    const videoTarget = heroVideo.closest('.hero-video-wrapper') || heroVideo;
-    videoTarget.addEventListener('mouseenter', () => {
-      heroVideo.pause();
-    });
-    videoTarget.addEventListener('mouseleave', () => {
-      heroVideo.play().catch(() => {});
-    });
+  }
+
+  /* ---- Homepage proof sequence ---- */
+  const comparisonSection = document.getElementById('compare');
+  const partnersSection = document.getElementById('partners');
+  const spiderLightbox = document.getElementById('spider-lightbox');
+  if (comparisonSection && partnersSection && spiderLightbox) {
+    spiderLightbox.insertAdjacentElement('afterend', comparisonSection);
+    comparisonSection.insertAdjacentElement('afterend', partnersSection);
   }
 
   /* ---- Scroll Reveal Observer ---- */
@@ -895,7 +898,4 @@
     });
   })();
 })();
-
-
-
 
