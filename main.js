@@ -28,17 +28,99 @@
 
   /* ---- Hero Video: Playback Controls ---- */
   const heroVideo = document.getElementById('hero-video');
-  if (heroVideo) {
-    const heroObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          heroVideo.currentTime = 0;
-          heroVideo.play();
-        }
-      });
-    }, { threshold: 0.3 });
-    heroObserver.observe(heroVideo);
+  const heroFallback = document.getElementById('hero-video-fallback');
+  const heroMotionToggle = document.getElementById('hero-motion-toggle');
+  if (heroVideo && heroFallback && heroMotionToggle) {
+    const heroWrapper = heroVideo.closest('.hero-video-wrapper');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const posterSource = heroFallback.getAttribute('src');
+    let isVisible = false;
+    let userPaused = false;
+    let hasLoadedVideo = false;
+    let hasVideoAlpha = false;
+    let playbackMode = 'video';
 
+    const syncHeroPlayback = () => {
+      const shouldPlay = isVisible && !document.hidden && !reducedMotion.matches && !userPaused;
+      heroMotionToggle.hidden = reducedMotion.matches || !hasLoadedVideo;
+      heroMotionToggle.textContent = userPaused ? 'Play animation' : 'Pause animation';
+      heroMotionToggle.setAttribute('aria-label', userPaused ? 'Play hero animation' : 'Pause hero animation');
+
+      if (playbackMode === 'image') {
+        heroWrapper.classList.remove('has-alpha-video');
+        const source = shouldPlay ? heroVideo.dataset.fallback : posterSource;
+        if (heroFallback.getAttribute('src') !== source) heroFallback.src = source;
+        return;
+      }
+
+      heroWrapper.classList.toggle('has-alpha-video', shouldPlay && hasVideoAlpha);
+      if (!shouldPlay) {
+        heroVideo.pause();
+        return;
+      }
+
+      if (!hasLoadedVideo) {
+        hasLoadedVideo = true;
+        heroVideo.src = heroVideo.dataset.src;
+        heroVideo.load();
+      }
+
+      const playAttempt = heroVideo.play();
+      if (playAttempt) {
+        playAttempt.catch((error) => {
+          // A visibility change can interrupt play while media is loading.
+          if (error.name !== 'NotAllowedError') return;
+          userPaused = true;
+          syncHeroPlayback();
+        });
+      }
+    };
+
+    const useTransparentImage = () => {
+      if (playbackMode === 'image') return;
+      playbackMode = 'image';
+      heroVideo.pause();
+      heroVideo.removeAttribute('src');
+      heroVideo.load();
+      syncHeroPlayback();
+    };
+
+    heroVideo.addEventListener('loadeddata', () => {
+      if (playbackMode !== 'video') return;
+      // Check an empty corner of the supplied animation. Some browsers decode
+      // VP9 but discard its alpha; keep those browsers on transparent WebP.
+      try {
+        const sample = document.createElement('canvas');
+        sample.width = sample.height = 1;
+        const context = sample.getContext('2d', { willReadFrequently: true });
+        context.drawImage(heroVideo, 0, 0, 1, 1, 0, 0, 1, 1);
+        hasVideoAlpha = context.getImageData(0, 0, 1, 1).data[3] < 16;
+      } catch {
+        hasVideoAlpha = false;
+      }
+      if (hasVideoAlpha) syncHeroPlayback();
+      else useTransparentImage();
+    });
+
+    heroVideo.addEventListener('error', useTransparentImage);
+    heroFallback.addEventListener('error', () => {
+      if (heroFallback.getAttribute('src') === posterSource) return;
+      userPaused = true;
+      heroFallback.src = posterSource;
+      syncHeroPlayback();
+    });
+    heroMotionToggle.addEventListener('click', () => {
+      userPaused = !userPaused;
+      syncHeroPlayback();
+    });
+    reducedMotion.addEventListener('change', syncHeroPlayback);
+    document.addEventListener('visibilitychange', syncHeroPlayback);
+
+    const heroObserver = new IntersectionObserver((entries) => {
+      isVisible = entries.some((entry) => entry.isIntersecting);
+      syncHeroPlayback();
+    }, { threshold: 0.15 });
+    heroObserver.observe(heroWrapper);
   }
 
   /* ---- Homepage proof sequence ---- */
@@ -605,45 +687,47 @@
   const preziResetBtn = document.getElementById('prezi-reset-view');
   const preziPrevPin = document.getElementById('prezi-prev-pin');
   const preziNextPin = document.getElementById('prezi-next-pin');
+  const preziMobileInsights = document.querySelectorAll('[data-prezi-mobile-pin]');
 
   const preziImg = document.getElementById('prezi-card-img');
   const preziTag = document.getElementById('prezi-step-tag');
   const preziTitle = document.getElementById('prezi-card-title');
   const preziDesc = document.getElementById('prezi-card-desc');
+  const preziProgress = document.getElementById('prezi-card-progress');
 
   const infographicData = {
     1: {
       step: 'Field Net Profitability',
       title: 'Know What Each Field Truly Earns',
-      desc: 'Combine crop performance with labor, rent, depreciation, and financial logs to calculate real profitability.',
+      desc: 'Keep crop performance, inputs, labor, and financial records linked to each field, so you can trace costs and understand what it earns.',
       img: '/assets/infographic/pin1_earnings.png',
       origin: { x: 46.05, y: 42.30 }
     },
     2: {
       step: 'Connected Systems',
       title: 'Connect Your Farm Systems',
-      desc: 'Bring machinery data, spray records, and software platforms into one unified database.',
+      desc: 'Bring equipment data, spray logs, and financial records together around your farm, fields, plots, and subplots, keeping the tools you already use.',
       img: '/assets/infographic/pin2_connected.png',
       origin: { x: 84.03, y: 71.73 }
     },
     3: {
       step: 'Field Diary & Story',
       title: 'Preserve the Story Behind the Numbers',
-      desc: 'Turn operator notes and field observations into structured insights that explain failures, delays, and unusual results.',
+      desc: 'Say what happened in the field and turn it into a structured, dated task. Review the entry before it is final and keep the context behind the numbers.',
       img: '/assets/infographic/pin3_story.png',
       origin: { x: 68.18, y: 24.20 }
     },
     4: {
       step: 'Real Field Conditions',
       title: 'Measure Real Field Conditions',
-      desc: 'Use localized weather stations and soil sensors to capture conditions that distant forecasts and machine displays miss.',
+      desc: 'Keep local weather and soil sensor readings alongside your field observations, so each record reflects the conditions on your land.',
       img: '/assets/infographic/pin4_truth.png',
       origin: { x: 17.00, y: 17.60 }
     },
     5: {
       step: 'Decision Intelligence',
       title: 'Make Better Decisions Faster',
-      desc: 'Transform soil, machinery, weather, financial, and field data into clear reports that show where to improve.',
+      desc: 'Use one organized farm record for clearer decisions and audit-ready reports, without hunting for receipts or rebuilding the story before a review.',
       img: '/assets/infographic/pin5_decisions.png',
       origin: { x: 20.00, y: 75.98 }
     }
@@ -651,7 +735,7 @@
 
   let activePinId = null;
 
-  function activatePreziPin(pinId) {
+  function activatePreziPin(pinId, scrollToCard = false) {
     const data = infographicData[pinId];
     if (!data) return;
 
@@ -660,6 +744,13 @@
     preziPins.forEach(p => {
       p.classList.toggle('is-active', parseInt(p.getAttribute('data-pin'), 10) === activePinId);
     });
+    preziMobileInsights.forEach(button => {
+      button.classList.toggle('is-active', parseInt(button.getAttribute('data-prezi-mobile-pin'), 10) === activePinId);
+    });
+    if (preziCanvas) {
+      preziCanvas.classList.add('has-active-pin');
+      preziCanvas.dataset.activePin = activePinId.toString();
+    }
 
     if (preziImg) {
       preziImg.onerror = function() {
@@ -671,16 +762,31 @@
     if (preziTag) preziTag.textContent = data.step;
     if (preziTitle) preziTitle.textContent = data.title;
     if (preziDesc) preziDesc.textContent = data.desc;
+    if (preziProgress) preziProgress.textContent = `${activePinId} of 5`;
 
     if (preziCardOverlay) {
       preziCardOverlay.classList.add('is-active');
       preziCardOverlay.setAttribute('aria-hidden', 'false');
+
+      if (scrollToCard && window.matchMedia('(max-width: 768px)').matches) {
+        window.requestAnimationFrame(() => {
+          preziCardOverlay.scrollIntoView({
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+            block: 'end'
+          });
+        });
+      }
     }
   }
 
   function resetPreziView() {
     activePinId = null;
     preziPins.forEach(p => p.classList.remove('is-active'));
+    preziMobileInsights.forEach(button => button.classList.remove('is-active'));
+    if (preziCanvas) {
+      preziCanvas.classList.remove('has-active-pin');
+      delete preziCanvas.dataset.activePin;
+    }
     if (preziCardOverlay) {
       preziCardOverlay.classList.remove('is-active');
       preziCardOverlay.setAttribute('aria-hidden', 'true');
@@ -690,25 +796,19 @@
   preziPins.forEach(pin => {
     const pinId = pin.getAttribute('data-pin');
 
-    // Show card popover when mouse hovers over icon/pin
-    pin.addEventListener('mouseenter', () => {
-      activatePreziPin(pinId);
-    });
-
-    // Also support click for touch screens / direct selection
+    // Open a detail card only on an intentional selection.
     pin.addEventListener('click', (e) => {
       e.stopPropagation();
-      activatePreziPin(pinId);
+      activatePreziPin(pinId, true);
     });
   });
 
-  // Fade out card when user hovers off the interactive map section
-  const infographicSec = document.getElementById('interactive-infographic');
-  if (infographicSec) {
-    infographicSec.addEventListener('mouseleave', () => {
-      resetPreziView();
+  preziMobileInsights.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      activatePreziPin(button.getAttribute('data-prezi-mobile-pin'), true);
     });
-  }
+  });
 
   // Card Close & Reset View Buttons
   if (preziCardClose) {
@@ -898,4 +998,3 @@
     });
   })();
 })();
-

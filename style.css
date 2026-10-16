@@ -2641,6 +2641,15 @@ input:checked+.slider:before {
   letter-spacing: 0.01em;
 }
 
+.prezi-intro {
+  margin: 0.8rem auto 0;
+  max-width: 34rem;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+}
+
 .prezi-viewport-wrapper {
   position: relative;
   width: 100vw;
@@ -2672,6 +2681,7 @@ input:checked+.slider:before {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: filter 0.35s ease;
 }
 
 /* Hotspot Pins & Clickable Area */
@@ -2695,6 +2705,19 @@ input:checked+.slider:before {
 
 .prezi-pin:hover {
   transform: translate(-50%, -50%) scale(1.08);
+}
+
+.prezi-pin:focus-visible {
+  outline: 3px solid #FFD700;
+  outline-offset: 4px;
+}
+
+.prezi-canvas.has-active-pin .prezi-map-img {
+  filter: brightness(0.72) saturate(0.82);
+}
+
+.prezi-canvas.has-active-pin .prezi-pin:not(.is-active) {
+  opacity: 0.52;
 }
 
 .pin-label {
@@ -2733,6 +2756,10 @@ input:checked+.slider:before {
   color: #FFD700;
   box-shadow: 0 0 28px rgba(255, 215, 0, 0.7);
   transform: translateX(-50%) scale(1.05);
+}
+
+.prezi-mobile-insights {
+  display: none;
 }
 
 /* Centered Glassmorphism Prezi Detail Card Overlay */
@@ -2826,6 +2853,20 @@ input:checked+.slider:before {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+}
+
+.prezi-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.prezi-card-progress {
+  flex: 0 0 auto;
+  color: #56605a;
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
 .prezi-step-tag {
@@ -3385,13 +3426,14 @@ input:checked+.slider:before {
    TRUSTED BY & SUPPORTED BY PARTNERS SECTION
    ---------------------------------------------------- */
 .trust-section {
-  padding: 5.5rem 0;
+  padding: 5.5rem 0 0;
   background-color: #FFFFFF !important;
   background: #FFFFFF !important;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   position: relative;
   z-index: 5;
+  overflow: hidden;
 }
 
 .trust-title {
@@ -3502,18 +3544,85 @@ input:checked+.slider:before {
   }
 }
 
-.partner-landscape {
-  margin: 2.75rem 0 0;
+/* Full-Width Framed Panoramic Banner across the whole page */
+.partner-landscape-frame {
+  width: 100%;
+  margin: 4rem 0 3.5rem;
+  position: relative;
+  background: #14281C;
+  border-top: 3px solid var(--color-forest);
+  border-bottom: 3px solid var(--color-forest);
+  box-shadow: 0 16px 36px -6px rgba(24, 60, 41, 0.16);
   overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid rgba(41, 91, 63, 0.14);
-  box-shadow: 0 18px 40px rgba(24, 60, 41, 0.1);
+}
+
+/* Subtle architectural frame bevel highlights */
+.partner-landscape-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.partner-landscape-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.partner-landscape {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  display: block;
+}
+
+/* Photographic gallery vignette shadow inside the frame */
+.partner-landscape::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 12px 24px -6px rgba(0, 0, 0, 0.3), inset 0 -12px 24px -6px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .partner-landscape img {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+@media (max-width: 992px) {
+  .partner-landscape-frame {
+    margin: 3rem 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .partner-landscape img {
+    min-height: 160px;
+  }
 }
 
 /* ----------------------------------------------------
@@ -3936,23 +4045,106 @@ button {
     display: block !important;
   }
 
-  .prezi-pin {
-    width: 55px !important;
-    height: 55px !important;
+  .prezi-intro {
+    margin: 0.65rem auto 1.25rem;
+    max-width: 31rem;
+    padding: 0 1.25rem;
+    font-size: 0.9rem;
   }
 
-  .pin-label {
-    font-size: 0.58rem !important;
-    padding: 0.18rem 0.45rem !important;
-    top: 34px !important;
-    border-radius: 12px !important;
+  .prezi-pin {
+    display: flex !important;
+    width: 48px !important;
+    height: 48px !important;
+    z-index: 20;
+  }
+
+  .prezi-pin::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 2px solid rgba(255, 255, 255, 0.82);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(13, 22, 18, 0.35), 0 2px 10px rgba(0, 0, 0, 0.38);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .prezi-pin.is-active::before {
+    border-color: #FFD700;
+    box-shadow: 0 0 0 5px rgba(255, 215, 0, 0.26), 0 0 20px rgba(255, 215, 0, 0.8);
+    transform: scale(1.12);
+  }
+
+  .prezi-pin .pin-label {
+    display: none !important;
+  }
+
+  .prezi-canvas.has-active-pin .prezi-map-img {
+    filter: brightness(0.9) saturate(0.92);
+  }
+
+  .prezi-mobile-insights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    padding: 1rem;
+  }
+
+  .prezi-mobile-insight {
+    min-height: 52px;
+    padding: 0.7rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    font-family: var(--font-headings);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .prezi-mobile-insight:active {
+    transform: scale(0.98);
+  }
+
+  .prezi-mobile-insight.is-active {
+    background: var(--color-forest);
+    border-color: var(--color-vibrant);
+  }
+
+  .prezi-card-overlay {
+    position: static !important;
+    display: none !important;
+    padding: 0 1rem 1.5rem !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .prezi-card-overlay.is-active {
+    display: block !important;
   }
 
   .prezi-card {
-    width: 94vw !important;
-    max-height: 80vh !important;
-    overflow-y: auto;
-    border-radius: 18px !important;
+    width: 100% !important;
+    max-width: 36rem !important;
+    max-height: none !important;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px !important;
+    transform: none !important;
+  }
+
+  .prezi-card-close {
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .prezi-card {
+    width: 100% !important;
   }
 
   .prezi-card-media {
@@ -3979,8 +4171,19 @@ button {
   }
 
   .prezi-card-nav button {
-    font-size: 0.72rem !important;
-    padding: 0.3rem 0.55rem !important;
+    min-height: 40px;
+    font-size: 0.78rem !important;
+    padding: 0.45rem 0.65rem !important;
+  }
+
+  #prezi-skip-map {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .prezi-mobile-insights {
+    grid-template-columns: 1fr;
   }
 }
 

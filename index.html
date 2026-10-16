@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Big Data in a Box | Ag-Tech Data & Certification Solutions</title>
-  <meta name="description" content="Empowering traditional and organic farmers with stress-free compliance, voice-to-text logging, and document scanning. Try SPIDER Ag free for 14 days.">
+  <meta name="description" content="One farm record, kept your way. SPIDER Ag turns voice notes, photos, and paper logs into records you review, ready for reporting and organic certification.">
   
   <link rel="icon" type="image/png" href="/assets/officialbdiblogo.png">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -13,8 +13,10 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="showcase.css">
+  <link rel="stylesheet" href="home-media.css">
+  <link rel="preload" as="image" href="/assets/home/hero-farm-1019.webp" imagesrcset="/assets/home/hero-farm-640.webp 640w, /assets/home/hero-farm-1019.webp 1019w" imagesizes="100vw">
 </head>
-<body>
+<body class="home-page">
 
   <!-- Background topography lines applied globally to the page -->
   <div class="topo-bg"></div>
@@ -79,6 +81,9 @@
        ---------------------------------------------------- -->
   <main>
     <section class="hero" id="top">
+      <div class="hero-backdrop" aria-hidden="true">
+        <img src="/assets/home/hero-farm-1019.webp" srcset="/assets/home/hero-farm-640.webp 640w, /assets/home/hero-farm-1019.webp 1019w" sizes="100vw" alt="" width="1019" height="573" fetchpriority="high" decoding="async">
+      </div>
       <div class="container grid-2">
         <div class="hero-content reveal">
           <h1 class="hero-title">
@@ -119,10 +124,10 @@
 
         <div class="hero-image-wrapper reveal" style="transition-delay: 0.15s;" id="hero-video-container">
           <div class="hero-image-inner hero-video-wrapper">
-            <video muted playsinline autoplay loop preload="auto" disablepictureinpicture aria-hidden="true" id="hero-video">
-              <source src="/assets/Hero Graphic/SPIDERagHeroAnimation.mp4" type="video/mp4">
-            </video>
+            <img src="/assets/home/hero-poster.webp" alt="" width="1080" height="1080" aria-hidden="true" id="hero-video-fallback" fetchpriority="high">
+            <video muted playsinline loop preload="none" disablepictureinpicture aria-hidden="true" tabindex="-1" id="hero-video" data-src="/assets/home/hero-animation.webm" data-fallback="/assets/home/hero-animation.webp" width="1080" height="1080"></video>
           </div>
+          <button type="button" class="hero-motion-toggle" id="hero-motion-toggle" aria-controls="hero-video" aria-label="Pause hero animation" hidden>Pause animation</button>
         </div>
       </div>
 
@@ -148,8 +153,8 @@
         <div class="gallery-intro reveal text-center" style="max-width: 800px; margin: 0 auto 2.5rem; text-align: center !important;">
           <img src="/assets/officialspideraglogo.png" alt="SPIDER Ag Logo" class="product-logo" style="height: 3.5rem; margin-bottom: 1.25rem;">
           <span class="eyebrow">Proprietary Software</span>
-          <h2>SPIDER Ag: Your Field Companion</h2>
-          <p class="lead">SPIDER Ag is our proprietary AI-powered data management application designed specifically to gather field-level data to create reports, certification audits, compliance tasks, and build operational insights.</p>
+          <h2>SPIDER Ag: One Farm Record</h2>
+          <p class="lead">One farm record, kept the way you already work and trusted by the people who need to see it. SPIDER Ag turns voice notes, photos, and paper logs into usable records for small and mid-sized row crop growers.</p>
           <div style="margin-top: 1.5rem;">
             <a href="spider-ag.html" class="btn btn-primary">
               Explore SPIDER Ag Features
@@ -239,7 +244,8 @@
     <section class="infographic-section-fullscreen" id="interactive-infographic">
       <!-- Floating Full-Screen Title Header -->
       <div class="prezi-floating-header">
-        <h2 class="prezi-main-title">SPIDER Ag Builds a Comprehensive View of Your Farm</h2>
+        <h2 class="prezi-main-title">Your Farm Records, Connected</h2>
+        <p class="prezi-intro">Explore how field notes, equipment data, and farm records come together for clearer decisions.</p>
       </div>
 
       <div class="prezi-viewport-wrapper" id="prezi-viewport">
@@ -272,33 +278,39 @@
           </button>
         </div>
 
-        <!-- Prezi Detail Glassmorphism Card Overlay -->
-        <div class="prezi-card-overlay" id="prezi-card-overlay" aria-hidden="true">
-          <div class="prezi-card" id="prezi-card">
-            <button class="prezi-card-close" id="prezi-card-close" aria-label="Reset View">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
+      </div>
 
-            <div class="prezi-card-media">
-              <img id="prezi-card-img" src="" alt="Infographic detail view">
-            </div>
+      <div class="prezi-mobile-insights" aria-label="Explore connected farm insights">
+        <button type="button" class="prezi-mobile-insight" data-prezi-mobile-pin="1" aria-controls="prezi-card">Field net earnings</button>
+        <button type="button" class="prezi-mobile-insight" data-prezi-mobile-pin="2" aria-controls="prezi-card">Connected systems</button>
+        <button type="button" class="prezi-mobile-insight" data-prezi-mobile-pin="3" aria-controls="prezi-card">Field diary</button>
+        <button type="button" class="prezi-mobile-insight" data-prezi-mobile-pin="4" aria-controls="prezi-card">Field conditions</button>
+        <button type="button" class="prezi-mobile-insight" data-prezi-mobile-pin="5" aria-controls="prezi-card">Better decisions</button>
+      </div>
 
-            <div class="prezi-card-body">
+      <!-- Detail card: overlay on desktop, inline panel on mobile -->
+      <div class="prezi-card-overlay" id="prezi-card-overlay" aria-hidden="true">
+        <div class="prezi-card" id="prezi-card" role="region" aria-live="polite" aria-label="Farm insight detail">
+          <button type="button" class="prezi-card-close" id="prezi-card-close" aria-label="Close insight detail">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+
+          <div class="prezi-card-media">
+            <img id="prezi-card-img" src="" alt="Infographic detail view">
+          </div>
+
+          <div class="prezi-card-body">
+            <div class="prezi-card-meta">
               <div class="prezi-step-tag" id="prezi-step-tag">Field Net Profitability</div>
-              <h3 id="prezi-card-title">Know What Each Field Truly Earns</h3>
-              <p id="prezi-card-desc">Combine crop performance with labor, rent, depreciation, and financial logs to calculate real profitability.</p>
+              <span class="prezi-card-progress" id="prezi-card-progress">1 of 5</span>
+            </div>
+            <h3 id="prezi-card-title">Know What Each Field Truly Earns</h3>
+            <p id="prezi-card-desc">Keep crop performance, inputs, labor, and financial records linked to each field, so you can trace costs and understand what it earns.</p>
 
-              <div class="prezi-card-nav">
-                <button class="btn btn-secondary btn-sm" id="prezi-prev-pin">
-                  &larr; Prev Node
-                </button>
-                <button class="btn btn-primary btn-sm" id="prezi-next-pin">
-                  Next Node &rarr;
-                </button>
-                <button class="btn btn-secondary btn-sm" id="prezi-skip-map" style="margin-left: auto;">
-                  Skip Map &rarr;
-                </button>
-              </div>
+            <div class="prezi-card-nav">
+              <button type="button" class="btn btn-secondary btn-sm" id="prezi-prev-pin">&larr; Previous</button>
+              <button type="button" class="btn btn-primary btn-sm" id="prezi-next-pin">Next insight &rarr;</button>
+              <button type="button" class="btn btn-secondary btn-sm" id="prezi-skip-map" style="margin-left: auto;">Continue &rarr;</button>
             </div>
           </div>
         </div>
@@ -313,8 +325,8 @@
       <div class="container">
         <div class="partner-cta-box reveal text-center">
           <span class="eyebrow" style="color: var(--color-gold); display: block; margin-bottom: 1rem;">Grow your Farm!</span>
-          <h2>Let us help you extract value from all your data.</h2>
-          <p class="partner-cta-subtext">You know the “what”, “how”, “when”, and “where” of your data. Get to know the “Why.”</p>
+          <h2>Give paperwork hours back to your farm.</h2>
+          <p class="partner-cta-subtext">Spend less time hunting for receipts, retyping field notes, and reconstructing records before an audit.</p>
           <div class="partner-cta-actions">
             <a href="pricing-sign-up.html" class="btn btn-primary btn-partner-gold">
               Try SPIDER Ag Free
@@ -346,7 +358,7 @@
       <div class="container">
         <div class="gallery-intro reveal text-center" style="max-width: 800px; margin: 0 auto 2.5rem; text-align: center !important;">
           <h2 style="text-align: center !important; margin: 0 auto;">Trusted by Real Farmers</h2>
-          <p class="lead" style="margin-top: 0.75rem; color: var(--color-text-muted); font-size: 1.05rem;">Qualities that matter: accuracy, traceability, and privacy.</p>
+          <p class="lead" style="margin-top: 0.75rem; color: var(--color-text-muted); font-size: 1.05rem;">Traceable records, reviewed by you and ready for the people who need them.</p>
         </div>
 
         <div class="coverflow-stage-wrapper reveal">
@@ -361,11 +373,11 @@
             </div>
             <!-- Slide 2 -->
             <div class="gallery-slide">
-              <img src="/assets/Gallery/11062b_2a737d5910f24c8a867b22f133a1dbfb~mv2.jpg" alt="Vibrant rows of cultivated organic lettuce, spinach, and leafy green crops in farm beds" loading="lazy">
+              <img src="/assets/home/corn-rows-1200.webp" srcset="/assets/home/corn-rows-640.webp 640w, /assets/home/corn-rows-1200.webp 1200w, /assets/home/corn-rows-1600.webp 1600w" sizes="(max-width: 768px) 86vw, 800px" alt="Green corn plants lining a row through a working field" width="1600" height="1200" loading="lazy" decoding="async">
             </div>
             <!-- Slide 3 -->
             <div class="gallery-slide">
-              <img src="/assets/Gallery/11062b_7d099b1ed8d547c6b05ee765f19742d4~mv2.jpg" alt="Farmer holding a wooden crate packed with fresh organic yellow tomatoes and green peppers" loading="lazy">
+              <img src="/assets/home/harvest-1200.webp" srcset="/assets/home/harvest-640.webp 640w, /assets/home/harvest-1200.webp 1200w, /assets/home/harvest-1600.webp 1600w" sizes="(max-width: 768px) 86vw, 800px" alt="A red combine harvesting a field beside autumn trees" width="1600" height="1067" loading="lazy" decoding="async">
             </div>
             <!-- Slide 4 -->
             <div class="gallery-slide">
@@ -441,8 +453,8 @@
       <div class="container">
         <div class="compare-intro reveal">
           <span class="eyebrow compare-eyebrow-accent">THE BENEFITS</span>
-          <h2>Move fast and grow more.</h2>
-          <p class="lead">Retire your Notebook, Information at the speed of your thoughts—all your data at your fingertips.</p>
+          <h2>Keep your habits. Save your time.</h2>
+          <p class="lead">Keep speaking, snapping photos, and using paper logs. SPIDER Ag turns them into organized records without the extra data entry.</p>
         </div>
 
         <div class="compare-matrix-wrapper reveal">
@@ -463,14 +475,14 @@
                   <span class="compare-feature-label">Data Capture</span>
                   <span class="compare-value">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2.5" style="display:inline-block; vertical-align:-3px; margin-right:0.4rem;" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    Muddy handwriting, lost receipts, coffee stains
+                    Handwritten logs and receipts to find and retype
                   </span>
                 </td>
                 <td class="compare-cell-bdib">
                   <span class="compare-feature-label">Data Capture</span>
                   <span class="compare-value">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" style="display:inline-block; vertical-align:-3px; margin-right:0.4rem;" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Voice dictation on the tractor &amp; instant document scanning
+                    Voice-to-task &amp; paper logs to searchable tables
                   </span>
                 </td>
               </tr>
@@ -487,7 +499,7 @@
                   <span class="compare-feature-label">Field Connectivity</span>
                   <span class="compare-value">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" style="display:inline-block; vertical-align:-3px; margin-right:0.4rem;" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    100% offline database; captures logs in real time &amp; syncs later
+                    Capture voice notes &amp; photos offline; sync when connected
                   </span>
                 </td>
               </tr>
@@ -514,14 +526,14 @@
                   <span class="compare-feature-label">FSA &amp; Organic Audits</span>
                   <span class="compare-value">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2.5" style="display:inline-block; vertical-align:-3px; margin-right:0.4rem;" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    Days of searching boxes of records and typing manually
+                    Reconstructing records from notes and shoebox receipts
                   </span>
                 </td>
                 <td class="compare-cell-bdib">
                   <span class="compare-feature-label">FSA &amp; Organic Audits</span>
                   <span class="compare-value">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" style="display:inline-block; vertical-align:-3px; margin-right:0.4rem;" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Clean audit trails generated automatically from logs
+                    Dated records assembled into audit-ready NOP reports
                   </span>
                 </td>
               </tr>
@@ -538,7 +550,7 @@
                   <span class="compare-feature-label">Actionable Insights</span>
                   <span class="compare-value">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" style="display:inline-block; vertical-align:-3px; margin-right:0.4rem;" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Field-by-field yield comparison and compliance forecasts
+                    Records organized by farm, field, plot &amp; subplot
                   </span>
                 </td>
               </tr>
@@ -555,6 +567,9 @@
          SPIDER AG MOBILE APP & FIELD CONNECTIVITY SECTION
          ---------------------------------------------------- -->
     <section class="mobile-app-connectivity-section" id="mobile-app">
+      <picture class="mobile-field-backdrop" aria-hidden="true">
+        <img src="/assets/home/tractor-field-1200.webp" srcset="/assets/home/tractor-field-640.webp 640w, /assets/home/tractor-field-1200.webp 1200w, /assets/home/tractor-field-1920.webp 1920w" sizes="100vw" alt="" width="1920" height="1280" loading="lazy" decoding="async">
+      </picture>
       <div class="container">
         <div class="mobile-app-grid">
           
@@ -571,9 +586,9 @@
           <!-- Text Column (RIGHT SIDE) -->
           <div class="mobile-app-text-col reveal-right">
             <span class="eyebrow">Mobile &amp; Field Connectivity</span>
-            <h2>SPIDER Ag Mobile App:<br>Enhance In-Field Connectivity</h2>
+            <h2>SPIDER Ag Mobile App:<br>Keep Working Beyond the Signal</h2>
             <p class="lead" style="margin-bottom: 2.25rem;">
-              Take SPIDER Ag into the cab and rows with our dedicated mobile app. Built specifically for low-signal rural environments, hands-free dictation, and fast photo receipt logging.
+              Record what happened while it is still fresh. Capture voice notes, photos, and receipts from the cab or field, even without cell service. Your records sync when you reconnect.
             </p>
 
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -635,10 +650,14 @@
               <img src="/assets/Partners/garland_logo.png" alt="Mustard Seed Community Farm Logo" class="partner-logo-img" loading="lazy">
             </a>
           </div>
-          <figure class="partner-landscape">
-            <img src="/assets/farm-landscape-collage.png" alt="A collage of working farmland, crops, barns, and rural landscapes" loading="lazy">
-          </figure>
         </div>
+      </div>
+
+      <!-- Original farm landscape collage banner. -->
+      <div class="partner-landscape-frame reveal">
+        <figure class="partner-landscape">
+          <img src="/assets/farm-landscape-collage.png" alt="A collage of working farmland, crops, barns, and rural landscapes" width="2508" height="627" loading="lazy" decoding="async">
+        </figure>
       </div>
     </section>
 
@@ -649,8 +668,8 @@
       <div class="container">
         <div class="onboarding-intro reveal">
           <span class="eyebrow">Streamlined Start</span>
-          <h2>Ease of Onboarding</h2>
-          <p class="lead">Transitioning to digital farm data is simple and quick. Get set up in three simple steps.</p>
+          <h2>Start With the Way You Already Work</h2>
+          <p class="lead">Get organized, reportable farm records without a dedicated data team or a second job. Start in three simple steps.</p>
         </div>
 
         <div class="onboarding-flow stagger-group" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
@@ -670,8 +689,8 @@
                 <path d="M16 18h.01"></path>
               </svg>
             </div>
-            <h3 style="margin-bottom: 1rem;">Activate Your Trial</h3>
-            <p style="font-size: 0.95rem;">Launch your 14-day free trial in under 60 seconds. No credit card required.</p>
+            <h3 style="margin-bottom: 1rem;">Set Up Your Farm</h3>
+            <p style="font-size: 0.95rem;">Start your free trial and organize your farm, fields, plots, and subplots the way you know them. No credit card required.</p>
           </div>
 
           <!-- Step 2 -->
@@ -686,7 +705,7 @@
               </svg>
             </div>
             <h3 style="margin-bottom: 1rem;">Speak and Snap</h3>
-            <p style="font-size: 0.95rem;">Dictate operations on the go or snap photos of invoices. BDiB auto-formats them.</p>
+            <p style="font-size: 0.95rem;">Say what happened to create a dated task, or photograph a handwritten log to make a searchable table. Review before saving.</p>
           </div>
 
           <!-- Step 3 -->
@@ -698,8 +717,8 @@
                 <polyline points="9 15 11 17 15 13"></polyline>
               </svg>
             </div>
-            <h3 style="margin-bottom: 1rem;">Fill your Forms and Report</h3>
-            <p style="font-size: 0.95rem;">Export clean PDF reports for USDA Organic and FSA audits instantly.</p>
+            <h3 style="margin-bottom: 1rem;">Be Ready to Report</h3>
+            <p style="font-size: 0.95rem;">Your reviewed records come together in an audit-ready report for your NOP certification review, without the last-minute reconstruction.</p>
           </div>
         </div>
       </div>
@@ -712,60 +731,60 @@
       <div class="container">
         <div class="section-intro reveal text-center" style="max-width: 800px; margin: 0 auto 3.5rem;">
           <span class="eyebrow">The Daily Reality</span>
-          <h2>The Hidden Costs &amp; Challenges of Farming</h2>
-          <p class="lead">Standard displays miss the full picture. Hover or tap each card to reveal the hidden operational gaps costing your farm today.</p>
+          <h2>When Record-Keeping Becomes a Second Job</h2>
+          <p class="lead">Lost receipts, scattered notes, and audit preparation take hours away from your farm. Explore the everyday gaps SPIDER Ag helps close.</p>
         </div>
 
         <div class="interactive-grid grid-2 stagger-group">
           <!-- Item 1 -->
           <div class="interactive-card painpoint-card reveal" tabindex="0">
-            <div class="card-badge">Cost &amp; Profitability</div>
-            <h3 class="card-title">The Hidden Costs of Farming</h3>
+            <div class="card-badge">Paperwork &amp; Time</div>
+            <h3 class="card-title">The Cost of Chasing Paperwork</h3>
             <div class="card-reveal-teaser">
               <span class="reveal-hint">Hover to reveal insight</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="teaser-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="card-reveal-content">
-              <p>High-end machine displays track seed and fuel, but they miss labor, rent, and depreciation. Stop relying on estimates and start tracking your actual net profitability.</p>
+              <p>Hunting for receipts, retyping field notes, and piecing together an audit trail costs hours. Capture records as work happens and get that time back.</p>
             </div>
           </div>
 
           <!-- Item 2 -->
           <div class="interactive-card painpoint-card reveal" tabindex="0">
             <div class="card-badge">Data Fragmentation</div>
-            <h3 class="card-title">The Interoperability Bottleneck</h3>
+            <h3 class="card-title">Records Scattered Across Systems</h3>
             <div class="card-reveal-teaser">
               <span class="reveal-hint">Hover to reveal insight</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="teaser-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="card-reveal-content">
-              <p>Planter data, spray logs, and financial software shouldn't live in isolated silos. We solve the fragmentation problem so your systems finally talk to each other.</p>
+              <p>Bring paper logs, spray records, and equipment data together by farm, field, plot, and subplot. Keep the way you already organize your work.</p>
             </div>
           </div>
 
           <!-- Item 3 -->
           <div class="interactive-card painpoint-card reveal" tabindex="0">
             <div class="card-badge">Human Intelligence</div>
-            <h3 class="card-title">Missing the "Why"</h3>
+            <h3 class="card-title">Field Notes Left Behind</h3>
             <div class="card-reveal-teaser">
               <span class="reveal-hint">Hover to reveal insight</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="teaser-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="card-reveal-content">
-              <p>Machine sensors can tell you a planter slowed down, but they can't tell you why. We help you capture the human insights and field-level decisions that standard displays miss.</p>
+              <p>Say why a job changed or an application was delayed. SPIDER Ag turns your field notes into a structured, dated task for your review.</p>
             </div>
           </div>
 
           <!-- Item 4 -->
           <div class="interactive-card painpoint-card reveal" tabindex="0">
-            <div class="card-badge">Field Truth</div>
-            <h3 class="card-title">Environmental Blind Spots</h3>
+            <div class="card-badge">Field Connectivity</div>
+            <h3 class="card-title">When Cell Service Drops</h3>
             <div class="card-reveal-teaser">
               <span class="reveal-hint">Hover to reveal insight</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="teaser-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="card-reveal-content">
-              <p>Interpolated weather from distant stations isn't good enough. You need the 'ground truth' of hyper-local weather and high-density soil health data.</p>
+              <p>Capture voice notes and photos beyond cell coverage. Records stay saved and sync when you reconnect, so details never have to wait for the office.</p>
             </div>
           </div>
         </div>
@@ -779,60 +798,60 @@
       <div class="container">
         <div class="section-intro reveal text-center" style="max-width: 800px; margin: 0 auto 3.5rem;">
           <span class="eyebrow">The Solution</span>
-          <h2>Empower Your Operation with Actionable Intelligence</h2>
-          <p class="lead">Hover or tap each value proposition to see how BDiB Solutions transforms raw field activity into clear financial ROI.</p>
+          <h2>Farm Records That Work the Way You Do</h2>
+          <p class="lead">Built and priced for small and mid-sized row crop operations, with the organized records larger farms rely on. Your practices fit right in.</p>
         </div>
 
         <div class="interactive-grid grid-2 stagger-group">
           <!-- Item 1 -->
           <div class="interactive-card value-card reveal" tabindex="0">
-            <div class="card-badge value-badge">Financial ROI</div>
-            <h3 class="card-title">Unified Reporting</h3>
+            <div class="card-badge value-badge">Traceability</div>
+            <h3 class="card-title">Audit-Ready Reporting</h3>
             <div class="card-reveal-teaser">
               <span class="reveal-hint">Hover to reveal solution</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="teaser-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="card-reveal-content">
-              <p>Generate simple, unified reports that reveal the total ROI for a specific crop variety in a specific field, including all inputs and labor.</p>
+              <p>Your dated field records are already assembled into an audit-ready report when your NOP certification review comes around.</p>
             </div>
           </div>
 
           <!-- Item 2 -->
           <div class="interactive-card value-card reveal" tabindex="0">
-            <div class="card-badge value-badge">API Integration</div>
-            <h3 class="card-title">Custom Data Integration</h3>
+            <div class="card-badge value-badge">Connected Records</div>
+            <h3 class="card-title">Keep Your Systems Connected</h3>
             <div class="card-reveal-teaser">
               <span class="reveal-hint">Hover to reveal solution</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="teaser-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="card-reveal-content">
-              <p>We leverage third-party APIs and custom scripts to pull raw data from platforms like Operations Center and AgFiniti into a single, cross-analyzed database.</p>
+              <p>Bring equipment data from Operations Center and AgFiniti together with spray logs and financial records, keeping the tools you already use.</p>
             </div>
           </div>
 
           <!-- Item 3 -->
           <div class="interactive-card value-card reveal" tabindex="0">
-            <div class="card-badge value-badge">Digital Standardization</div>
-            <h3 class="card-title">Digitizing the Field Diary</h3>
+            <div class="card-badge value-badge">Less Data Entry</div>
+            <h3 class="card-title">Voice Notes &amp; Paper Logs</h3>
             <div class="card-reveal-teaser">
               <span class="reveal-hint">Hover to reveal solution</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="teaser-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="card-reveal-content">
-              <p>We help you standardize manual inputs, turning qualitative operator notes into valuable, actionable data to help analyze field failures and anomalies.</p>
+              <p>Turn voice notes into dated tasks and handwritten logs into searchable tables. Review every AI-generated entry before it is final.</p>
             </div>
           </div>
 
           <!-- Item 4 -->
           <div class="interactive-card value-card reveal" tabindex="0">
-            <div class="card-badge value-badge">IoT &amp; Hardware</div>
-            <h3 class="card-title">Deploying Ground Truth Sensors</h3>
+            <div class="card-badge value-badge">Field Conditions</div>
+            <h3 class="card-title">Know Your Field Conditions</h3>
             <div class="card-reveal-teaser">
               <span class="reveal-hint">Hover to reveal solution</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="teaser-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="card-reveal-content">
-              <p>Integrate low-cost, IoT-based soil moisture probes and localized weather stations directly into your homescreen to see what machine sensors alone cannot detect.</p>
+              <p>Keep soil moisture and local weather readings alongside field observations for a clearer record of the conditions on your land.</p>
             </div>
           </div>
         </div>
@@ -844,8 +863,11 @@
          ---------------------------------------------------- -->
     <section class="story-section" id="story">
       <div class="container story-wrapper">
-        <div class="story-text reveal" style="margin: 0 auto; text-align: center; max-width: 800px;">
-          <span class="eyebrow" style="display: block; margin: 0 auto 1rem;">Ag-Tech Roots</span>
+        <figure class="story-field-photo reveal">
+          <img src="/assets/home/soybean-rows-800.webp" srcset="/assets/home/soybean-rows-480.webp 480w, /assets/home/soybean-rows-800.webp 800w, /assets/home/soybean-rows-1200.webp 1200w" sizes="(max-width: 768px) calc(100vw - 48px), (max-width: 1024px) 36vw, 440px" alt="Sunlight falling on soybean leaves and the soil between farm rows" width="800" height="1200" loading="lazy" decoding="async">
+        </figure>
+        <div class="story-text reveal">
+          <span class="eyebrow" style="display: block; margin-bottom: 1rem;">Ag-Tech Roots</span>
           <h2>Our Story</h2>
           <p>Big Data in a Box (BDiB) was founded on a simple insight: small and medium-sized organic farmers spend too much valuable time on paperwork. The inspiration occurred when Dr. Sree Nilakanta listened to an NPR broadcast highlighting the frustrations of organic growers undergoing seed-to-sale certification audits.</p>
           
@@ -916,7 +938,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                <p>Yes! You can use SPIDER Ag offline to record voice notes, capture photos, and rename recordings. The app saves your data offline and automatically syncs it once you're back connected.</p>
+                <p>Yes. SPIDER Ag is designed to keep capturing records where cell service does not reach. Record voice notes, take photos, and rename recordings offline. Your data stays saved on your device and syncs when you reconnect.</p>
               </div>
             </div>
           </div>
@@ -927,7 +949,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                <p>You can upload documents (PDF, Word), photos, and voice notes. SPIDER Ag will automatically transcribe scanned copies of text, describe pictures, convert voice recordings to text, and extract important information to save you manual entry time.</p>
+                <p>You can upload PDF and Word documents, photos, and voice notes. Say what happened in the field to create a structured, dated task, or snap a photo of a handwritten log to create a searchable table. Review the extracted details without retyping the original.</p>
               </div>
             </div>
           </div>
@@ -938,7 +960,7 @@
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                <p>SPIDER Ag offers several methods to generate reports, including using ready-made NOP (National Organic Program) forms that follow USDA guidelines. You can generate reports from a single file or multiple files, as long as they are linked to a specific land area.</p>
+                <p>SPIDER Ag assembles your reviewed, dated records into an audit-ready report using ready-made National Organic Program (NOP) forms. Records stay linked to your farm, field, plot, or subplot, so the information is already organized when your certification review comes around.</p>
               </div>
             </div>
           </div>
@@ -955,12 +977,12 @@
           </div>
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
-              <span>What should I do if the transcription is missing information?</span>
+              <span>Do I stay in control of AI-generated records?</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="faq-chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner">
-                <p>It's always best practice to review SPIDER Ag's output. If information is missing from a transcription, you can easily edit it manually within the app. For reports, you can ask SPIDER Ag to regenerate the report or add the missing details directly before confirming and saving.</p>
+                <p>Yes. SPIDER Ag checks its AI-generated entries with you at every step, and each entry is reviewed before it is final. You can correct a transcription, add missing details, or regenerate a report before confirming and saving. You remain the final word on your yield, input, and farm records.</p>
               </div>
             </div>
           </div>
@@ -975,8 +997,8 @@
       <div class="topo-bg"></div>
       <div class="container">
         <div class="newsletter-content reveal">
-          <h2>Grow Smarter. Start Today.</h2>
-          <p>Claim your 14-day free trial of SPIDER Ag with absolutely zero commitment. Enter your email to begin setting up your farm profile or to subscribe to our ag-tech developments.</p>
+          <h2>More Field Time. Less Paperwork.</h2>
+          <p>Try SPIDER Ag free for 14 days and turn the notes you already keep into records you can use. Enter your email to start your farm profile or subscribe to our updates.</p>
           
           <form class="newsletter-form" id="newsletter-email-form">
             <input type="email" class="newsletter-input" id="newsletter-email-input" placeholder="Enter your email address" required aria-label="Email address for subscription">
@@ -1008,7 +1030,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="/assets/officialbdiblogo.png" alt="BDIB Solutions Logo" class="footer-logo">
-          <p>Providing intelligent, stress-free record-keeping and data compliance for traditional and organic farmers.</p>
+          <p>One farm record, kept your way and ready for the people who need it.</p>
           <p>2625 North Loop Drive, Suite 2622<br>Ames, Iowa 50010</p>
         </div>
         
