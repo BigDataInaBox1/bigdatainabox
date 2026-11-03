@@ -1,6 +1,6 @@
 /**
  * main.js — Core site utilities for BDIB Solutions
- * Hamburger navigation, scroll reveal animations, newsletter form
+ * Hamburger navigation, scroll reveal animations, contact modal
  */
 (function () {
   'use strict';
@@ -156,19 +156,6 @@
     );
 
     revealEls.forEach((el) => revealIO.observe(el));
-  }
-
-  /* ---- Newsletter Form Handler ---- */
-  const nlForm  = document.getElementById('newsletter-email-form');
-  const nlToast = document.getElementById('newsletter-success-toast');
-
-  if (nlForm && nlToast) {
-    nlForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      nlToast.style.display = 'block';
-      nlForm.reset();
-      setTimeout(() => { nlToast.style.display = 'none'; }, 6000);
-    });
   }
 
   /* ---- Active Navigation Highlighting ---- */
@@ -697,37 +684,37 @@
 
   const infographicData = {
     1: {
-      step: 'Field Net Profitability',
-      title: 'Know What Each Field Truly Earns',
-      desc: 'Keep crop performance, inputs, labor, and financial records linked to each field, so you can trace costs and understand what it earns.',
+      step: 'Field Records',
+      title: 'Trace Records Back to Each Field',
+      desc: 'Keep dated tasks, input records, and receipts linked to the field they belong to, so you can find the record behind each activity.',
       img: '/assets/infographic/pin1_earnings.png',
       origin: { x: 46.05, y: 42.30 }
     },
     2: {
-      step: 'Connected Systems',
-      title: 'Connect Your Farm Systems',
-      desc: 'Bring equipment data, spray logs, and financial records together around your farm, fields, plots, and subplots, keeping the tools you already use.',
+      step: 'Farm Organization',
+      title: 'Built Around Your Farm',
+      desc: 'Organize notes, photos, and paper logs by farm, field, plot, and subplot, using the names and boundaries you already know.',
       img: '/assets/infographic/pin2_connected.png',
       origin: { x: 84.03, y: 71.73 }
     },
     3: {
       step: 'Field Diary & Story',
       title: 'Preserve the Story Behind the Numbers',
-      desc: 'Say what happened in the field and turn it into a structured, dated task. Review the entry before it is final and keep the context behind the numbers.',
+      desc: 'Say what happened in the field and turn it into a dated task. Review and confirm the details, keeping the context behind the record.',
       img: '/assets/infographic/pin3_story.png',
       origin: { x: 68.18, y: 24.20 }
     },
     4: {
-      step: 'Real Field Conditions',
-      title: 'Measure Real Field Conditions',
-      desc: 'Keep local weather and soil sensor readings alongside your field observations, so each record reflects the conditions on your land.',
+      step: 'Field Observations',
+      title: 'Record What You See in the Field',
+      desc: 'Record field conditions in a voice note or photo, even offline. Sync when connected, then review and confirm the captured details.',
       img: '/assets/infographic/pin4_truth.png',
       origin: { x: 17.00, y: 17.60 }
     },
     5: {
-      step: 'Decision Intelligence',
-      title: 'Make Better Decisions Faster',
-      desc: 'Use one organized farm record for clearer decisions and audit-ready reports, without hunting for receipts or rebuilding the story before a review.',
+      step: 'Audit Preparation',
+      title: 'Prepare Audit-Ready Records',
+      desc: 'Find records linked to your land, select a NOP template, and generate a report. Review and confirm the details before your certification review.',
       img: '/assets/infographic/pin5_decisions.png',
       origin: { x: 20.00, y: 75.98 }
     }
@@ -911,7 +898,7 @@
           <div class="demo-modal-header">
             <span class="demo-modal-eyebrow">BDIB Solutions</span>
             <h3 id="demo-modal-title" class="demo-modal-title">Contact Us</h3>
-            <p class="demo-modal-subtitle">Send us a message and our team will get in touch with you shortly.</p>
+            <p class="demo-modal-subtitle">Tell us how you keep farm records today. Ask about voice and photo capture, organizing your farm, or preparing for an audit.</p>
           </div>
           <div class="demo-modal-body">
             <div class="demo-modal-loader" id="demo-modal-loader">

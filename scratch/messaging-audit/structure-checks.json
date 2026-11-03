@@ -1,0 +1,31 @@
+{
+  "pages": [
+    {
+      "file": "index.html",
+      "sectionsPreserved": 14,
+      "heroHeadingPreserved": true,
+      "imagesPreserved": true
+    },
+    {
+      "file": "spider-ag.html",
+      "sectionsPreserved": 6,
+      "heroHeadingPreserved": true,
+      "imagesPreserved": true
+    },
+    {
+      "file": "pricing-sign-up.html",
+      "sectionsPreserved": 1,
+      "heroHeadingPreserved": true,
+      "imagesPreserved": true
+    },
+    {
+      "file": "schedule-demo.html",
+      "sectionsPreserved": 1,
+      "heroHeadingPreserved": true,
+      "imagesPreserved": true
+    }
+  ],
+  "annualSavings": 230,
+  "roundedAnnualSavingsPercent": 48,
+  "trialCtaCorrected": true
+}

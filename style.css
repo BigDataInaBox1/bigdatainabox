@@ -680,6 +680,43 @@ section {
   align-items: center;
 }
 
+.spider-hero {
+  isolation: isolate;
+}
+
+.spider-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 68%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 68%, transparent);
+}
+
+.spider-hero-backdrop img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 42% 55%;
+  opacity: 0.65;
+}
+
+.spider-hero-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 45%, rgb(248 248 245 / 88%) 0%, rgb(248 248 245 / 76%) 43%, rgb(248 248 245 / 35%) 100%);
+}
+
+@media (max-width: 768px) {
+  .spider-hero-backdrop img {
+    object-position: 35% center;
+    opacity: 0.5;
+  }
+}
+
 .hero-content {
   z-index: 2;
   max-width: 720px;
@@ -1678,6 +1715,41 @@ section {
 /* ----------------------------------------------------
    PRICING TOGGLE & SINGLE CARD STYLES
    ---------------------------------------------------- */
+.pricing-hero > .container {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .pricing-hero .card-core {
+    min-width: 0;
+    padding: 1.5rem 1rem !important;
+  }
+
+  .pricing-hero .pricing-toggle-container {
+    width: 100% !important;
+    max-width: 100%;
+    gap: 0.25rem;
+  }
+
+  .pricing-hero .toggle-label {
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.35rem 0.45rem !important;
+    font-size: 0.8rem;
+  }
+
+  .pricing-hero .switch {
+    flex: 0 0 52px;
+    margin: 0 0.25rem !important;
+  }
+
+  .pricing-hero .toggle-label .save-badge {
+    padding: 0.2rem 0.35rem;
+    font-size: 0.625rem;
+  }
+}
+
 .pricing-toggle-container {
   display: flex;
   align-items: center;

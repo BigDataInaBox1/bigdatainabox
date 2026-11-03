@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | BDIB Solutions</title>
+  <meta name="description"
+    content="Get in touch with BDIB Solutions. Send us a message or inquiry to learn more about SPIDER Ag.">
+  <link rel="icon" type="image/png" href="/assets/officialbdiblogo.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/officialbdiblogo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ====================================================
+       SCHEDULE DEMO — PAGE-SPECIFIC STYLES
+       ==================================================== */
+
+    .schedule-hero {
+      padding-top: 9rem;
+      padding-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .schedule-hero .lead {
+      margin: 0 auto;
+    }
+
+    /* ---- Contact Form Section ---- */
+    .demo-form-wrapper {
+      max-width: 850px;
+      margin: 0 auto 5rem;
+      background: #FFFFFF;
+      border: 1px solid rgba(41, 91, 63, 0.14);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-ambient);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .demo-form-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--color-forest) 0%, #10B981 100%);
+    }
+
+    .demo-form-header {
+      text-align: center;
+      margin-bottom: 2.25rem;
+    }
+
+    .demo-form-header h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-forest);
+      margin-bottom: 0.5rem;
+    }
+
+    .demo-form-header p {
+      font-size: 0.98rem;
+      color: #666666;
+    }
+
+    .demo-form-header strong {
+      color: var(--color-forest);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      text-align: left;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-family: var(--font-headings);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-forest);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border-radius: 12px;
+      border: 1.5px solid rgba(41, 91, 63, 0.2);
+      background: #F8FAF9;
+      font-family: var(--font-base);
+      font-size: 1rem;
+      color: #1F2937;
+      transition: all 0.25s ease;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-forest);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 4px rgba(41, 91, 63, 0.12);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .btn-submit-demo {
+      grid-column: 1 / -1;
+      margin-top: 1rem;
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(41, 91, 63, 0.25);
+      cursor: pointer;
+    }
+
+    /* Success Toast Modal */
+    .form-success-banner {
+      display: none;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1.5px solid #10B981;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .form-success-banner h4 {
+      color: #065F46;
+      font-size: 1.2rem;
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+    }
+
+    .form-success-banner p {
+      color: #047857;
+      font-size: 0.95rem;
+    }
+
+    /* ---- Team List ---- */
+    .team-section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .team-section-header h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--color-forest);
+    }
+
+    .team-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .team-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 1.75rem;
+      background: var(--color-white);
+      border: 1px solid rgba(41, 91, 63, 0.06);
+      border-radius: 1.25rem;
+      padding: 1.25rem 2rem;
+      box-shadow: var(--shadow-ambient);
+      transition: var(--transition-fluid);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(41, 91, 63, 0.02) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .team-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 48px -10px rgba(41, 91, 63, 0.12);
+      border-color: rgba(41, 91, 63, 0.12);
+    }
+
+    .team-card-photo {
+      width: 4.25rem;
+      height: 4.25rem;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(41, 91, 63, 0.1);
+      border: 2px solid var(--color-white);
+      outline: 1px solid rgba(41, 91, 63, 0.08);
+    }
+
+    .team-card-body {
+      text-align: left;
+    }
+
+    .team-card-body h3 {
+      font-family: var(--font-headings);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-forest);
+      margin-bottom: 0.15rem;
+    }
+
+    .team-card-role {
+      font-family: var(--font-headings);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-sage);
+      margin-bottom: 0.6rem;
+    }
+
+    .team-card-bio {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.6;
+      max-width: 48ch;
+    }
+
+    .team-card-action {
+      flex-shrink: 0;
+    }
+
+    .btn-schedule {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-headings);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 100px;
+      border: 1.5px solid var(--color-forest);
+      background: transparent;
+      color: var(--color-forest);
+      cursor: pointer;
+      transition: var(--transition-fluid);
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .btn-schedule svg {
+      width: 1rem;
+      height: 1rem;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      transition: var(--transition-fluid);
+    }
+
+    .btn-schedule:hover {
+      background: var(--color-forest);
+      color: var(--color-white);
+      box-shadow: 0 4px 16px rgba(41, 91, 63, 0.2);
+      transform: scale(1.04);
+    }
+
+    .btn-schedule:active {
+      transform: scale(0.97);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 768px) {
+      .schedule-hero {
+        padding-top: 7.5rem;
+        padding-bottom: 2rem;
+      }
+
+      .demo-form-wrapper {
+        padding: 2rem 1.25rem;
+        border-radius: 18px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.25rem;
+        padding: 1.75rem 1.5rem;
+      }
+
+      .team-card-photo {
+        margin: 0 auto;
+      }
+
+      .team-card-body {
+        text-align: center;
+      }
+
+      .team-card-bio {
+        max-width: 100%;
+      }
+
+      .team-card-action {
+        width: 100%;
+      }
+
+      .btn-schedule {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* ---- Bottom CTA ---- */
+    .schedule-bottom-cta {
+      text-align: center;
+      padding: 3rem 0 0;
+    }
+
+    .schedule-bottom-cta p {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-bottom-cta a {
+      color: var(--color-forest);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .schedule-bottom-cta a:hover {
+      color: var(--color-vibrant);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background topography lines applied globally to the page -->
+  <div class="topo-bg"></div>
+
+  <!-- ----------------------------------------------------
+       HEADER / NAVIGATION
+       ---------------------------------------------------- -->
+  <header class="header-wrapper">
+    <div class="container">
+      <nav class="nav-bar">
+        <a href="index.html" class="logo-link">
+          <img src="/assets/officialbdiblogo.png" alt="BDIB Solutions Logo" class="logo-img">
+        </a>
+
+        <ul class="nav-links" id="nav-links-menu">
+          <li><a href="index.html#onboarding">How It Works</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+          <li class="dropdown">
+            <a href="spider-ag.html" class="dropdown-toggle">
+              SPIDER Ag
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="https://spiderag-preprod.bdibsolutions.com/auth/">Login</a></li>
+            </ul>
+          </li>
+          <li><a href="pricing-sign-up.html">Pricing</a></li>
+          <li><a href="javascript:void(0)">Schedule Demo</a></li>
+          <li><a href="schedule-demo.html" class="active-nav" data-open-contact-modal>Contact Us</a></li>
+          <!-- Nav Drawer CTA for mobile -->
+          <li>
+            <a href="pricing-sign-up.html" class="btn btn-primary btn-nav-drawer">
+              Free Trial
+              <span class="btn-icon-wrapper">
+                <svg viewBox="0 0 24 24">
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Navbar Main CTAs -->
+        <div class="nav-actions" style="display: flex; gap: 1rem; align-items: center;">
+          <a href="https://spiderag-preprod.bdibsolutions.com/auth/" class="btn btn-secondary btn-nav" style="border-color: rgba(41,91,63,0.3);">Login</a>
+          <a href="pricing-sign-up.html" class="btn btn-primary btn-nav">Free Trial</a>
+        </div>
+
+        <!-- Hamburger toggle button -->
+        <button class="hamburger" id="hamburger-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ----------------------------------------------------
+         SCHEDULE HERO & STREAMLINED CONTACT FORM
+         ---------------------------------------------------- -->
+    <section class="schedule-hero" id="top">
+      <div class="container">
+        <div class="reveal" style="max-width: 700px; margin: 0 auto 2.5rem;">
+          <span class="eyebrow">Get In Touch</span>
+          <h1 style="font-size: clamp(2.25rem, 4.5vw, 3.5rem); letter-spacing: -0.03em; margin-bottom: 0.75rem;">Contact Us</h1>
+          <p class="lead" style="max-width: 580px; font-size: 1.05rem; opacity: 0.85;">
+            Send us a message below and our team will get in touch with you shortly. All messages go directly to <strong>info@bdibsolutions.com</strong>.
+          </p>
+        </div>
+
+        <!-- Contact Form Card -->
+        <div class="demo-form-wrapper reveal" id="demo-form-container" style="padding: 2.5rem 1.5rem 1.5rem;">
+          <div class="demo-form-header">
+            <h2>Send Us a Message</h2>
+            <p>Fill in your details below and our team will get in touch with you shortly.</p>
+          </div>
+
+          <iframe id="ziframe_787725" aria-label="Contact" frameborder="0" style="height:550px;width:100%;border:none;border-radius:12px;" src='https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y'></iframe>
+
+          <script type="text/javascript">
+          (function() {
+            try {
+              var zf_frame = document.getElementById("ziframe_787725");
+              var ifrmSrc = zf_frame.src;
+                 
+                  if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
+                      var rfr = window.location.href;
+                     
+                      try {
+                          rfr = window.self !== window.top ?
+                              window.top.location.href :
+                              (/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
+                      } catch (e) {}
+                     
+                      if (rfr && rfr !== "") {
+                          if (rfr.length > 1800) {
+                              var queryIndex = rfr.indexOf('?');
+                              if (queryIndex > -1) {
+                                  rfr = rfr.substring(0, queryIndex);
+                              }
+                              if (rfr.length > 1800) {
+                                  rfr = rfr.substring(0, 1800);
+                              }
+                          }
+                          ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
+                      }
+                  }
+                  if (zf_frame.src !== ifrmSrc) {
+                      zf_frame.src = ifrmSrc;
+                  }
+            } catch (e) {}
+          })();
+          </script>
+        </div>
+
+        <!-- Bottom Email Contact Callout -->
+        <div class="schedule-bottom-cta reveal" style="padding-top: 1rem; padding-bottom: 4rem;">
+          <p>Or send an email directly to:</p>
+          <a href="mailto:info@bdibsolutions.com?subject=Contact%20Us">info@bdibsolutions.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ----------------------------------------------------
+       FOOTER
+       ---------------------------------------------------- -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/assets/officialbdiblogo.png" alt="BDIB Solutions Logo" class="footer-logo">
+          <p>One farm record, kept your way and ready for the people who need it.</p>
+          <p>2625 North Loop Drive, Suite 2622<br>Ames, Iowa 50010</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#onboarding">How It Works</a></li>
+            <li><a href="index.html#story">Our Story</a></li>
+            <li><a href="spider-ag.html">SPIDER Ag</a></li>
+            <li><a href="pricing-sign-up.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Get In Touch</h4>
+          <p>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <a href="tel:+15153296652">+1-515-329-6652</a>
+          </p>
+          <p>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <a href="mailto:info@bdibsolutions.com">info@bdibsolutions.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BDIB Solutions. All rights reserved.</p>
+        <p>Big Data in a Box, Inc. Ames, IA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

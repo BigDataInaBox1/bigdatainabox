@@ -1,0 +1,1024 @@
+[
+  {
+    "file": "index.html",
+    "section": "Search metadata",
+    "label": "Page title",
+    "before": "Big Data in a Box | Ag-Tech Data & Certification Solutions",
+    "after": "Big Data in a Box | Farm Records & Audit Preparation",
+    "reason": "Lead with farm records and preparation rather than a broad certification solution.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Search metadata",
+    "label": "Description",
+    "before": "One farm record, kept your way. SPIDER Ag turns voice notes, photos, and paper logs into records you review, ready for reporting and organic certification.",
+    "after": "Less time on paperwork. Keep voice notes, photos, and paper logs organized by farm and field, review AI-generated entries, and prepare audit-ready records.",
+    "reason": "Lead with time savings and make human review explicit.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Hero",
+    "label": "Supporting description",
+    "before": "Record a voice note, snap a picture or video, integrate real-time observations with data from combines and sensors, and build an intelligent, stress-free farm support.",
+    "after": "Record voice notes, photos, and documents as work happens. Keep field activity in one place, review the details, and prepare records for reporting.",
+    "reason": "Remove unverified machinery and sensor integration claims; preserve the hero heading.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Hero",
+    "label": "Trial note",
+    "before": "No credit card commitment · 14-Day Free Trial",
+    "after": "No credit card required · 14-Day Free Trial",
+    "reason": "State the existing trial condition precisely.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "SPIDER Ag introduction",
+    "label": "Eyebrow",
+    "before": "Proprietary Software",
+    "after": "Farm Record-Keeping",
+    "reason": "Use a plain description instead of a technical ownership label.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "SPIDER Ag introduction",
+    "label": "Lead",
+    "before": "One farm record, kept the way you already work and trusted by the people who need to see it. SPIDER Ag turns voice notes, photos, and paper logs into usable records for small and mid-sized row crop growers.",
+    "after": "One farm record, kept the way you already work and trusted by the people who need to see it. Keep voice notes, photos, and paper logs together for everyday work and organic audit preparation.",
+    "reason": "Preserve the main message while making organic audit preparation visible earlier.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Intro",
+    "before": "Explore how field notes, equipment data, and farm records come together for clearer decisions.",
+    "after": "Explore how notes, photos, and dated records help you keep track of field work and prepare reports.",
+    "reason": "Describe documented record workflows without suggesting automatic equipment connectivity.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Cost insight button label",
+    "before": "aria-label=\"Know What Each Field Truly Earns\"",
+    "after": "aria-label=\"Trace Records Back to Each Field\"",
+    "reason": "Avoid implying a validated profitability calculation.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Cost insight pin text",
+    "before": ">Field Net Earnings<",
+    "after": ">Field Records<",
+    "reason": "Match the field-record benefit.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Organization button label",
+    "before": "aria-label=\"Connect Your Farm Systems\"",
+    "after": "aria-label=\"Built Around Your Farm\"",
+    "reason": "Replace system integration language with farm organization.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Organization pin text",
+    "before": ">Connected Systems<",
+    "after": ">Farm Organization<",
+    "reason": "Use plain organization language.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Observation button label",
+    "before": "aria-label=\"Measure Real Field Conditions\"",
+    "after": "aria-label=\"Record What You See in the Field\"",
+    "reason": "Avoid claiming sensor measurement capability.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Observation pin text",
+    "before": ">Real Field Conditions<",
+    "after": ">Field Observations<",
+    "reason": "Describe observation capture.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Report button label",
+    "before": "aria-label=\"Make Better Decisions Faster\"",
+    "after": "aria-label=\"Prepare Audit-Ready Records\"",
+    "reason": "Replace a broad outcome claim with a concrete reporting benefit.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Report pin text",
+    "before": ">Better Decisions Faster<",
+    "after": ">Audit-Ready Records<",
+    "reason": "Use the approved audit-ready wording.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Mobile cost button",
+    "before": ">Field net earnings<",
+    "after": ">Field records<",
+    "reason": "Match the desktop label.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Mobile organization button",
+    "before": ">Connected systems<",
+    "after": ">Farm organization<",
+    "reason": "Match the desktop label.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Mobile observation button",
+    "before": ">Field conditions<",
+    "after": ">Field observations<",
+    "reason": "Match the desktop label.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Mobile report button",
+    "before": ">Better decisions<",
+    "after": ">Audit-ready records<",
+    "reason": "Match the desktop label.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Default card category",
+    "before": ">Field Net Profitability<",
+    "after": ">Field Records<",
+    "reason": "Keep the initial HTML consistent with interactive copy.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Default card title",
+    "before": ">Know What Each Field Truly Earns<",
+    "after": ">Trace Records Back to Each Field<",
+    "reason": "Avoid an unverified profitability calculation.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Interactive farm map",
+    "label": "Default card description",
+    "before": "Keep crop performance, inputs, labor, and financial records linked to each field, so you can trace costs and understand what it earns.",
+    "after": "Keep dated tasks, input records, and receipts linked to the field they belong to, so you can find the record behind each activity.",
+    "reason": "Focus on traceability instead of implied financial analysis.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Farmer photo gallery",
+    "label": "Heading",
+    "before": "Trusted by Real Farmers",
+    "after": "Built for Everyday Farm Work",
+    "reason": "Do not use illustrative farm photos as evidence of customer validation.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Farmer photo gallery",
+    "label": "Lead",
+    "before": "Traceable records, reviewed by you and ready for the people who need them.",
+    "after": "For organic, specialty, and row crop growers: less time retyping notes, more time in the field, and records kept your way.",
+    "reason": "Emphasize existing habits and qualitative time savings.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Comparison",
+    "label": "Heading",
+    "before": "Keep your habits. Save your time.",
+    "after": "Say It, Snap It, It's Recorded",
+    "reason": "Place the approved low-friction capture tagline in an existing body section.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Comparison",
+    "label": "Lead",
+    "before": "Keep speaking, snapping photos, and using paper logs. SPIDER Ag turns them into organized records without the extra data entry.",
+    "after": "AI helps turn voice notes, photos, and paper logs into draft records. Review and confirm the details before saving, without retyping the whole log.",
+    "reason": "Explain the AI role after the benefit and qualify capture with human review.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Comparison",
+    "label": "Storage category",
+    "before": "Security &amp; Backups",
+    "after": "Record Storage",
+    "reason": "Avoid framing the comparison as an unsupported security guarantee.",
+    "count": 2
+  },
+  {
+    "file": "index.html",
+    "section": "Comparison",
+    "label": "Storage benefit",
+    "before": "Secure, encrypted cloud storage; accessible anywhere",
+    "after": "Cloud-backed records kept in one place",
+    "reason": "Remove unverified encryption and absolute availability claims.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Comparison",
+    "label": "Audit category",
+    "before": "FSA &amp; Organic Audits",
+    "after": "Organic Audit Preparation",
+    "reason": "Focus on the documented NOP workflow rather than unverified FSA coverage.",
+    "count": 2
+  },
+  {
+    "file": "index.html",
+    "section": "Comparison",
+    "label": "Audit benefit",
+    "before": "Dated records assembled into audit-ready NOP reports",
+    "after": "NOP templates for reports you review and confirm",
+    "reason": "Make report creation and review explicit.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Comparison",
+    "label": "Organization category",
+    "before": ">Actionable Insights<",
+    "after": ">Farm Organization<",
+    "reason": "Match the actual benefit stated in the comparison.",
+    "count": 2
+  },
+  {
+    "file": "index.html",
+    "section": "Mobile app",
+    "label": "Heading",
+    "before": "SPIDER Ag Mobile App:<br>Keep Working Beyond the Signal",
+    "after": "Built for the Field,<br>Not the Office",
+    "reason": "Use the supplied field-first tagline where offline capture is explained.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Institutional support",
+    "label": "Heading",
+    "before": "Supported and Funded By Industry Leaders",
+    "after": "Research &amp; Community Support",
+    "reason": "Avoid implying that every logo represents funding, endorsement, or independent product validation.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Onboarding",
+    "label": "Intro",
+    "before": "Get organized, reportable farm records without a dedicated data team or a second job. Start in three simple steps.",
+    "after": "Get time back without adding a second job. Use the notes and photos you already keep, then review and confirm your records in three simple steps.",
+    "reason": "Lead with time savings and make the review step part of the workflow.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Onboarding",
+    "label": "Capture step title",
+    "before": "Speak and Snap",
+    "after": "Say It, Snap It",
+    "reason": "Use the approved plain-language capture phrase.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Onboarding",
+    "label": "Capture step description",
+    "before": "Say what happened to create a dated task, or photograph a handwritten log to make a searchable table. Review before saving.",
+    "after": "Say what happened or photograph a paper log. AI helps structure the entry; you review and confirm before saving.",
+    "reason": "Describe AI-assisted capture without implying hands-off final records.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Onboarding",
+    "label": "Report step title",
+    "before": "Be Ready to Report",
+    "after": "Review, Confirm, Report",
+    "reason": "Make the human review step visible.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Onboarding",
+    "label": "Report step description",
+    "before": "Your reviewed records come together in an audit-ready report for your NOP certification review, without the last-minute reconstruction.",
+    "after": "Choose your field records and a NOP template, generate a report, then review and confirm the details for your certification review.",
+    "reason": "Reflect the documented, user-initiated report workflow.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Everyday challenges",
+    "label": "Record fragmentation description",
+    "before": "Bring paper logs, spray records, and equipment data together by farm, field, plot, and subplot. Keep the way you already organize your work.",
+    "after": "Keep paper logs, photos, and field notes together by farm, field, plot, and subplot, using the names and boundaries you already know.",
+    "reason": "Avoid implying equipment integrations.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Everyday challenges",
+    "label": "Field context description",
+    "before": "Say why a job changed or an application was delayed. SPIDER Ag turns your field notes into a structured, dated task for your review.",
+    "after": "Say why a job changed or an application was delayed. Turn that field note into a dated task, then review and confirm the details.",
+    "reason": "Use the approved review-and-confirm phrasing.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Everyday challenges",
+    "label": "Offline description",
+    "before": "Capture voice notes and photos beyond cell coverage. Records stay saved and sync when you reconnect, so details never have to wait for the office.",
+    "after": "Record voice notes and take photos without cell service. The mobile app saves them offline and syncs when you reconnect.",
+    "reason": "Describe limited offline capture without an absolute never claim.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "Heading",
+    "before": "Farm Records That Work the Way You Do",
+    "after": "Built Around How You Organize Your Farm",
+    "reason": "Use the approved farmer-native organization language.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "Audience fit lead",
+    "before": "Built and priced for small and mid-sized row crop operations, with the organized records larger farms rely on. Your practices fit right in.",
+    "after": "Sized and priced for small and mid-sized row crop farms. Get organized records without a dedicated data team or another job on top of farming.",
+    "reason": "Prioritize fit and low added workload for the row-crop audience.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "Audit card description",
+    "before": "Your dated field records are already assembled into an audit-ready report when your NOP certification review comes around.",
+    "after": "Use dated field records and NOP templates to prepare an audit-ready report. Review and confirm it before your certification review.",
+    "reason": "Remove the implication that reports assemble themselves.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "Organization card badge",
+    "before": "card-badge value-badge\">Connected Records",
+    "after": "card-badge value-badge\">Your Farm Structure",
+    "reason": "Remove integration implications from the card label.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "Organization card title",
+    "before": "Keep Your Systems Connected",
+    "after": "Farmer-Native Organization",
+    "reason": "Use the supplied organization tagline, explained in plain language below.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "Organization card description",
+    "before": "Bring equipment data from Operations Center and AgFiniti together with spray logs and financial records, keeping the tools you already use.",
+    "after": "Keep records by farm, field, plot, and subplot, using your own names and boundaries. Build around how you already organize your land.",
+    "reason": "Remove named integrations that are not confirmed in the reviewed product documentation.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "AI card title",
+    "before": "Voice Notes &amp; Paper Logs",
+    "after": "Trustworthy AI, Not Blind AI",
+    "reason": "Use the supplied trust tagline in a body section.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "AI card description",
+    "before": "Turn voice notes into dated tasks and handwritten logs into searchable tables. Review every AI-generated entry before it is final.",
+    "after": "AI helps structure voice notes and photos. Review and confirm the details before saving; you remain the final word on your farm records.",
+    "reason": "Make trust a concrete review-and-correct process rather than an accuracy guarantee.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "Time card badge",
+    "before": "card-badge value-badge\">Field Conditions",
+    "after": "card-badge value-badge\">Time Back",
+    "reason": "Use the highest-priority audience benefit.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "Time card title",
+    "before": "Know Your Field Conditions",
+    "after": "Less Time on Paperwork",
+    "reason": "Replace an unverified sensor-led benefit with documented record-keeping value.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Benefits",
+    "label": "Time card description",
+    "before": "Keep soil moisture and local weather readings alongside field observations for a clearer record of the conditions on your land.",
+    "after": "Find dated tasks, receipts, and field notes in one place instead of retyping logs or rebuilding the story before a review.",
+    "reason": "Prioritize time back without quantified savings.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "FAQ",
+    "label": "File capture answer",
+    "before": "You can upload PDF and Word documents, photos, and voice notes. Say what happened in the field to create a structured, dated task, or snap a photo of a handwritten log to create a searchable table. Review the extracted details without retyping the original.",
+    "after": "Upload PDF and Word documents, photos, and voice notes. Say what happened to draft a dated task, or photograph a handwritten log to extract a searchable table. Review, correct, and confirm the details before saving.",
+    "reason": "Qualify generated entries as drafts that need review.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "FAQ",
+    "label": "NOP answer",
+    "before": "SPIDER Ag assembles your reviewed, dated records into an audit-ready report using ready-made National Organic Program (NOP) forms. Records stay linked to your farm, field, plot, or subplot, so the information is already organized when your certification review comes around.",
+    "after": "Choose up to five files linked to a land area, select a National Organic Program (NOP) template, and generate your report. Review, correct, and confirm the details before saving. Audit-ready records support your review; the certification decision remains with your certifier.",
+    "reason": "Reflect the documented five-file workflow and distinguish audit preparation from guaranteed certification.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "FAQ",
+    "label": "Subscription question",
+    "before": "Does SPIDER Ag require a long-term commitment?",
+    "after": "How do the trial and cancellation work?",
+    "reason": "Replace an open-ended commitment claim with an explanation of actual conditions.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "FAQ",
+    "label": "Subscription answer",
+    "before": "No, SPIDER Ag offers a flexible 14-day free trial with absolutely zero commitment and no credit card required. After the trial, you can choose between our monthly or annual subscription plans and cancel at any time.",
+    "after": "Start with a 14-day free trial, with no credit card required. A paid subscription is needed to keep access after the trial. If you cancel, access continues through the current billing period. Download files and reports you need before it ends.",
+    "reason": "State trial and cancellation access limitations from the manual.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "FAQ",
+    "label": "AI review answer",
+    "before": "Yes. SPIDER Ag checks its AI-generated entries with you at every step, and each entry is reviewed before it is final. You can correct a transcription, add missing details, or regenerate a report before confirming and saving. You remain the final word on your yield, input, and farm records.",
+    "after": "Yes. AI helps draft tasks, extract information, and fill report templates. You review the output, correct errors or missing details, then confirm and save. That includes voice transcriptions, scanned logs, and generated reports. You remain the final word on your records.",
+    "reason": "Do not imply AI verifies its own correctness or that a human review is performed automatically.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Trial call to action",
+    "label": "Description",
+    "before": "Try SPIDER Ag free for 14 days and turn the notes you already keep into records you can use. Enter your email to start your farm profile or subscribe to our updates.",
+    "after": "Try SPIDER Ag free for 14 days and keep the records the way you already work. Choose a plan to continue to signup.",
+    "reason": "Match the call to action to the existing pricing and signup flow rather than implying an email signup that does not exist.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Search metadata",
+    "label": "Description",
+    "before": "Turn voice notes into dated tasks and handwritten logs into searchable tables. SPIDER Ag keeps farm records your way, reviewed by you and ready for NOP audits.",
+    "after": "Keep farm records the way you already work. Capture voice notes and photos, review and confirm AI-generated entries, and prepare audit-ready NOP reports.",
+    "reason": "Reinforce existing habits, human review, and audit preparation.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Hero",
+    "label": "Eyebrow",
+    "before": "Proprietary Software",
+    "after": "Farm Record-Keeping",
+    "reason": "Replace an ownership label with a plain product description.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Hero",
+    "label": "Supporting description",
+    "before": "SPIDER Ag is a secure, innovative, two-sided platform that links organic and traditional farmers with key members of their supply chain, such as certifiers and regulators. It transforms farming into a seamless, intelligent, and profitable experience.",
+    "after": "SPIDER Ag helps turn voice notes, photos, and paper logs into farm records you can review, find, and use in reports. Keep the way you already work, with less time spent retyping.",
+    "reason": "Remove dense platform language, unverified supply-chain account capabilities, and implied profitability guarantees; keep the hero heading.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Core record view",
+    "label": "Heading",
+    "before": "One Farm Record, Your Way",
+    "after": "One Place for Every Farm Record",
+    "reason": "Use the approved one-place phrase in an existing card.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Core record view",
+    "label": "Description",
+    "before": "Keep one farm record the way you already work, trusted by the people who need to see it. Your fields, tasks, and certification records come together in one view.",
+    "after": "Keep voice notes, photos, paper logs, and dated tasks together, organized around your land. Find what happened, when, and where without retyping the whole record.",
+    "reason": "Describe concrete traceability and time-saving benefits.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Capture features",
+    "label": "Voice title",
+    "before": "Voice Notes to Dated Tasks",
+    "after": "Say It: Voice Notes to Tasks",
+    "reason": "Use a plain low-friction capture instruction.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Capture features",
+    "label": "Voice description",
+    "before": "Say what happened in the field. SPIDER Ag turns it into a structured, dated task for you to review and confirm before it is final.",
+    "after": "Say what happened in the field. AI helps turn your voice note into a dated task; review and confirm the details before saving.",
+    "reason": "Put the action first and make the AI and review roles explicit.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Capture features",
+    "label": "Photo title",
+    "before": "Paper Logs to Searchable Tables",
+    "after": "Snap It: Paper Logs to Tables",
+    "reason": "Pair the photo workflow with the voice workflow.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Capture features",
+    "label": "Photo description",
+    "before": "Photograph a handwritten log or receipt to create a searchable table. Review the extracted details without retyping or digging through a shoebox later.",
+    "after": "Photograph a handwritten log or receipt. AI extracts the details into a searchable table for you to review, correct, and confirm without retyping.",
+    "reason": "Explain AI-assisted capture and human correction without leading the headline with AI.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Capture features",
+    "label": "Organization title",
+    "before": "Your Land, Your Organization",
+    "after": "Farmer-Native Organization",
+    "reason": "Use the supplied organization tagline where the land hierarchy is explained.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Capture features",
+    "label": "Organization description",
+    "before": "Records follow your farm, fields, plots, and subplots, so you never have to reorganize your land to fit the software.",
+    "after": "Use your own farm, field, plot, and subplot names and boundaries. Set up that structure before adding records, so it fits how your farm already runs.",
+    "reason": "Avoid an absolute never claim and respect the manual warning about changing the hierarchy later.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Capture features",
+    "label": "Offline title",
+    "before": "Keep Working Offline",
+    "after": "Works in the Field, Even Offline",
+    "reason": "Use the approved offline-first phrase.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Mobile app",
+    "label": "Heading",
+    "before": "SPIDER Ag Mobile:<br>Capture It While You Work",
+    "after": "Built for the Field,<br>Not the Office",
+    "reason": "Use the supplied field-first tagline consistently across pages.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Mobile app",
+    "label": "Description",
+    "before": "Keep voice notes, photos, and paper logs part of your day. Capture them from the cab or field, even offline, and turn them into usable records without adding a second job.",
+    "after": "Record voice notes and take photos in the field, even offline. When you reconnect, sync your captures and review the AI-generated details before confirming and saving.",
+    "reason": "Limit offline claims to documented capture and make review explicit.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Interface tour",
+    "label": "Eyebrow",
+    "before": "Interface Tour",
+    "after": "Less Time on Paperwork",
+    "reason": "Lead with the highest-priority benefit.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Interface tour",
+    "label": "Intro",
+    "before": "From a field observation to an audit-ready report, keep a clear record of what happened, when, and where.",
+    "after": "Say it, snap it, it's recorded. AI helps structure your notes and photos; you review and confirm before saving.",
+    "reason": "State the low-friction capture promise and its review condition together.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Interface tour",
+    "label": "Task title",
+    "before": "Task Calendar &amp; Compliance Audit Schedules",
+    "after": "Dated Tasks &amp; Audit Preparation",
+    "reason": "Use preparation language instead of suggesting guaranteed compliance.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Interface tour",
+    "label": "Task image description",
+    "before": "alt=\"Task Calendar & Compliance Interface\"",
+    "after": "alt=\"SPIDER Ag task calendar and dated field activities\"",
+    "reason": "Keep accessibility copy aligned with visible copy.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Interface tour",
+    "label": "Report title",
+    "before": "Office Desk Analytics &amp; Report Generator",
+    "after": "Field Records &amp; Report Preparation",
+    "reason": "Remove unverified analytics breadth and reinforce the preparation workflow.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Interface tour",
+    "label": "Report description",
+    "before": "Bring reviewed field records together in reports that certifiers and others who need them can trust.",
+    "after": "Select field records and a NOP template, generate a report, then review and confirm the details for your certification review.",
+    "reason": "Explain the report workflow instead of implying externally validated acceptance.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Final call to action",
+    "label": "Eyebrow",
+    "before": "Take Control Of Your Data",
+    "after": "Audit Preparation",
+    "reason": "Use a focused, plain-language description.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Final call to action",
+    "label": "Heading",
+    "before": "Be Ready When Your Review Comes Around",
+    "after": "Audit-Ready Records, Reviewed by You",
+    "reason": "Combine audit preparation and human review without a compliance guarantee.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Final call to action",
+    "label": "Description",
+    "before": "Your records are already assembled into an audit-ready report for your NOP certification review. Every AI-generated entry is reviewed by you before it is final, so you remain the final word on your yield and input data.",
+    "after": "Create a NOP report from selected field records, then review, correct, and confirm the details. You remain the final word on the entries and reports you save. Your certifier makes the certification decision.",
+    "reason": "Remove passive automation and separate software assistance from the certification outcome.",
+    "count": 1
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Final call to action",
+    "label": "Trial note",
+    "before": "14-Day Free Trial · Instant Setup · Cancel Anytime",
+    "after": "14-Day Free Trial · No Credit Card Required",
+    "reason": "Avoid unsupported setup timing and unqualified cancellation language.",
+    "count": 1
+  },
+  {
+    "file": "pricing-sign-up.html",
+    "section": "Search metadata",
+    "label": "Description",
+    "before": "Choose your SPIDER Ag plan. Secure, compliance-ready ag-tech data platform for farmers.",
+    "after": "SPIDER Ag plans for farm records, voice and photo capture, and audit preparation. Start a 14-day trial and review the monthly and annual billing options.",
+    "reason": "Replace security and compliance overstatements with concrete plan benefits.",
+    "count": 1
+  },
+  {
+    "file": "pricing-sign-up.html",
+    "section": "Plan introduction",
+    "label": "Description",
+    "before": "Select the plan that fits your farm. No credit card required for trial, cancel at any time.",
+    "after": "Select the plan that fits your farm. No credit card required to start your 14-day trial. A paid plan is needed to keep access after the trial.",
+    "reason": "Disclose continued-access conditions without adding new marketing taglines to the hero.",
+    "count": 1
+  },
+  {
+    "file": "pricing-sign-up.html",
+    "section": "Plan card",
+    "label": "Eyebrow",
+    "before": "Ag-Tech Standard",
+    "after": "Fits Your Farm",
+    "reason": "Emphasize operation fit instead of a vague technology label.",
+    "count": 1
+  },
+  {
+    "file": "pricing-sign-up.html",
+    "section": "Plan card",
+    "label": "Annual billing explanation (static and toggle)",
+    "before": "Billed annually. Most popular among established farmers.",
+    "after": "Billed annually: $250, versus $480 for 12 monthly payments.",
+    "reason": "Give a visible basis for the existing $230 and rounded 48% price savings; remove unsupported popularity.",
+    "count": 2
+  },
+  {
+    "file": "pricing-sign-up.html",
+    "section": "Plan card",
+    "label": "Monthly billing explanation",
+    "before": "Billed monthly. Perfect for flexible operational needs.",
+    "after": "Billed monthly at $40. Twelve payments total $480.",
+    "reason": "Make the annual comparison auditable from the displayed prices.",
+    "count": 1
+  },
+  {
+    "file": "pricing-sign-up.html",
+    "section": "Plan features",
+    "label": "Capture",
+    "before": "Record from the field or tractor (photos, voice notes, invoices)",
+    "after": "Voice notes, photos, and paper logs with less retyping",
+    "reason": "Lead with capture and time saved.",
+    "count": 1
+  },
+  {
+    "file": "pricing-sign-up.html",
+    "section": "Plan features",
+    "label": "Offline",
+    "before": "Offline Database with automated sync when connected",
+    "after": "Voice and photo capture offline; sync when connected",
+    "reason": "Describe the documented limited offline workflow.",
+    "count": 1
+  },
+  {
+    "file": "pricing-sign-up.html",
+    "section": "Plan features",
+    "label": "Organization",
+    "before": "Pre-loaded and custom regulatory compliance forms",
+    "after": "Records organized by farm, field, plot, and subplot",
+    "reason": "Add operation fit using the existing feature row.",
+    "count": 1
+  },
+  {
+    "file": "pricing-sign-up.html",
+    "section": "Plan features",
+    "label": "Audit preparation",
+    "before": "Automated time-stamps for trace-backs (Audit-Ready)",
+    "after": "Dated records and NOP templates for audit preparation",
+    "reason": "State traceability and reporting without claiming automation guarantees.",
+    "count": 1
+  },
+  {
+    "file": "pricing-sign-up.html",
+    "section": "Plan features",
+    "label": "AI review",
+    "before": "100% Private & Secure data cloud backup",
+    "after": "Review and confirm AI-generated entries before saving",
+    "reason": "Remove absolute security claims and show the review step.",
+    "count": 1
+  },
+  {
+    "file": "schedule-demo.html",
+    "section": "Contact form",
+    "label": "Description",
+    "before": "Fill in your details below and our team will get in touch with you shortly.",
+    "after": "Tell us how you keep farm records today. We can help you explore voice and photo capture, farm organization, and audit preparation.",
+    "reason": "Use the existing form introduction to invite a workflow-fit conversation.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Shared contact modal",
+    "label": "Description",
+    "before": "Send us a message and our team will get in touch with you shortly.",
+    "after": "Tell us how you keep farm records today. Ask about voice and photo capture, organizing your farm, or preparing for an audit.",
+    "reason": "Keep the contact conversation aligned with the approved benefits.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Field category",
+    "before": "step: 'Field Net Profitability'",
+    "after": "step: 'Field Records'",
+    "reason": "Remove a profitability-calculation implication.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Field title",
+    "before": "title: 'Know What Each Field Truly Earns'",
+    "after": "title: 'Trace Records Back to Each Field'",
+    "reason": "Match the updated default card and desktop pin.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Field description",
+    "before": "Keep crop performance, inputs, labor, and financial records linked to each field, so you can trace costs and understand what it earns.",
+    "after": "Keep dated tasks, input records, and receipts linked to the field they belong to, so you can find the record behind each activity.",
+    "reason": "Use concrete traceability.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Organization category",
+    "before": "step: 'Connected Systems'",
+    "after": "step: 'Farm Organization'",
+    "reason": "Replace technical integration framing.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Organization title",
+    "before": "title: 'Connect Your Farm Systems'",
+    "after": "title: 'Built Around Your Farm'",
+    "reason": "Explain farmer-native organization.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Organization description",
+    "before": "Bring equipment data, spray logs, and financial records together around your farm, fields, plots, and subplots, keeping the tools you already use.",
+    "after": "Organize notes, photos, and paper logs by farm, field, plot, and subplot, using the names and boundaries you already know.",
+    "reason": "Avoid unverified direct equipment connections.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Field diary description",
+    "before": "Say what happened in the field and turn it into a structured, dated task. Review the entry before it is final and keep the context behind the numbers.",
+    "after": "Say what happened in the field and turn it into a dated task. Review and confirm the details, keeping the context behind the record.",
+    "reason": "Use the approved review-and-confirm step.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Observation category",
+    "before": "step: 'Real Field Conditions'",
+    "after": "step: 'Field Observations'",
+    "reason": "Describe observation capture instead of sensor deployment.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Observation title",
+    "before": "title: 'Measure Real Field Conditions'",
+    "after": "title: 'Record What You See in the Field'",
+    "reason": "Align the title with documented capture features.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Observation description",
+    "before": "Keep local weather and soil sensor readings alongside your field observations, so each record reflects the conditions on your land.",
+    "after": "Record field conditions in a voice note or photo, even offline. Sync when connected, then review and confirm the captured details.",
+    "reason": "Remove implied sensor and weather-station integration.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Report category",
+    "before": "step: 'Decision Intelligence'",
+    "after": "step: 'Audit Preparation'",
+    "reason": "Use a concrete benefit instead of technical abstraction.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Report title",
+    "before": "title: 'Make Better Decisions Faster'",
+    "after": "title: 'Prepare Audit-Ready Records'",
+    "reason": "Use the approved audit-ready focus.",
+    "count": 1
+  },
+  {
+    "file": "main.js",
+    "section": "Interactive farm map",
+    "label": "Report description",
+    "before": "Use one organized farm record for clearer decisions and audit-ready reports, without hunting for receipts or rebuilding the story before a review.",
+    "after": "Find records linked to your land, select a NOP template, and generate a report. Review and confirm the details before your certification review.",
+    "reason": "Show the actual report preparation process.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Trial call to action",
+    "label": "Pricing/signup link replaces nonfunctional email form",
+    "before": "          <form class=\"newsletter-form\" id=\"newsletter-email-form\">\n            <input type=\"email\" class=\"newsletter-input\" id=\"newsletter-email-input\" placeholder=\"Enter your email address\" required aria-label=\"Email address for subscription\">\n            <button type=\"submit\" class=\"btn btn-primary\">\n              Get Started Free\n              <span class=\"btn-icon-wrapper\">\n                <svg viewBox=\"0 0 24 24\">\n                  <line x1=\"7\" y1=\"17\" x2=\"17\" y2=\"7\" />\n                  <polyline points=\"7 7 17 7 17 17\" />\n                </svg>\n              </span>\n            </button>\n          </form>\n\n          <div class=\"newsletter-toast\" id=\"newsletter-success-toast\">\n            ✓ Welcome! Your 14-day free trial invite is on its way to your inbox.\n          </div>",
+    "after": "          <a href=\"pricing-sign-up.html\" class=\"btn btn-primary\">\n            Choose Your Plan\n            <span class=\"btn-icon-wrapper\">\n              <svg viewBox=\"0 0 24 24\">\n                <line x1=\"7\" y1=\"17\" x2=\"17\" y2=\"7\" />\n                <polyline points=\"7 7 17 7 17 17\" />\n              </svg>\n            </span>\n          </a>",
+    "reason": "The old form collected an email and showed an invite-sent message without a backend. A direct link to the existing plan selection page makes the action truthful.",
+    "count": 1,
+    "kind": "markup"
+  },
+  {
+    "file": "main.js",
+    "section": "Trial call to action",
+    "label": "Remove local-only email success handler",
+    "before": "  /* ---- Newsletter Form Handler ---- */\n  const nlForm  = document.getElementById('newsletter-email-form');\n  const nlToast = document.getElementById('newsletter-success-toast');\n\n  if (nlForm && nlToast) {\n    nlForm.addEventListener('submit', (e) => {\n      e.preventDefault();\n      nlToast.style.display = 'block';\n      nlForm.reset();\n      setTimeout(() => { nlToast.style.display = 'none'; }, 6000);\n    });\n  }\n\n",
+    "after": "",
+    "reason": "Remove the code that displayed an invitation confirmation without sending an invitation. No real signup or backend handler was removed.",
+    "count": 1,
+    "kind": "logic"
+  },
+  {
+    "file": "spider-ag.html",
+    "section": "Final call to action",
+    "label": "Plan selection button",
+    "before": "Create Free Account &amp; Join",
+    "after": "Choose a Plan &amp; Start Trial",
+    "reason": "Describe the next step accurately: the button opens plan selection, rather than immediately creating a permanently free account.",
+    "count": 1
+  },
+  {
+    "file": "index.html",
+    "section": "Source maintenance",
+    "label": "Trial section comment",
+    "before": "NEWSLETTER CAPTURE",
+    "after": "FREE TRIAL CALL TO ACTION",
+    "reason": "Match the source comment to the corrected trial CTA.",
+    "count": 1,
+    "kind": "maintenance"
+  },
+  {
+    "file": "main.js",
+    "section": "Source maintenance",
+    "label": "Utilities comment",
+    "before": "Hamburger navigation, scroll reveal animations, newsletter form",
+    "after": "Hamburger navigation, scroll reveal animations, contact modal",
+    "reason": "Remove the reference to the deleted local-only newsletter handler.",
+    "count": 1,
+    "kind": "maintenance"
+  },
+  {
+    "file": "style.css",
+    "section": "Pricing mobile layout",
+    "label": "Responsive pricing width and compact toggle",
+    "before": "No pricing-specific container minimum-width override or compact mobile billing-toggle rules.",
+    "after": ".pricing-hero > .container {\r\n  width: 100%;\r\n  min-width: 0;\r\n}\r\n\r\n@media (max-width: 640px) {\r\n  .pricing-hero .card-core {\r\n    min-width: 0;\r\n    padding: 1.5rem 1rem !important;\r\n  }\r\n\r\n  .pricing-hero .pricing-toggle-container {\r\n    width: 100% !important;\r\n    max-width: 100%;\r\n    gap: 0.25rem;\r\n  }\r\n\r\n  .pricing-hero .toggle-label {\r\n    flex-direction: column;\r\n    gap: 0.15rem;\r\n    padding: 0.35rem 0.45rem !important;\r\n    font-size: 0.8rem;\r\n  }\r\n\r\n  .pricing-hero .switch {\r\n    flex: 0 0 52px;\r\n    margin: 0 0.25rem !important;\r\n  }\r\n\r\n  .pricing-hero .toggle-label .save-badge {\r\n    padding: 0.2rem 0.35rem;\r\n    font-size: 0.625rem;\r\n  }\r\n}",
+    "reason": "The pre-existing max-content toggle forced the pricing container wider than a phone. Constrain the container, reduce mobile card padding, and compact the labels and savings badge while preserving both billing options.",
+    "count": 1,
+    "kind": "css"
+  }
+]

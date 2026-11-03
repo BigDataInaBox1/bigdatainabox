@@ -1,0 +1,19 @@
+Tool: Built-in image_gen
+Purpose: New website collage banner, retaining the five circled photos and adding all seven supplied standalone photos.
+Method: Two composition passes to preserve all source images within the tool's reference-image limit.
+
+Use case: compositing.
+Create the FINAL very wide, short panoramic photographic collage banner for an agricultural website. Target aspect ratio FOUR TO ONE, such as 3072 pixels wide by 768 pixels high. It is a single finished image that fills the canvas edge to edge. Two horizontal rows, SIX separate photo panels per row, EXACTLY TWELVE photographs total. Use the actual supplied photos; do not invent substitutes.
+
+Image 1 is a nine-photo preparation sheet. Recover each of its nine photos separately, not the sheet as one panel. Its top row is the old green tractor in rolling farmland, rusty tubular farm gate/wooden post, and weathered red barn siding/white wildflowers. Its middle row is the hand holding fuzzy soybean pods, sunset fence with wooden post, and new hand holding smooth green pea pods. Its bottom row is industrial silos over a green field, the man with a phone in dry corn, and the woman with a tablet in a golden grain field.
+Image 2 is additional golden oat panicles in soft focus.
+Image 3 is additional sunlit wheat stalks.
+Image 4 is additional hands inspecting green cereal heads, with a dark watch and blue sleeves.
+
+Exact FINAL arrangement:
+TOP ROW, left to right:
+1 industrial silos, 2 man with phone in corn, 3 rusty gate and wooden post, 4 sunlit wheat, 5 green tractor in rolling farmland, 6 golden oat panicles.
+BOTTOM ROW, left to right:
+7 smooth pea-pod hand, 8 red barn siding and wildflowers, 9 woman with tablet in grain, 10 hands inspecting green cereal heads, 11 fuzzy soybean-pod hand, 12 sunset fence.
+
+Make a polished editorial mosaic with intentionally varied panel widths. The people, tractor, and crop-inspection photographs get enough width to keep their important details visible; narrower panels suit gate, barn and crop textures. Suggested widths as a percentage of canvas: top row 15,18,11,16,24,16; bottom row 16,11,22,20,13,18. Both rows have the same height. Use very thin off-white dividers, no thick margins. Natural, cohesive photographic greens and warm golden sunlight, sharp detail, gentle exposure balancing. Preserve the actual people, faces, clothing, devices, tractor and recognizable old scenes. Crop carefully so faces and devices are visible. Keep ALL twelve photographs, each once. Do not drop or duplicate any photo. Do not add any additional photos, text, logos, watermark, red circles, labels, black bars, page mockup, background frame, or blank space.

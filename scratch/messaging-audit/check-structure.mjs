@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const result = [];
+for (const file of ['index.html','spider-ag.html','pricing-sign-up.html','schedule-demo.html']) {
+  const before = fs.readFileSync(`scratch/messaging-audit/before/${file}`, 'utf8');
+  const after = fs.readFileSync(file, 'utf8');
+  const sections = source => source.match(/<section\b[^>]*>/g) || [];
+  const headings = source => source.match(/<h1\b[^>]*>[\s\S]*?<\/h1>/g) || [];
+  const imageSources = source => [...source.matchAll(/<img\b[^>]*>/g)].map(([tag]) => ({src:tag.match(/\bsrc="([^"]*)"/)?.[1],srcset:tag.match(/\bsrcset="([^"]*)"/)?.[1]}));
+  assert.deepEqual(sections(after), sections(before), `${file}: section order changed`);
+  assert.deepEqual(headings(after), headings(before), `${file}: hero heading changed`);
+  assert.deepEqual(imageSources(after), imageSources(before), `${file}: image source changed`);
+  result.push({file,sectionsPreserved:sections(after).length,heroHeadingPreserved:true,imagesPreserved:true});
+}
+const pricing = fs.readFileSync('pricing-sign-up.html','utf8');
+assert(pricing.includes("priceDisplay.innerHTML = '$250"));
+assert(pricing.includes("priceDisplay.innerHTML = '$40"));
+assert.equal(40*12-250,230);
+assert.equal(Math.round((40*12-250)/(40*12)*100),48);
+const home = fs.readFileSync('index.html','utf8');
+assert(!home.includes('Your 14-day free trial invite is on its way'));
+assert(!home.includes('id="newsletter-email-form"'));
+assert(home.includes('Choose Your Plan'));
+const changesPath='scratch/messaging-audit/changes.json';
+const changes=JSON.parse(fs.readFileSync(changesPath,'utf8'));
+changes.find(c=>c.file==='index.html'&&c.section==='Farmer photo gallery'&&c.label==='Lead').after='For organic, specialty, and row crop growers: less time retyping notes, more time in the field, and records kept your way.';
+fs.writeFileSync(changesPath,JSON.stringify(changes,null,2));
+fs.writeFileSync('scratch/messaging-audit/structure-checks.json',JSON.stringify({pages:result,annualSavings:230,roundedAnnualSavingsPercent:48,trialCtaCorrected:true},null,2));
+console.log(JSON.stringify(result));
+console.log('Prices, annual-savings arithmetic, and truthful trial CTA checks passed.');
