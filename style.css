@@ -394,6 +394,40 @@ section {
   font-size: 1.15rem;
   color: var(--color-forest);
   letter-spacing: -0.01em;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  min-height: 44px;
+}
+
+/* Keep the supplied DATA mark and set the full name at a readable size. */
+.brand-mark {
+  position: relative;
+  display: block;
+  flex: 0 0 3.75rem;
+  width: 3.75rem;
+  height: 1.9375rem;
+  overflow: hidden;
+}
+
+.brand-mark .logo-img {
+  position: absolute;
+  top: -0.5625rem;
+  left: -1.25rem;
+  width: 6.25rem;
+  max-width: none;
+  height: 3.75rem;
+}
+
+.brand-name {
+  font-size: 0.875rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.footer-brand-link {
+  width: max-content;
+  margin-bottom: 1.5rem;
 }
 
 .logo-img {
@@ -429,7 +463,7 @@ section {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 1.75rem;
+  gap: clamp(0.75rem, 1.55vw, 1.75rem);
   align-items: center;
 }
 
@@ -543,7 +577,7 @@ section {
   transition: var(--transition-fast);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1180px) {
   .header-wrapper {
     top: 0.75rem;
   }
@@ -885,6 +919,10 @@ section {
   gap: 1.25rem;
   justify-content: center;
   height: 100%;
+}
+
+.spider-showcase {
+  overflow-x: clip;
 }
 
 .feature-list-card {
@@ -1800,8 +1838,13 @@ section {
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
-  width: 0;
-  height: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 1;
 }
 
 /* The slider */
@@ -1848,14 +1891,64 @@ input:checked+.slider:before {
 }
 
 .savings-callout .callout-pill {
-  background-color: var(--color-vibrant);
-  color: var(--color-white);
+  background-color: #D5EBD3;
+  color: #193D29;
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.35rem 0.8rem;
   border-radius: 100px;
   box-shadow: var(--shadow-button);
   display: inline-block;
+}
+
+.billing-period-text {
+  margin-bottom: 1.25rem;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.billing-savings {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 6px;
+  background: #D5EBD3;
+  color: #193D29;
+  font-weight: 800;
+}
+
+button.toggle-label {
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+}
+
+.pricing-hero .toggle-label {
+  min-height: 44px;
+  opacity: 1;
+  color: #4C6154;
+}
+
+.pricing-hero .toggle-label.active {
+  color: var(--color-forest);
+}
+
+.pricing-hero .switch {
+  min-height: 44px;
+}
+
+.savings-callout[hidden] {
+  display: none;
+}
+
+.pricing-hero .save-badge {
+  background: var(--color-forest);
+  color: #FFFFFF;
+}
+
+.switch input:focus-visible + .slider {
+  outline: 3px solid var(--color-forest);
+  outline-offset: 4px;
 }
 
 /* ----------------------------------------------------
@@ -3918,6 +4011,50 @@ button {
   filter: drop-shadow(-20px 30px 55px rgba(0, 0, 0, 0.8));
 }
 
+.offline-phone-callout {
+  position: absolute;
+  top: 12%;
+  right: -3rem;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(167, 243, 208, 0.4);
+  border-radius: 14px;
+  background: rgba(15, 40, 29, 0.96);
+  color: #D5EBD3;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-headings);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  pointer-events: none;
+}
+
+.offline-phone-callout strong {
+  display: block;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.offline-signal-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+@media (max-width: 576px) {
+  .offline-phone-callout {
+    right: -1rem;
+    padding: 0.6rem 0.7rem;
+    gap: 0.45rem;
+  }
+}
+
 /* Secondary Floating Device Preview Card */
 .phone-secondary-card {
   position: absolute;
@@ -4302,7 +4439,8 @@ button {
   z-index: 2;
   width: 100%;
   max-width: 720px;
-  max-height: 90vh;
+  height: min(850px, 90vh);
+  height: min(850px, 90dvh);
   background: #FFFFFF;
   border: 1px solid rgba(41, 91, 63, 0.2);
   border-radius: 24px;
@@ -4343,7 +4481,8 @@ button {
 }
 
 .demo-modal-header {
-  padding: 2rem 2.25rem 1.25rem;
+  flex: 0 0 auto;
+  padding: 2rem 4.5rem 1.25rem 2.25rem;
   background: linear-gradient(180deg, rgba(248, 248, 245, 0.8) 0%, rgba(255, 255, 255, 1) 100%);
   border-bottom: 1px solid rgba(41, 91, 63, 0.1);
   text-align: left;
@@ -4380,7 +4519,9 @@ button {
 .demo-modal-body {
   position: relative;
   flex: 1;
-  overflow-y: auto;
+  min-height: 0;
+  display: flex;
+  overflow: hidden;
   padding: 1rem 1.25rem 1.5rem;
   background: #FFFFFF;
 }
@@ -4416,7 +4557,9 @@ button {
 .demo-modal-body iframe {
   display: block;
   width: 100%;
-  min-height: 520px;
+  height: 100%;
+  min-height: 0;
+  flex: 1;
   border: none;
 }
 
@@ -4426,12 +4569,13 @@ button {
   }
 
   .demo-modal-container {
-    max-height: 94vh;
+    height: 94vh;
+    height: 94dvh;
     border-radius: 18px;
   }
 
   .demo-modal-header {
-    padding: 1.5rem 1.5rem 1rem;
+    padding: 1.5rem 4rem 1rem 1.5rem;
   }
 
   .demo-modal-title {
@@ -4447,6 +4591,6 @@ button {
   }
 
   .demo-modal-body iframe {
-    min-height: 480px;
+    min-height: 0;
   }
 }

@@ -26,8 +26,11 @@
   <header class="header-wrapper">
     <div class="container">
       <nav class="nav-bar">
-        <a href="index.html" class="logo-link">
-          <img src="/assets/officialbdiblogo.png" alt="BDIB Solutions Logo" class="logo-img">
+        <a href="index.html" class="logo-link" aria-label="Big Data in a Box home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="/assets/officialbdiblogo.png" alt="" class="logo-img" width="1501" height="901">
+          </span>
+          <span class="brand-name">Big Data<br>in a Box</span>
         </a>
 
         <ul class="nav-links" id="nav-links-menu">
@@ -43,7 +46,7 @@
             </ul>
           </li>
           <li><a href="pricing-sign-up.html" class="active-nav">Pricing</a></li>
-          <li><a href="javascript:void(0)">Schedule Demo</a></li>
+          <li><a href="https://sn-bdibsolutions27.zohobookings.com/4741574000000837028/#/4741574000000837028?">Schedule Demo</a></li>
           <li><a href="schedule-demo.html" data-open-contact-modal>Contact Us</a></li>
           <!-- Nav Drawer CTA for mobile -->
           <li>
@@ -102,24 +105,26 @@
                   </div>
                   <!-- Savings Callout -->
                   <div class="savings-callout" id="savings-callout" style="visibility: visible; opacity: 1; transform: translateY(0); transition: var(--transition-fluid);">
-                    <span class="callout-pill" style="background-color: var(--color-vibrant); color: var(--color-forest); font-weight: 800; padding: 0.35rem 0.85rem; font-size: 0.8rem; box-shadow: 0 8px 24px rgba(99, 185, 109, 0.3);">Save $230/yr</span>
+                    <span class="callout-pill">Save $230/yr</span>
                   </div>
                 </div>
 
-                <div class="price-value" id="price-display" style="font-size: clamp(2.75rem, 4.5vw, 3.5rem); color: var(--color-white); margin-bottom: 0;">$250<span class="price-interval" style="color: var(--color-vibrant); font-size: 1.1rem; margin-left: 0.2rem;">/year</span></div>
-                <p class="text-muted" id="billing-period-text" style="margin-bottom: 1.25rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">Billed annually: $250, versus $480 for 12 monthly payments.</p>
+                <div class="pricing-amount" aria-live="polite" aria-atomic="true">
+                <div class="price-value" id="price-display" style="font-size: clamp(2.75rem, 4.5vw, 3.5rem); color: var(--color-white); margin-bottom: 0;">$250<span class="price-interval" style="color: #D5EBD3; font-size: 1.1rem; margin-left: 0.2rem;">/year</span></div>
+                <p id="billing-period-text" class="billing-period-text">Billed once annually. <strong class="billing-savings">Save $230 (48%)</strong></p>
+                </div>
                 
                 <!-- Billing Toggle Slider (Glassmorphic) -->
                 <div class="pricing-toggle-container" style="background-color: var(--color-white); padding: 0.35rem; border-radius: 100px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.1); display: flex; margin: 0 auto 1.5rem auto; width: max-content;">
-                  <span class="toggle-label monthly-label" id="label-monthly" style="padding: 0.35rem 1.25rem; border-radius: 100px;">Monthly</span>
+                  <button type="button" class="toggle-label monthly-label" id="label-monthly" aria-pressed="false" style="padding: 0.35rem 1.25rem; border-radius: 100px;">Monthly</button>
                   <label class="switch" style="margin: 0 0.5rem; display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" id="pricing-toggle" aria-label="Toggle billing interval" checked>
+                    <input type="checkbox" id="pricing-toggle" role="switch" aria-label="Use annual billing" checked>
                     <span class="slider" style="position: relative; width: 52px; height: 28px; border-radius: 100px; background-color: var(--color-forest-10); display: block; border: 1px solid rgba(41,91,63,0.1); transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);"></span>
                   </label>
-                  <span class="toggle-label annual-label active" id="label-annual" style="padding: 0.35rem 1.25rem; border-radius: 100px;">
+                  <button type="button" class="toggle-label annual-label active" id="label-annual" aria-pressed="true" style="padding: 0.35rem 1.25rem; border-radius: 100px;">
                     Annual
                     <span class="save-badge">Save 48%</span>
-                  </span>
+                  </button>
                 </div>
 
                 <div style="height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%); margin-bottom: 1.25rem;"></div>
@@ -151,7 +156,7 @@
                       stroke-linejoin="round" style="color: var(--color-vibrant); width: 1.15rem; height: 1.15rem; flex-shrink: 0;">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span>Dated records and NOP templates for audit preparation</span>
+                    <span>Traceable records and compliance forms for audit readiness.</span>
                   </li>
                   <li style="color: rgba(255,255,255,0.9); font-size: 0.9rem;">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
@@ -164,8 +169,8 @@
               </div>
 
               <a href="https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=yearly" class="btn btn-primary" id="cta-button"
-                style="width: 100%; justify-content: center; padding: 0.85rem 1.5rem; margin-top: 1.5rem; font-size: 1rem; background-color: var(--color-vibrant); color: var(--color-forest);">
-                Select Annual
+                style="width: 100%; justify-content: center; padding: 0.85rem 1.5rem; margin-top: 1.5rem; font-size: 1rem; background-color: var(--color-vibrant); color: #0F281D;">
+                Subscribe
               </a>
             </div>
           </div>
@@ -181,7 +186,12 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="/assets/officialbdiblogo.png" alt="BDIB Solutions Logo" class="footer-logo">
+          <a href="index.html" class="logo-link footer-brand-link" aria-label="Big Data in a Box home">
+            <span class="brand-mark" aria-hidden="true">
+              <img src="/assets/officialbdiblogo.png" alt="" class="logo-img" width="1501" height="901">
+            </span>
+            <span class="brand-name">Big Data<br>in a Box</span>
+          </a>
           <p>One farm record, kept your way and ready for the people who need it.</p>
           <p>2625 North Loop Drive, Suite 2622<br>Ames, Iowa 50010</p>
         </div>
@@ -236,27 +246,30 @@
       const ctaButton = document.getElementById('cta-button');
 
       function updatePricing(isAnnual) {
+        monthlyLabel.setAttribute('aria-pressed', String(!isAnnual));
+        annualLabel.setAttribute('aria-pressed', String(isAnnual));
+        savingsCallout.hidden = !isAnnual;
         if (isAnnual) {
-          priceDisplay.innerHTML = '$250<span class="price-interval" style="color: var(--color-vibrant); font-size: 1.1rem; margin-left: 0.2rem;">/year</span>';
-          billingPeriodText.textContent = 'Billed annually: $250, versus $480 for 12 monthly payments.';
+          priceDisplay.innerHTML = '$250<span class="price-interval" style="color: #D5EBD3; font-size: 1.1rem; margin-left: 0.2rem;">/year</span>';
+          billingPeriodText.innerHTML = 'Billed once annually. <strong class="billing-savings">Save $230 (48%)</strong>';
           billingTitle.textContent = 'Annual Plan';
           savingsCallout.style.visibility = 'visible';
           savingsCallout.style.opacity = '1';
           savingsCallout.style.transform = 'translateY(0)';
           monthlyLabel.classList.remove('active');
           annualLabel.classList.add('active');
-          ctaButton.textContent = 'Select Annual';
+          ctaButton.textContent = 'Subscribe';
           ctaButton.href = 'https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=yearly';
         } else {
-          priceDisplay.innerHTML = '$40<span class="price-interval" style="color: var(--color-vibrant); font-size: 1.1rem; margin-left: 0.2rem;">/month</span>';
-          billingPeriodText.textContent = 'Billed monthly at $40. Twelve payments total $480.';
+          priceDisplay.innerHTML = '$40<span class="price-interval" style="color: #D5EBD3; font-size: 1.1rem; margin-left: 0.2rem;">/month</span>';
+          billingPeriodText.textContent = 'Billed month-to-month. No annual commitment. Twelve months total $480 for comparison.';
           billingTitle.textContent = 'Monthly Plan';
           savingsCallout.style.visibility = 'hidden';
           savingsCallout.style.opacity = '0';
           savingsCallout.style.transform = 'translateY(5px)';
           monthlyLabel.classList.add('active');
           annualLabel.classList.remove('active');
-          ctaButton.textContent = 'Select Monthly';
+          ctaButton.textContent = 'Subscribe';
           ctaButton.href = 'https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=monthly';
         }
       }

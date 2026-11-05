@@ -883,6 +883,7 @@
       modal.id = 'schedule-demo-modal';
       modal.className = 'demo-modal-overlay';
       modal.setAttribute('aria-hidden', 'true');
+      modal.setAttribute('aria-modal', 'true');
       modal.setAttribute('role', 'dialog');
       modal.setAttribute('aria-labelledby', 'demo-modal-title');
       
@@ -904,7 +905,7 @@
             <div class="demo-modal-loader" id="demo-modal-loader">
               <div class="spinner"></div>
             </div>
-            <iframe id="modal_ziframe_787725" name="modal_ziframe_787725" aria-label="Contact" frameborder="0" style="height:550px;width:100%;border:none;border-radius:12px;" src="https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y"></iframe>
+            <iframe id="modal_ziframe_787725" name="modal_ziframe_787725" title="Contact form" aria-label="Contact" frameborder="0" style="width:100%;border:none;border-radius:12px;" src="https://forms.zohopublic.com/bigdatainaboxinc1/form/Contact/formperma/WYv3jZRHHIv_q55kIAIoiF4ONy8hI17TYppR-AXSo2Y"></iframe>
           </div>
         </div>
       `;
