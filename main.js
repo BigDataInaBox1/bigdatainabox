@@ -714,7 +714,7 @@
     5: {
       step: 'Audit Preparation',
       title: 'Prepare Audit-Ready Records',
-      desc: 'Find records linked to your land, select a NOP template, and generate a report. Review and confirm the details before your certification review.',
+      desc: 'Find records linked to your land, select a template, and generate a report. Review and confirm the details before your certification review.',
       img: '/assets/infographic/pin5_decisions.png',
       origin: { x: 20.00, y: 75.98 }
     }
