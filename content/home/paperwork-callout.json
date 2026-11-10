@@ -1,0 +1,15 @@
+{
+  "eyebrow": "Grow your Farm!",
+  "title": "Give paperwork hours back to your farm.",
+  "description": "Spend less time hunting for receipts, retyping field notes, and reconstructing records before an audit.",
+  "primary": {
+    "text": "Try SPIDER Ag Free",
+    "url": "pricing-sign-up.html",
+    "download": ""
+  },
+  "secondary": {
+    "text": "Contact Us",
+    "url": "schedule-demo.html",
+    "download": ""
+  }
+}

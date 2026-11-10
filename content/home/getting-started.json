@@ -1,0 +1,23 @@
+{
+  "eyebrow": "Streamlined Start",
+  "title": "Start With the Way You Already Work",
+  "description": "Get time back without adding a second job. Use the notes and photos you already keep, then review and confirm your records in three simple steps.",
+  "background": {
+    "src": "/assets/home/onboarding-field-1200.webp",
+    "alt": ""
+  },
+  "steps": [
+    {
+      "title": "Set Up Your Farm",
+      "description": "Start your free trial and visually organize your farm, fields, plots, and subplots the way you know them. No credit card required."
+    },
+    {
+      "title": "Say It, Snap It",
+      "description": "Say what happened or photograph a paper log. AI helps structure the entry; you review and confirm before saving."
+    },
+    {
+      "title": "Review, Confirm, Report",
+      "description": "Choose your field records and compliance forms or templates to generate reports. Review, confirm, and share reports and data."
+    }
+  ]
+}

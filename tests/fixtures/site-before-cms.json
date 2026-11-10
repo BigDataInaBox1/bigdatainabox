@@ -1,0 +1,553 @@
+{
+  "index.html": {
+    "headings": [
+      "Knowthepulseofyourfarmoperationanytime,anywhere.",
+      "SPIDERAg:OneFarmRecord",
+      "YourFarmRecords,Connected",
+      "TraceRecordsBacktoEachField",
+      "Givepaperworkhoursbacktoyourfarm.",
+      "BuiltforEverydayFarmWork",
+      "SayIt,SnapIt,It'sRecorded",
+      "BuiltfortheField,NottheOffice",
+      "Research&CommunitySupport",
+      "StartWiththeWayYouAlreadyWork",
+      "SetUpYourFarm",
+      "SayIt,SnapIt",
+      "Review,Confirm,Report",
+      "WhenRecord-KeepingBecomesaSecondJob",
+      "TheCostofChasingPaperwork",
+      "RecordsScatteredAcrossSystems",
+      "FieldNotesLeftBehind",
+      "WhenCellServiceDrops",
+      "BuiltAroundHowYouOrganizeYourFarm",
+      "Audit-ReadyReporting",
+      "Farmer-NativeOrganization",
+      "TrustworthyAI,NotBlindAI",
+      "LessTimeonPaperwork",
+      "OurStory",
+      "Dr.SreeNilakanta",
+      "Dr.SriniReddy",
+      "HariSarma",
+      "FrequentlyAskedQuestions",
+      "MoreFieldTime.LessPaperwork.",
+      "Navigation",
+      "GetInTouch"
+    ],
+    "sections": [
+      "top",
+      "spider-ag",
+      "interactive-infographic",
+      "partner-to-profit",
+      "gallery",
+      "compare",
+      "mobile-app",
+      "partners",
+      "onboarding",
+      "painpoints",
+      "value-props",
+      "story",
+      "faq",
+      "trial"
+    ],
+    "ids": [
+      "btn-expand-compare",
+      "compare",
+      "contact",
+      "faq",
+      "gallery",
+      "gallery-dots",
+      "gallery-lightbox",
+      "gallery-next-btn",
+      "gallery-prev-btn",
+      "gallery-track",
+      "hamburger-toggle",
+      "hero-motion-toggle",
+      "hero-video",
+      "hero-video-container",
+      "hero-video-fallback",
+      "interactive-infographic",
+      "lightbox-caption",
+      "lightbox-close",
+      "lightbox-img",
+      "lightbox-next-btn",
+      "lightbox-overlay",
+      "lightbox-prev-btn",
+      "mobile-app",
+      "nav-links-menu",
+      "onboarding",
+      "painpoints",
+      "partner-to-profit",
+      "partners",
+      "prezi-canvas",
+      "prezi-card",
+      "prezi-card-close",
+      "prezi-card-desc",
+      "prezi-card-img",
+      "prezi-card-overlay",
+      "prezi-card-progress",
+      "prezi-card-title",
+      "prezi-next-pin",
+      "prezi-prev-pin",
+      "prezi-skip-map",
+      "prezi-step-tag",
+      "prezi-viewport",
+      "spider-ag",
+      "spider-carousel",
+      "spider-carousel-dots",
+      "spider-carousel-track",
+      "spider-lightbox",
+      "spider-lightbox-caption",
+      "spider-lightbox-close",
+      "spider-lightbox-img",
+      "spider-lightbox-next",
+      "spider-lightbox-overlay",
+      "spider-lightbox-prev",
+      "spider-next-btn",
+      "spider-prev-btn",
+      "story",
+      "top",
+      "trial",
+      "value-props"
+    ],
+    "images": [
+      {
+        "src": "/assets/officialbdiblogo.png",
+        "alt": ""
+      },
+      {
+        "src": "/assets/home/hero-farm-1019.webp",
+        "alt": "",
+        "srcset": "/assets/home/hero-farm-640.webp 640w, /assets/home/hero-farm-1019.webp 1019w"
+      },
+      {
+        "src": "/assets/home/hero-poster.webp",
+        "alt": ""
+      },
+      {
+        "src": "/assets/officialspideraglogo.png",
+        "alt": "SPIDER Ag Logo"
+      },
+      {
+        "src": "/assets/spiderag pics/spiderag_tractor_mockup.png",
+        "alt": "SPIDER Ag on tractor console in organic crop field"
+      },
+      {
+        "src": "/assets/spiderag pics/spiderag_desk_mockup.png",
+        "alt": "SPIDER Ag farm management desk setup"
+      },
+      {
+        "src": "/assets/spiderag pics/ui task calendar.png",
+        "alt": "SPIDER Ag operations and task calendar interface"
+      },
+      {
+        "src": "/assets/spiderag pics/farm color plots.png",
+        "alt": "SPIDER Ag color-coded acreage and field plot mapping interface"
+      },
+      {
+        "src": "/assets/spiderag pics/ui in farm.png",
+        "alt": "SPIDER Ag mobile in-field tablet companion"
+      },
+      {
+        "src": "/assets/spiderag_mobile_voice.jpg",
+        "alt": "Farmer using SPIDER Ag mobile voice recording interface in field"
+      },
+      {
+        "src": "",
+        "alt": "Enlarged SPIDER Ag view"
+      },
+      {
+        "src": "/assets/infographic/infographic.png",
+        "alt": "Connected Farm Data Ecosystem Aerial Map"
+      },
+      {
+        "src": "",
+        "alt": "Infographic detail view"
+      },
+      {
+        "src": "/assets/Gallery/11062b_288ab3edd5bb493cb9e3c38420654758~mv2.jpg",
+        "alt": "Farmer crouching in a field of green crops while logging field data on a digital tablet"
+      },
+      {
+        "src": "/assets/home/corn-rows-1200.webp",
+        "alt": "Green corn plants lining a row through a working field",
+        "srcset": "/assets/home/corn-rows-640.webp 640w, /assets/home/corn-rows-1200.webp 1200w, /assets/home/corn-rows-1600.webp 1600w"
+      },
+      {
+        "src": "/assets/home/harvest-1200.webp",
+        "alt": "A red combine harvesting a field beside autumn trees",
+        "srcset": "/assets/home/harvest-640.webp 640w, /assets/home/harvest-1200.webp 1200w, /assets/home/harvest-1600.webp 1600w"
+      },
+      {
+        "src": "/assets/Gallery/11062b_b3d81e77da124646b5424e71556a0f1a~mv2.jpeg",
+        "alt": "Center-pivot agricultural irrigation sprinkler system extending across a green field"
+      },
+      {
+        "src": "/assets/Gallery/11062b_bc1333dcf4004a4aada14e1f4c29e57c~mv2.jpg",
+        "alt": "Tall green cornfield standing in front of a metal grain silo and traditional red farm barn"
+      },
+      {
+        "src": "/assets/Gallery/2f53f326ca8727547a6822aec4ec0e04.webp",
+        "alt": "Woven bushel basket filled with freshly harvested green okra pods"
+      },
+      {
+        "src": "/assets/Gallery/6e37d9_498e05f8dbfd4b4c831e22bf2e8b832f~mv2.webp",
+        "alt": "Farm team members harvesting crops in the field with buckets and giving a thumbs up"
+      },
+      {
+        "src": "/assets/Gallery/6e37d9_d7b629d093814e448fb5d726c873618a~mv2.jpg",
+        "alt": "Open farm field featuring tilled soil beds, crop markers, and growing garlic rows under a clear sky"
+      },
+      {
+        "src": "/assets/Gallery/c1c96acfb5c929e2ba3ddb42efc52490.jpg",
+        "alt": "Close-up of freshly harvested organic red potatoes coated in rich field soil"
+      },
+      {
+        "src": "/assets/Gallery/f7ccedd621392775fd2cb109759e7c16.jpg",
+        "alt": "Farmer's hands carefully parting large green leaves to inspect a growing head of organic cauliflower"
+      },
+      {
+        "src": "",
+        "alt": "Enlarged gallery view"
+      },
+      {
+        "src": "/assets/officialbdiblogo.png",
+        "alt": "SPIDER Ag"
+      },
+      {
+        "src": "/assets/home/tractor-field-1200.webp",
+        "alt": "",
+        "srcset": "/assets/home/tractor-field-640.webp 640w, /assets/home/tractor-field-1200.webp 1200w, /assets/home/tractor-field-1920.webp 1920w"
+      },
+      {
+        "src": "/assets/spiderag-3d-iphone-mockup.png",
+        "alt": "SPIDER Ag mobile voice recording interface"
+      },
+      {
+        "src": "/assets/Partners/usda.png",
+        "alt": "USDA Logo"
+      },
+      {
+        "src": "/assets/Partners/aiira-banner-logo-no-circle.png",
+        "alt": "AIIRA Logo"
+      },
+      {
+        "src": "/assets/Partners/BioConnect_Iowa_Logo_-_Color-1024x337.png",
+        "alt": "BioConnect Iowa Logo"
+      },
+      {
+        "src": "/assets/Partners/iowa_economic_development_authority_ieda__logo.jfif",
+        "alt": "Iowa Economic Development Authority Logo"
+      },
+      {
+        "src": "/assets/Partners/rodale-institute-logo.png",
+        "alt": "Rodale Institute Logo"
+      },
+      {
+        "src": "/assets/Partners/Root-to-Rise-Color-Full-Logo-Image.jpg",
+        "alt": "Root to Rise Logo"
+      },
+      {
+        "src": "/assets/Partners/garland_logo.png",
+        "alt": "Mustard Seed Community Farm Logo"
+      },
+      {
+        "src": "/assets/home/farm-collage-v2-1536.webp",
+        "alt": "Farm collage showing growers with a phone and tablet, hands inspecting crops, grain silos, a tractor, a rustic gate, a red barn, and a sunset fence",
+        "srcset": "/assets/home/farm-collage-v2-768.webp 768w, /assets/home/farm-collage-v2-1536.webp 1536w, /assets/home/farm-collage-v2-2172.webp 2172w"
+      },
+      {
+        "src": "/assets/home/onboarding-field-1200.webp",
+        "alt": "",
+        "srcset": "/assets/home/onboarding-field-640.webp 640w, /assets/home/onboarding-field-1200.webp 1200w, /assets/home/onboarding-field-1540.webp 1540w"
+      },
+      {
+        "src": "/assets/home/sunlit-wheat-800.webp",
+        "alt": "Sunlit wheat stalks in a golden field",
+        "srcset": "/assets/home/sunlit-wheat-480.webp 480w, /assets/home/sunlit-wheat-800.webp 800w, /assets/home/sunlit-wheat-1200.webp 1200w"
+      },
+      {
+        "src": "/assets/team-sree.jpg",
+        "alt": "Dr. Sree Nilakanta"
+      },
+      {
+        "src": "/assets/team-srini.jpg",
+        "alt": "Dr. Srini Reddy"
+      },
+      {
+        "src": "/assets/team-hari.jpg",
+        "alt": "Hari Sarma"
+      },
+      {
+        "src": "/assets/officialbdiblogo.png",
+        "alt": ""
+      }
+    ],
+    "links": [
+      "index.html",
+      "index.html#onboarding",
+      "index.html#story",
+      "spider-ag.html",
+      "https://spiderag-preprod.bdibsolutions.com/auth/",
+      "pricing-sign-up.html",
+      "https://sn-bdibsolutions27.zohobookings.com/4741574000000837028/#/4741574000000837028?",
+      "schedule-demo.html",
+      "pricing-sign-up.html",
+      "https://spiderag-preprod.bdibsolutions.com/auth/",
+      "pricing-sign-up.html",
+      "pricing-sign-up.html",
+      "schedule-demo.html",
+      "#spider-ag",
+      "spider-ag.html",
+      "pricing-sign-up.html",
+      "schedule-demo.html",
+      "spider-ag.html",
+      "schedule-demo.html",
+      "https://www.usda.gov/",
+      "https://aiira.iastate.edu/",
+      "https://bioconnectiowa.org/",
+      "https://www.iowaeda.com/",
+      "https://rodaleinstitute.org/",
+      "https://www.facebook.com/roottorisefarmer/",
+      "https://www.mustardseedfarm.org/",
+      "https://www.isupjcenter.org/",
+      "https://iowapodcast.com/sree-nilakanta/",
+      "https://www.youtube.com/watch?v=m7ix-9VCyv0",
+      "https://x.com/IowaPodcast/status/2118297285704720702",
+      "http://www.linkedin.com/in/nilakanta",
+      "http://linkedin.com/in/hariksarma",
+      "pricing-sign-up.html",
+      "index.html",
+      "index.html",
+      "index.html#onboarding",
+      "index.html#story",
+      "spider-ag.html",
+      "pricing-sign-up.html",
+      "tel:+15153296652",
+      "mailto:info@bdibsolutions.com"
+    ],
+    "text": "BigDatainaBoxHowItWorksOurStorySPIDERAgLoginPricingScheduleDemoContactUsFreeTrialLoginFreeTrialKnowthepulseofyourfarmoperationanytime,anywhere.Recordvoicenotes,photos,anddocumentsasworkhappens.Keepfieldactivityinoneplace,reviewthedetails,andpreparerecordsforsharingandreporting.TrySPIDERAgFreeContactUsNocreditcardrequired·14-DayFreeTrialPauseanimationScrolltoexploreFarmRecord-KeepingSPIDERAg:OneFarmRecordOnefarmrecord,keptthewayyoualreadyworkandtrustedbythepeoplewhoneedtoseeit.Keepvoicenotes,photos,andpaperlogstogetherforeverydayworkandorganicauditpreparation.ExploreSPIDERAgFeaturesYourFarmRecords,ConnectedExplorehownotes,photos,anddatedrecordshelpyoukeeptrackoffieldworkandpreparereports.FieldObservationsFieldRecordsFieldDiary&StoryAudit-ReadyRecordsFarmOrganizationFieldrecordsFarmorganizationFielddiaryFieldobservationsAudit-readyrecordsFieldRecords1of5TraceRecordsBacktoEachFieldKeepdatedtasks,inputrecords,andreceiptslinkedtothefieldtheybelongto,soyoucanfindtherecordbehindeachactivity.←PreviousNextinsight→Continue→GrowyourFarm!Givepaperworkhoursbacktoyourfarm.Spendlesstimehuntingforreceipts,retypingfieldnotes,andreconstructingrecordsbeforeanaudit.TrySPIDERAgFreeContactUsBuiltforEverydayFarmWorkFororganic,specialty,androwcropgrowers:lesstimeretypingnotes,moretimeinthefield,andrecordskeptyourway.THEBENEFITSSayIt,SnapIt,It'sRecordedAIhelpsturnvoicenotes,photos,andpaperlogsintodraftrecords.Reviewandconfirmthedetailsbeforesaving,withoutretypingthewholelog.TheOldNotebookSPIDERAgDataCaptureHandwrittenlogsandreceiptstofindandretypeDataCaptureVoice-to-task&paperlogstosearchabletablesFieldConnectivityMustrememberdetailsandwritethemdownbackattheofficeFieldConnectivityCapturevoicenotes&photosoffline;syncwhenconnectedRecordStorageSinglephysicalcopyvulnerabletowater,fire,orbeingmisplacedRecordStorageCloud-backedrecordskeptinoneplaceAuditTrails&SharingNoeasywaytocreateaudittrailsorshareaccessAuditTrails&SharingSharerecordsandreportstoauthorizedusersandpartnersOrganicAuditPreparationReconstructingrecordsfromnotesandshoeboxreceiptsOrganicAuditPreparationTemplatesforreportsyoureviewandconfirmFarmOrganizationStaticrecordswithnoanalysisoroperationaltrendsFarmOrganizationRecordsorganizedbyfarm,field,plot&subplotSeeFullComparisonNosignal?Keeprecording.VoiceRecording,EvenOfflineBuiltfortheField,NottheOfficeNocellservice?Keeprecording.Capturevoicenotesandphotosinthefield,evenoffline.Yourcapturesstayonyourdeviceandsyncwhenyoureconnect.ThenreviewandconfirmtheAI-generateddetailsbeforesaving.ExploreMobileAppContactUsResearch&CommunitySupportStreamlinedStartStartWiththeWayYouAlreadyWorkGettimebackwithoutaddingasecondjob.Usethenotesandphotosyoualreadykeep,thenreviewandconfirmyourrecordsinthreesimplesteps.SetUpYourFarmStartyourfreetrialandvisuallyorganizeyourfarm,fields,plots,andsubplotsthewayyouknowthem.Nocreditcardrequired.SayIt,SnapItSaywhathappenedorphotographapaperlog.AIhelpsstructuretheentry;youreviewandconfirmbeforesaving.Review,Confirm,ReportChooseyourfieldrecordsandcomplianceformsortemplatestogeneratereports.Review,confirm,andsharereportsanddata.TheDailyRealityWhenRecord-KeepingBecomesaSecondJobLostreceipts,scatterednotes,andauditpreparationtakehoursawayfromyourfarm.ExploretheeverydaygapsSPIDERAghelpsclose.Paperwork&TimeTheCostofChasingPaperworkHovertorevealinsightHuntingforreceipts,retypingfieldnotes,andpiecingtogetheranaudittrailcostshours.Capturerecordsasworkhappensandgetthattimeback.DataFragmentationRecordsScatteredAcrossSystemsHovertorevealinsightKeeppaperlogs,photos,andfieldnotestogetherbyfarm,field,plot,andsubplot,usingthenamesandboundariesyoualreadyknow.HumanIntelligenceFieldNotesLeftBehindHovertorevealinsightSaywhyajobchangedoranapplicationwasdelayed.Turnthatfieldnoteintoadatedtask,thenreviewandconfirmthedetails.FieldConnectivityWhenCellServiceDropsHovertorevealinsightRecordvoicenotesandtakephotoswithoutcellservice.Themobileappsavesthemofflineandsyncswhenyoureconnect.TheSolutionBuiltAroundHowYouOrganizeYourFarmSizedandpricedforsmallandmid-sizedrowcropfarms.Getorganizedrecordswithoutadedicateddatateamoranotherjobontopoffarming.TraceabilityAudit-ReadyReportingHovertorevealsolutionUsedatedfieldrecordsandtemplatestoprepareanaudit-readyreport.Reviewandconfirmitbeforeyourcertificationreview.YourFarmStructureFarmer-NativeOrganizationHovertorevealsolutionKeeprecordsbyfarm,field,plot,andsubplot,usingyourownnamesandboundaries.Buildaroundhowyoualreadyorganizeyourland.LessDataEntryTrustworthyAI,NotBlindAIHovertorevealsolutionAIhelpsstructurevoicenotesandphotos.Reviewandconfirmthedetailsbeforesaving;youremainthefinalwordonyourfarmrecords.TimeBackLessTimeonPaperworkHovertorevealsolutionFindtimestampedrecords,receipts,andfieldnotesinoneplaceinsteadofretypinglogsorrebuildingthestorybeforeareview.Ag-TechRootsOurStoryBigDatainaBox(BDiB)wasfoundedonasimpleinsight:smallandmedium-sizedorganicfarmersspendtoomuchvaluabletimeonpaperwork.TheinspirationoccurredwhenDr.SreeNilakantalistenedtoanNPRbroadcasthighlightingthefrustrationsoforganicgrowersundergoingseed-to-salecertificationaudits.\"Achievingcomplianceandrecord-keepingshouldn'tkeepyoufromfocusingonyourcrops.Wewantedtobuildtoolsthatreturndeskhoursbacktofieldhours.\"Dr.SreeNilakanta,FounderLeveragingprogramsattheIowaStateUniversity(ISU)PappajohnEntrepreneurshipCenter,thefoundingteampivotedfromhardwarestoragemodulesintobuildingSPIDERAg—anintelligent,cloud-backedvoiceandOCRtrackingsystembuiltinAmes,Iowa.OntheIowaPodcast:Listentotheepisode·WatchonYouTube·ViewonXDr.SreeNilakantaFoundingMember–ExternalRelations,Strategy,&Technology.Dr.Nilakantahasfourdecadesofdistinguishedexperienceinresearch,teaching,management,entrepreneurship,andconsulting.Hisextensiveexpertisespansbusinessanddataanalytics,processimprovements,artificialintelligence,andknowledgemanagement.Dr.SriniReddyFoundingMember–Agriculture&RegulatoryExpert.Dr.Reddyhas30yearsofexperienceinagriculturalbiotechnology,including15yearsinregulatoryprocesses.Hesupportsmarketcoexistenceandencouragesconsumerstoembraceandutilizenew,farmer-friendlyagriculturaltechnologiestoenhanceprofitsandpromotesustainability.HariSarmaFoundingMember–HR&Finance.HariSarmahas30yearsofexperienceininformationtechnology,supplychainoperationsandprojectmanagement.Heisastrategicbusinessdevelopmentprofessionalwholeveragestechnologyasthedifferentiatorforinnovationandgrowth.GotQuestions?FrequentlyAskedQuestionsCanIuseSPIDERAgifIdon'thaveanInternetconnection?Yes.SPIDERAgisdesignedtokeepcapturingrecordswherecellservicedoesnotreach.Recordvoicenotes,takephotos,andrenamerecordingsoffline.Yourdatastayssavedonyourdeviceandsyncswhenyoureconnect.WhattypesoffilescanIuploadtoSPIDERAg?UploadPDFandWorddocuments,photos,andvoicenotes.Saywhathappenedtodraftadatedtask,orphotographahandwrittenlogtoextractasearchabletable.Review,correct,andconfirmthedetailsbeforesaving.HowdoIgeneratereportsfororganiccertification?Choosefileslinkedtoalandarea,selectformsandtemplatesrequiredbytheOrganicSystemPlanorotherregulatorydemands,andgenerateyourreport.Review,correct,andconfirmthedetailsbeforesaving.Audit-readyrecordssupportyourreview;thecertificationdecisionremainswithyourcertifier.Howdothetrialandcancellationwork?Startwitha14-dayfreetrial,withnocreditcardrequired.Apaidsubscriptionisneededtokeepaccessafterthetrial.Ifyoucancel,accesscontinuesthroughthecurrentbillingperiod.Downloadfilesandreportsyouneedbeforethebillingperiodends.DoIstayincontrolofAI-generatedrecords?Yes.AIhelpsdrafttasks,extractinformation,andfillreporttemplates.Youreviewtheoutput,correcterrorsormissingdetails,thenconfirmandsave.Thatincludesvoicetranscriptions,scannedlogs,andgeneratedreports.Youremainthefinalwordonyourrecords.MoreFieldTime.LessPaperwork.TrySPIDERAgfreefor14daysandkeeptherecordsthewayyoualreadywork.Chooseaplantocontinuetosignup.ChooseYourPlanBigDatainaBoxOnefarmrecord,keptyourwayandreadyforthepeoplewhoneedit.2625NorthLoopDrive,Suite2622Ames,Iowa50010NavigationHomeHowItWorksOurStorySPIDERAgPricingGetInTouch+1-515-329-6652info@bdibsolutions.com©2026BDIBSolutions.Allrightsreserved.BigDatainaBox,Inc.Ames,IA"
+  },
+  "spider-ag.html": {
+    "headings": [
+      "SPIDERAg:YourFieldCompanion",
+      "OnePlaceforEveryFarmRecord",
+      "SayIt:VoiceNotestoTasks",
+      "SnapIt:PaperLogstoTables",
+      "Farmer-NativeOrganization",
+      "WorksintheField,EvenOffline",
+      "BuiltfortheField,NottheOffice",
+      "FarmRecordsSizedforYourOperation",
+      "SPIDERAginAction",
+      "FieldBoundaries&ColorPlotMapping",
+      "In-CabTractorCompanion",
+      "MobileFieldScouting&VoiceLogging",
+      "DatedTasks&AuditPreparation",
+      "FieldRecords&ReportPreparation",
+      "Audit-ReadyRecords,ReviewedbyYou",
+      "Navigation",
+      "GetInTouch"
+    ],
+    "sections": [
+      "top",
+      "spider-showcase",
+      "mobile-app",
+      "spider-mid-cta",
+      "spider-gallery-section",
+      "spider-bottom-join"
+    ],
+    "ids": [
+      "contact",
+      "hamburger-toggle",
+      "mobile-app",
+      "nav-links-menu",
+      "top"
+    ],
+    "images": [
+      {
+        "src": "/assets/officialbdiblogo.png",
+        "alt": ""
+      },
+      {
+        "src": "/assets/spider-ag/hero-phone-field-1200.webp",
+        "alt": "",
+        "srcset": "/assets/spider-ag/hero-phone-field-640.webp 640w, /assets/spider-ag/hero-phone-field-1200.webp 1200w, /assets/spider-ag/hero-phone-field-1538.webp 1538w"
+      },
+      {
+        "src": "/assets/officialspideraglogo.png",
+        "alt": "SPIDER Ag Logo"
+      },
+      {
+        "src": "/spiderag-desk-mockup.png",
+        "alt": "Tablet mockup displaying the SPIDER Ag software resting on a rustic oak farm desk next to a coffee mug and notebook"
+      },
+      {
+        "src": "/assets/spiderag-3d-iphone-mockup.png",
+        "alt": "SPIDER Ag mobile voice recording interface"
+      },
+      {
+        "src": "/assets/spiderag pics/farm color plots.png",
+        "alt": "SPIDER Ag Field Color Plots Interface"
+      },
+      {
+        "src": "/assets/spiderag pics/spiderag_tractor_mockup.png",
+        "alt": "In-Cab Tractor Mockup Interface"
+      },
+      {
+        "src": "/assets/spiderag pics/ui in farm.png",
+        "alt": "In-Field Mobile Interface"
+      },
+      {
+        "src": "/assets/spiderag pics/ui task calendar.png",
+        "alt": "SPIDER Ag task calendar and dated field activities"
+      },
+      {
+        "src": "/assets/spiderag pics/spiderag_desk_mockup.png",
+        "alt": "Office Desk Homescreen Interface"
+      },
+      {
+        "src": "/assets/officialbdiblogo.png",
+        "alt": ""
+      }
+    ],
+    "links": [
+      "index.html",
+      "index.html#onboarding",
+      "index.html#story",
+      "spider-ag.html",
+      "https://spiderag-preprod.bdibsolutions.com/auth/",
+      "pricing-sign-up.html",
+      "https://sn-bdibsolutions27.zohobookings.com/4741574000000837028/#/4741574000000837028?",
+      "schedule-demo.html",
+      "pricing-sign-up.html",
+      "https://spiderag-preprod.bdibsolutions.com/auth/",
+      "pricing-sign-up.html",
+      "pricing-sign-up.html",
+      "schedule-demo.html",
+      "pricing-sign-up.html",
+      "schedule-demo.html",
+      "pricing-sign-up.html",
+      "schedule-demo.html",
+      "pricing-sign-up.html",
+      "pricing-sign-up.html",
+      "index.html",
+      "index.html",
+      "index.html#onboarding",
+      "index.html#story",
+      "spider-ag.html",
+      "pricing-sign-up.html",
+      "tel:+15153296652",
+      "mailto:info@bdibsolutions.com"
+    ],
+    "text": "BigDatainaBoxHowItWorksOurStorySPIDERAgLoginPricingScheduleDemoContactUsFreeTrialLoginFreeTrialFarmRecord-KeepingSPIDERAg:YourFieldCompanionSPIDERAghelpsturnvoicenotes,photos,andpaperlogsintofarmrecordsyoucanreview,find,anduseinreports.Keepthewayyoualreadywork,withlesstimespentretyping.TrySPIDERAgFreeContactUsYourFarmRecordOnePlaceforEveryFarmRecordKeepvoicenotes,photos,paperlogs,anddatedtaskstogether,organizedaroundyourland.Findwhathappened,when,andwherewithoutretypingthewholerecord.SayIt:VoiceNotestoTasksSaywhathappenedinthefield.AIhelpsturnyourvoicenoteintoadatedtask;reviewandconfirmthedetailsbeforesaving.SnapIt:PaperLogstoTablesPhotographahandwrittenlogorreceipt.AIextractsthedetailsintoasearchabletableforyoutoreview,correct,andconfirmwithoutretyping.Farmer-NativeOrganizationUseyourownfarm,field,plot,andsubplotnamesandboundaries.Setupthatstructurebeforeaddingrecords,soitfitshowyourfarmalreadyruns.WorksintheField,EvenOfflineCapturevoicenotesandphotoswherecellservicedoesnotreach.Yourrecordsstaysavedandsyncwhenyoureconnect.Nosignal?Keeprecording.VoiceRecording,EvenOfflineBuiltfortheField,NottheOfficeNocellservice?Keeprecording.Capturevoicenotesandphotosinthefield,evenoffline.Yourcapturesstayonyourdeviceandsyncwhenyoureconnect.ThenreviewandconfirmtheAI-generateddetailsbeforesaving.TryMobileAppFreeContactUsReadytoGetStarted?FarmRecordsSizedforYourOperationOrganized,reportablerecords,sizedandpricedforsmallandmid-sizedrowcropfarms.Getstartedwithoutanenterprisesystemordedicateddatateam.TrySPIDERAgfreefor14days,withnocreditcardrequired.Join&StartFreeTrialContactUsLessTimeonPaperworkSPIDERAginActionSayit,snapit,it'srecorded.AIhelpsstructureyournotesandphotos;youreviewandconfirmbeforesaving.FieldBoundaries&ColorPlotMappingKeeprecordsbyfarm,field,plot,andsubplot,usingtheboundariesandnamesyoualreadyknow.In-CabTractorCompanionSaywhathappenedfromthecabandturnitintoadatedtask,readyforyourreview.MobileFieldScouting&VoiceLoggingCapturevoicenotesandphotosoffline.Turnhandwrittenlogsintosearchablerecordswithoutretypingthem.DatedTasks&AuditPreparationTraceplanting,applications,andharvestthroughdatedtasksalongsideyourcertificationreviewschedule.FieldRecords&ReportPreparationSelectfieldrecordsandatemplate,generateareport,thenreviewandconfirmthedetailsforyourcertificationreview.AuditPreparationAudit-ReadyRecords,ReviewedbyYouCreateareportfromselectedfieldrecords,thenreview,correct,andconfirmthedetails.Youremainthefinalwordontheentriesandreportsyousave.Yourcertifiermakesthecertificationdecision.ChooseaPlan&StartTrialViewPricingPlans14-DayFreeTrial·NoCreditCardRequiredBigDatainaBoxOnefarmrecord,keptyourwayandreadyforthepeoplewhoneedit.2625NorthLoopDrive,Suite2622Ames,Iowa50010NavigationHomeHowItWorksOurStorySPIDERAgPricingGetInTouch+1-515-329-6652info@bdibsolutions.com©2026BDIBSolutions.Allrightsreserved.BigDatainaBox,Inc.Ames,IA"
+  },
+  "pricing-sign-up.html": {
+    "headings": [
+      "StartYour14-DayFreeTrial",
+      "AnnualPlan",
+      "Navigation",
+      "GetInTouch"
+    ],
+    "sections": [
+      "top"
+    ],
+    "ids": [
+      "billing-period-text",
+      "billing-title",
+      "contact",
+      "cta-button",
+      "hamburger-toggle",
+      "label-annual",
+      "label-monthly",
+      "nav-links-menu",
+      "price-display",
+      "pricing-toggle",
+      "savings-callout",
+      "top"
+    ],
+    "images": [
+      {
+        "src": "/assets/officialbdiblogo.png",
+        "alt": ""
+      },
+      {
+        "src": "/assets/officialbdiblogo.png",
+        "alt": ""
+      }
+    ],
+    "links": [
+      "index.html",
+      "index.html#onboarding",
+      "index.html#story",
+      "spider-ag.html",
+      "https://spiderag-preprod.bdibsolutions.com/auth/",
+      "pricing-sign-up.html",
+      "https://sn-bdibsolutions27.zohobookings.com/4741574000000837028/#/4741574000000837028?",
+      "schedule-demo.html",
+      "pricing-sign-up.html",
+      "https://spiderag-preprod.bdibsolutions.com/auth/",
+      "pricing-sign-up.html",
+      "https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=yearly",
+      "index.html",
+      "index.html",
+      "index.html#onboarding",
+      "index.html#story",
+      "spider-ag.html",
+      "pricing-sign-up.html",
+      "tel:+15153296652",
+      "mailto:info@bdibsolutions.com"
+    ],
+    "text": "BigDatainaBoxHowItWorksOurStorySPIDERAgLoginPricingScheduleDemoContactUsFreeTrialLoginFreeTrialFlexiblePlansStartYour14-DayFreeTrialSelecttheplanthatfitsyourfarm.Nocreditcardrequiredtostartyour14-daytrial.Apaidplanisneededtokeepaccessafterthetrial.FitsYourFarmAnnualPlanSave$230/yr$250/yearBilledonceannually.Save$230(48%)MonthlyAnnualSave48%Voicenotes,photos,andpaperlogswithlessretypingVoiceandphotocaptureoffline;syncwhenconnectedRecordsorganizedbyfarm,field,plot,andsubplotTraceablerecordsandcomplianceformsforauditreadiness.ReviewandconfirmAI-generatedentriesbeforesavingSubscribeBigDatainaBoxOnefarmrecord,keptyourwayandreadyforthepeoplewhoneedit.2625NorthLoopDrive,Suite2622Ames,Iowa50010NavigationHomeHowItWorksOurStorySPIDERAgPricingGetInTouch+1-515-329-6652info@bdibsolutions.com©2026BDIBSolutions.Allrightsreserved.BigDatainaBox,Inc.Ames,IA"
+  },
+  "schedule-demo.html": {
+    "headings": [
+      "ContactUs",
+      "SendUsaMessage",
+      "Navigation",
+      "GetInTouch"
+    ],
+    "sections": [
+      "top"
+    ],
+    "ids": [
+      "contact",
+      "demo-form-container",
+      "hamburger-toggle",
+      "nav-links-menu",
+      "top",
+      "ziframe_787725"
+    ],
+    "images": [
+      {
+        "src": "/assets/officialbdiblogo.png",
+        "alt": ""
+      },
+      {
+        "src": "/assets/officialbdiblogo.png",
+        "alt": ""
+      }
+    ],
+    "links": [
+      "index.html",
+      "index.html#onboarding",
+      "index.html#story",
+      "spider-ag.html",
+      "https://spiderag-preprod.bdibsolutions.com/auth/",
+      "pricing-sign-up.html",
+      "https://sn-bdibsolutions27.zohobookings.com/4741574000000837028/#/4741574000000837028?",
+      "schedule-demo.html",
+      "pricing-sign-up.html",
+      "https://spiderag-preprod.bdibsolutions.com/auth/",
+      "pricing-sign-up.html",
+      "mailto:info@bdibsolutions.com?subject=Contact%20Us",
+      "index.html",
+      "index.html",
+      "index.html#onboarding",
+      "index.html#story",
+      "spider-ag.html",
+      "pricing-sign-up.html",
+      "tel:+15153296652",
+      "mailto:info@bdibsolutions.com"
+    ],
+    "text": "BigDatainaBoxHowItWorksOurStorySPIDERAgLoginPricingScheduleDemoContactUsFreeTrialLoginFreeTrialGetInTouchContactUsSendusamessagebelowandourteamwillgetintouchwithyoushortly.Allmessagesgodirectlytoinfo@bdibsolutions.com.SendUsaMessageTellushowyoukeepfarmrecordstoday.Wecanhelpyouexplorevoiceandphotocapture,farmorganization,andauditpreparation.Orsendanemaildirectlyto:info@bdibsolutions.comBigDatainaBoxOnefarmrecord,keptyourwayandreadyforthepeoplewhoneedit.2625NorthLoopDrive,Suite2622Ames,Iowa50010NavigationHomeHowItWorksOurStorySPIDERAgPricingGetInTouch+1-515-329-6652info@bdibsolutions.com©2026BDIBSolutions.Allrightsreserved.BigDatainaBox,Inc.Ames,IA"
+  }
+}

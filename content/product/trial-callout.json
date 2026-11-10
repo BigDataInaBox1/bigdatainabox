@@ -1,0 +1,15 @@
+{
+  "eyebrow": "Ready to Get Started?",
+  "title": "Farm Records Sized for Your Operation",
+  "description": "Organized, reportable records, sized and priced for small and mid-sized row crop farms. Get started without an enterprise system or dedicated data team. Try SPIDER Ag free for 14 days, with no credit card required.",
+  "primary": {
+    "text": "Join & Start Free Trial",
+    "url": "pricing-sign-up.html",
+    "download": ""
+  },
+  "secondary": {
+    "text": "Contact Us",
+    "url": "schedule-demo.html",
+    "download": ""
+  }
+}

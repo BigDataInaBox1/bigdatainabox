@@ -1,0 +1,45 @@
+{
+  "eyebrow": "THE BENEFITS",
+  "title": "Say It, Snap It, It's Recorded",
+  "description": "AI helps turn voice notes, photos, and paper logs into draft records. Review and confirm the details before saving, without retyping the whole log.",
+  "oldHeading": "The Old Notebook",
+  "productHeading": "SPIDER Ag",
+  "rows": [
+    {
+      "title": "Data Capture",
+      "old": "Handwritten logs and receipts to find and retype",
+      "product": "Voice-to-task & paper logs to searchable tables"
+    },
+    {
+      "title": "Field Connectivity",
+      "old": "Must remember details and write them down back at the office",
+      "product": "Capture voice notes & photos offline; sync when connected"
+    },
+    {
+      "title": "Record Storage",
+      "old": "Single physical copy vulnerable to water, fire, or being misplaced",
+      "product": "Cloud-backed records kept in one place"
+    },
+    {
+      "title": "Audit Trails & Sharing",
+      "old": "No easy way to create audit trails or share access",
+      "product": "Share records and reports to authorized users and partners"
+    },
+    {
+      "title": "Organic Audit Preparation",
+      "old": "Reconstructing records from notes and shoebox receipts",
+      "product": "Templates for reports you review and confirm"
+    },
+    {
+      "title": "Farm Organization",
+      "old": "Static records with no analysis or operational trends",
+      "product": "Records organized by farm, field, plot & subplot"
+    }
+  ],
+  "expandLabel": "See Full Comparison",
+  "collapseLabel": "Hide Full Comparison",
+  "logo": {
+    "src": "/assets/officialbdiblogo.png",
+    "alt": "SPIDER Ag"
+  }
+}

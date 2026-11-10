@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Got Questions?",
+  "title": "Frequently Asked Questions",
+  "questions": [
+    {
+      "question": "Can I use SPIDER Ag if I don't have an Internet connection?",
+      "answer": "<p>Yes. SPIDER Ag is designed to keep capturing records where cell service does not reach. Record voice notes, take photos, and rename recordings offline. Your data stays saved on your device and syncs when you reconnect.</p>"
+    },
+    {
+      "question": "What types of files can I upload to SPIDER Ag?",
+      "answer": "<p>Upload PDF and Word documents, photos, and voice notes. Say what happened to draft a dated task, or photograph a handwritten log to extract a searchable table. Review, correct, and confirm the details before saving.</p>"
+    },
+    {
+      "question": "How do I generate reports for organic certification?",
+      "answer": "<p>Choose files linked to a land area, select forms and templates required by the Organic System Plan or other regulatory demands, and generate your report. Review, correct, and confirm the details before saving. Audit-ready records support your review; the certification decision remains with your certifier.</p>"
+    },
+    {
+      "question": "How do the trial and cancellation work?",
+      "answer": "<p>Start with a 14-day free trial, with no credit card required. A paid subscription is needed to keep access after the trial. If you cancel, access continues through the current billing period. Download files and reports you need before the billing period ends.</p>"
+    },
+    {
+      "question": "Do I stay in control of AI-generated records?",
+      "answer": "<p>Yes. AI helps draft tasks, extract information, and fill report templates. You review the output, correct errors or missing details, then confirm and save. That includes voice transcriptions, scanned logs, and generated reports. You remain the final word on your records.</p>"
+    }
+  ]
+}

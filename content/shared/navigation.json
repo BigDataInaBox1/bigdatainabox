@@ -1,0 +1,52 @@
+{
+  "howItWorks": {
+    "text": "How It Works",
+    "url": "index.html#onboarding",
+    "download": ""
+  },
+  "story": {
+    "text": "Our Story",
+    "url": "index.html#story",
+    "download": ""
+  },
+  "product": {
+    "text": "SPIDER Ag",
+    "url": "spider-ag.html",
+    "download": ""
+  },
+  "productLogin": {
+    "text": "Login",
+    "url": "https://spiderag-preprod.bdibsolutions.com/auth/",
+    "download": ""
+  },
+  "pricing": {
+    "text": "Pricing",
+    "url": "pricing-sign-up.html",
+    "download": ""
+  },
+  "demo": {
+    "text": "Schedule Demo",
+    "url": "https://sn-bdibsolutions27.zohobookings.com/4741574000000837028/#/4741574000000837028?",
+    "download": ""
+  },
+  "contact": {
+    "text": "Contact Us",
+    "url": "schedule-demo.html",
+    "download": ""
+  },
+  "trial": {
+    "text": "Free Trial",
+    "url": "pricing-sign-up.html",
+    "download": ""
+  },
+  "loginButton": {
+    "text": "Login",
+    "url": "https://spiderag-preprod.bdibsolutions.com/auth/",
+    "download": ""
+  },
+  "trialButton": {
+    "text": "Free Trial",
+    "url": "pricing-sign-up.html",
+    "download": ""
+  }
+}

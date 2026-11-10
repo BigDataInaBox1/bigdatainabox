@@ -1,0 +1,31 @@
+{
+  "members": [
+    {
+      "name": "Dr. Sree Nilakanta",
+      "photo": {
+        "src": "/assets/team-sree.jpg",
+        "alt": "Dr. Sree Nilakanta"
+      },
+      "description": "Founding Member – External Relations, Strategy, & Technology. Dr. Nilakanta has four decades of distinguished experience in research, teaching, management, entrepreneurship, and consulting. His extensive expertise spans business and data analytics, process improvements, artificial intelligence, and knowledge management.",
+      "linkedin": "http://www.linkedin.com/in/nilakanta"
+    },
+    {
+      "name": "Dr. Srini Reddy",
+      "photo": {
+        "src": "/assets/team-srini.jpg",
+        "alt": "Dr. Srini Reddy"
+      },
+      "description": "Founding Member – Agriculture & Regulatory Expert. Dr. Reddy has 30 years of experience in agricultural biotechnology, including 15 years in regulatory processes. He supports market coexistence and encourages consumers to embrace and utilize new, farmer-friendly agricultural technologies to enhance profits and promote sustainability.",
+      "linkedin": ""
+    },
+    {
+      "name": "Hari Sarma",
+      "photo": {
+        "src": "/assets/team-hari.jpg",
+        "alt": "Hari Sarma"
+      },
+      "description": "Founding Member – HR & Finance. Hari Sarma has 30 years of experience in information technology, supply chain operations and project management. He is a strategic business development professional who leverages technology as the differentiator for innovation and growth.",
+      "linkedin": "http://linkedin.com/in/hariksarma"
+    }
+  ]
+}

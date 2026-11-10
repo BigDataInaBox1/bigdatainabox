@@ -1,0 +1,65 @@
+{
+  "title": "Research & Community Support",
+  "logos": [
+    {
+      "image": {
+        "src": "/assets/Partners/usda.png",
+        "alt": "USDA Logo"
+      },
+      "url": "https://www.usda.gov/",
+      "title": "United States Department of Agriculture (USDA)"
+    },
+    {
+      "image": {
+        "src": "/assets/Partners/aiira-banner-logo-no-circle.png",
+        "alt": "AIIRA Logo"
+      },
+      "url": "https://aiira.iastate.edu/",
+      "title": "AI Institute for Resilient Agriculture (AIIRA)"
+    },
+    {
+      "image": {
+        "src": "/assets/Partners/BioConnect_Iowa_Logo_-_Color-1024x337.png",
+        "alt": "BioConnect Iowa Logo"
+      },
+      "url": "https://bioconnectiowa.org/",
+      "title": "BioConnect Iowa"
+    },
+    {
+      "image": {
+        "src": "/assets/Partners/iowa_economic_development_authority_ieda__logo.jfif",
+        "alt": "Iowa Economic Development Authority Logo"
+      },
+      "url": "https://www.iowaeda.com/",
+      "title": "Iowa Economic Development Authority (IEDA)"
+    },
+    {
+      "image": {
+        "src": "/assets/Partners/rodale-institute-logo.png",
+        "alt": "Rodale Institute Logo"
+      },
+      "url": "https://rodaleinstitute.org/",
+      "title": "Rodale Institute"
+    },
+    {
+      "image": {
+        "src": "/assets/Partners/Root-to-Rise-Color-Full-Logo-Image.jpg",
+        "alt": "Root to Rise Logo"
+      },
+      "url": "https://www.facebook.com/roottorisefarmer/",
+      "title": "Root to Rise"
+    },
+    {
+      "image": {
+        "src": "/assets/Partners/garland_logo.png",
+        "alt": "Mustard Seed Community Farm Logo"
+      },
+      "url": "https://www.mustardseedfarm.org/",
+      "title": "Mustard Seed Community Farm"
+    }
+  ],
+  "collage": {
+    "src": "/assets/home/farm-collage-v2-1536.webp",
+    "alt": "Farm collage showing growers with a phone and tablet, hands inspecting crops, grain silos, a tractor, a rustic gate, a red barn, and a sunset fence"
+  }
+}

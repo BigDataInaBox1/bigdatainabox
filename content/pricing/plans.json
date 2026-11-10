@@ -1,0 +1,30 @@
+{
+  "currency": "$",
+  "monthly": {
+    "title": "Monthly Plan",
+    "label": "Monthly",
+    "amount": 40,
+    "interval": "/month",
+    "billing": "Billed monthly for 12 months. Total annual cost $480",
+    "button": {
+      "text": "Subscribe",
+      "url": "https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=monthly",
+      "download": ""
+    }
+  },
+  "annual": {
+    "title": "Annual Plan",
+    "label": "Annual",
+    "amount": 250,
+    "interval": "/year",
+    "billing": "Billed once annually.",
+    "button": {
+      "text": "Subscribe",
+      "url": "https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=yearly",
+      "download": ""
+    }
+  },
+  "savingsPill": "Save $230/yr",
+  "savingsBadge": "Save 48%",
+  "savingsDetail": "Save $230 (48%)"
+}

@@ -1,0 +1,26 @@
+{
+  "lineOne": "Know the pulse of",
+  "lineTwo": "your farm operation",
+  "accent": "any time, anywhere.",
+  "description": "Record voice notes, photos, and documents as work happens. Keep field activity in one place, review the details, and prepare records for sharing and reporting.",
+  "primary": {
+    "text": "Try SPIDER Ag Free",
+    "url": "pricing-sign-up.html",
+    "download": ""
+  },
+  "secondary": {
+    "text": "Contact Us",
+    "url": "schedule-demo.html",
+    "download": ""
+  },
+  "trialNote": "No credit card required · 14-Day Free Trial",
+  "scrollLabel": "Scroll to explore",
+  "background": {
+    "src": "/assets/home/hero-farm-1019.webp",
+    "alt": ""
+  },
+  "illustration": {
+    "src": "/assets/home/hero-poster.webp",
+    "alt": ""
+  }
+}

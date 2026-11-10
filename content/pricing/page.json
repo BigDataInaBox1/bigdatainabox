@@ -1,0 +1,25 @@
+{
+  "searchTitle": "Pricing | BDIB Solutions",
+  "searchDescription": "SPIDER Ag plans for farm records, voice and photo capture, and audit preparation. Start a 14-day trial and review the monthly and annual billing options.",
+  "eyebrow": "Flexible Plans",
+  "title": "Start Your 14-Day Free Trial",
+  "description": "Select the plan that fits your farm. No credit card required to start your 14-day trial. A paid plan is needed to keep access after the trial.",
+  "cardLabel": "Fits Your Farm",
+  "features": [
+    {
+      "title": "Voice notes, photos, and paper logs with less retyping"
+    },
+    {
+      "title": "Voice and photo capture offline; sync when connected"
+    },
+    {
+      "title": "Records organized by farm, field, plot, and subplot"
+    },
+    {
+      "title": "Traceable records and compliance forms for audit readiness."
+    },
+    {
+      "title": "Review and confirm AI-generated entries before saving"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "eyebrow": "Farm Record-Keeping",
+  "title": "SPIDER Ag:\nYour Field Companion",
+  "description": "SPIDER Ag helps turn voice notes, photos, and paper logs into farm records you can review, find, and use in reports. Keep the way you already work, with less time spent retyping.",
+  "logo": {
+    "src": "/assets/officialspideraglogo.png",
+    "alt": "SPIDER Ag Logo"
+  },
+  "background": {
+    "src": "/assets/spider-ag/hero-phone-field-1200.webp",
+    "alt": ""
+  },
+  "primary": {
+    "text": "Try SPIDER Ag Free",
+    "url": "pricing-sign-up.html",
+    "download": ""
+  },
+  "secondary": {
+    "text": "Contact Us",
+    "url": "schedule-demo.html",
+    "download": ""
+  }
+}

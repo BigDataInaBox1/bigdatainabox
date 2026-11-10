@@ -1,0 +1,15 @@
+{
+  "searchTitle": "Contact Us | BDIB Solutions",
+  "searchDescription": "Get in touch with BDIB Solutions. Send us a message or inquiry to learn more about SPIDER Ag.",
+  "eyebrow": "Get In Touch",
+  "title": "Contact Us",
+  "description": "Send us a message below and our team will get in touch with you shortly. All messages go directly to <strong>info@bdibsolutions.com</strong>.",
+  "formTitle": "Send Us a Message",
+  "formDescription": "Tell us how you keep farm records today. We can help you explore voice and photo capture, farm organization, and audit preparation.",
+  "emailIntroduction": "Or send an email directly to:",
+  "email": {
+    "text": "info@bdibsolutions.com",
+    "url": "mailto:info@bdibsolutions.com?subject=Contact%20Us",
+    "download": ""
+  }
+}

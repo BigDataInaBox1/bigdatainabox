@@ -1,3 +1,6 @@
+import farmMapContent from './content/home/farm-map.json';
+import popupContent from './content/shared/contact-popup.json';
+
 /**
  * main.js — Core site utilities for BDIB Solutions
  * Hamburger navigation, scroll reveal animations, contact modal
@@ -202,7 +205,7 @@
       expandableRows.forEach(row => {
         row.style.display = isExpanded ? 'table-row' : 'none';
       });
-      btnExpandCompare.textContent = isExpanded ? 'Hide Full Comparison' : 'See Full Comparison';
+      btnExpandCompare.textContent = isExpanded ? btnExpandCompare.dataset.collapseLabel : btnExpandCompare.dataset.expandLabel;
       btnExpandCompare.setAttribute('aria-expanded', isExpanded.toString());
     });
   }
@@ -682,43 +685,16 @@
   const preziDesc = document.getElementById('prezi-card-desc');
   const preziProgress = document.getElementById('prezi-card-progress');
 
-  const infographicData = {
-    1: {
-      step: 'Field Records',
-      title: 'Trace Records Back to Each Field',
-      desc: 'Keep dated tasks, input records, and receipts linked to the field they belong to, so you can find the record behind each activity.',
-      img: '/assets/infographic/pin1_earnings.png',
-      origin: { x: 46.05, y: 42.30 }
-    },
-    2: {
-      step: 'Farm Organization',
-      title: 'Built Around Your Farm',
-      desc: 'Organize notes, photos, and paper logs by farm, field, plot, and subplot, using the names and boundaries you already know.',
-      img: '/assets/infographic/pin2_connected.png',
-      origin: { x: 84.03, y: 71.73 }
-    },
-    3: {
-      step: 'Field Diary & Story',
-      title: 'Preserve the Story Behind the Numbers',
-      desc: 'Say what happened in the field and turn it into a dated task. Review and confirm the details, keeping the context behind the record.',
-      img: '/assets/infographic/pin3_story.png',
-      origin: { x: 68.18, y: 24.20 }
-    },
-    4: {
-      step: 'Field Observations',
-      title: 'Record What You See in the Field',
-      desc: 'Record field conditions in a voice note or photo, even offline. Sync when connected, then review and confirm the captured details.',
-      img: '/assets/infographic/pin4_truth.png',
-      origin: { x: 17.00, y: 17.60 }
-    },
-    5: {
-      step: 'Audit Preparation',
-      title: 'Prepare Audit-Ready Records',
-      desc: 'Find records linked to your land, select a template, and generate a report. Review and confirm the details before your certification review.',
-      img: '/assets/infographic/pin5_decisions.png',
-      origin: { x: 20.00, y: 75.98 }
-    }
+  // Coordinates and IDs stay in code; editors change only each insight's content.
+  const mapOrigins = {
+    1: { x: 46.05, y: 42.30 }, 2: { x: 84.03, y: 71.73 },
+    3: { x: 68.18, y: 24.20 }, 4: { x: 17.00, y: 17.60 },
+    5: { x: 20.00, y: 75.98 }
   };
+  const infographicData = Object.fromEntries(farmMapContent.insights.map(item => [item.id, {
+    step: item.category, title: item.title, desc: item.description,
+    img: item.image.src, alt: item.image.alt, origin: mapOrigins[item.id]
+  }]));
 
   let activePinId = null;
 
@@ -745,6 +721,7 @@
         this.src = `/infographic/${data.img.split('/').pop()}`;
       };
       preziImg.src = data.img;
+      preziImg.alt = data.alt;
     }
     if (preziTag) preziTag.textContent = data.step;
     if (preziTitle) preziTitle.textContent = data.title;
@@ -897,9 +874,9 @@
             </svg>
           </button>
           <div class="demo-modal-header">
-            <span class="demo-modal-eyebrow">BDIB Solutions</span>
-            <h3 id="demo-modal-title" class="demo-modal-title">Contact Us</h3>
-            <p class="demo-modal-subtitle">Tell us how you keep farm records today. Ask about voice and photo capture, organizing your farm, or preparing for an audit.</p>
+            <span class="demo-modal-eyebrow"></span>
+            <h3 id="demo-modal-title" class="demo-modal-title"></h3>
+            <p class="demo-modal-subtitle"></p>
           </div>
           <div class="demo-modal-body">
             <div class="demo-modal-loader" id="demo-modal-loader">
@@ -911,6 +888,10 @@
       `;
       document.body.appendChild(modal);
     }
+
+    modal.querySelector('.demo-modal-eyebrow').textContent = popupContent.eyebrow;
+    modal.querySelector('.demo-modal-title').textContent = popupContent.title;
+    modal.querySelector('.demo-modal-subtitle').textContent = popupContent.description;
 
     const iframe = document.getElementById('modal_ziframe_787725');
     const loader = document.getElementById('demo-modal-loader');

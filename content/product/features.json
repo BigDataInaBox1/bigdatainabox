@@ -1,0 +1,27 @@
+{
+  "eyebrow": "Your Farm Record",
+  "title": "One Place for Every Farm Record",
+  "description": "Keep voice notes, photos, paper logs, and dated tasks together, organized around your land. Find what happened, when, and where without retyping the whole record.",
+  "image": {
+    "src": "/spiderag-desk-mockup.png",
+    "alt": "Tablet mockup displaying the SPIDER Ag software resting on a rustic oak farm desk next to a coffee mug and notebook"
+  },
+  "features": [
+    {
+      "title": "Say It: Voice Notes to Tasks",
+      "description": "Say what happened in the field. AI helps turn your voice note into a dated task; review and confirm the details before saving."
+    },
+    {
+      "title": "Snap It: Paper Logs to Tables",
+      "description": "Photograph a handwritten log or receipt. AI extracts the details into a searchable table for you to review, correct, and confirm without retyping."
+    },
+    {
+      "title": "Farmer-Native Organization",
+      "description": "Use your own farm, field, plot, and subplot names and boundaries. Set up that structure before adding records, so it fits how your farm already runs."
+    },
+    {
+      "title": "Works in the Field, Even Offline",
+      "description": "Capture voice notes and photos where cell service does not reach. Your records stay saved and sync when you reconnect."
+    }
+  ]
+}

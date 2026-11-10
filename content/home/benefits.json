@@ -1,0 +1,31 @@
+{
+  "eyebrow": "The Solution",
+  "title": "Built Around How You Organize Your Farm",
+  "description": "Sized and priced for small and mid-sized row crop farms. Get organized records without a dedicated data team or another job on top of farming.",
+  "cards": [
+    {
+      "badge": "Traceability",
+      "title": "Audit-Ready Reporting",
+      "hint": "Hover to reveal solution",
+      "description": "Use dated field records and templates to prepare an audit-ready report. Review and confirm it before your certification review."
+    },
+    {
+      "badge": "Your Farm Structure",
+      "title": "Farmer-Native Organization",
+      "hint": "Hover to reveal solution",
+      "description": "Keep records by farm, field, plot, and subplot, using your own names and boundaries. Build around how you already organize your land."
+    },
+    {
+      "badge": "Less Data Entry",
+      "title": "Trustworthy AI, Not Blind AI",
+      "hint": "Hover to reveal solution",
+      "description": "AI helps structure voice notes and photos. Review and confirm the details before saving; you remain the final word on your farm records."
+    },
+    {
+      "badge": "Time Back",
+      "title": "Less Time on Paperwork",
+      "hint": "Hover to reveal solution",
+      "description": "Find timestamped records, receipts, and field notes in one place instead of retyping logs or rebuilding the story before a review."
+    }
+  ]
+}

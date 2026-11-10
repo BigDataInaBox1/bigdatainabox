@@ -1,0 +1,55 @@
+{
+  "summary": "One farm record, kept your way and ready for the people who need it.",
+  "address": "2625 North Loop Drive, Suite 2622\nAmes, Iowa 50010",
+  "navigationHeading": "Navigation",
+  "links": [
+    {
+      "link": {
+        "text": "Home",
+        "url": "index.html",
+        "download": ""
+      }
+    },
+    {
+      "link": {
+        "text": "How It Works",
+        "url": "index.html#onboarding",
+        "download": ""
+      }
+    },
+    {
+      "link": {
+        "text": "Our Story",
+        "url": "index.html#story",
+        "download": ""
+      }
+    },
+    {
+      "link": {
+        "text": "SPIDER Ag",
+        "url": "spider-ag.html",
+        "download": ""
+      }
+    },
+    {
+      "link": {
+        "text": "Pricing",
+        "url": "pricing-sign-up.html",
+        "download": ""
+      }
+    }
+  ],
+  "contactHeading": "Get In Touch",
+  "phone": {
+    "text": "+1-515-329-6652",
+    "url": "tel:+15153296652",
+    "download": ""
+  },
+  "email": {
+    "text": "info@bdibsolutions.com",
+    "url": "mailto:info@bdibsolutions.com",
+    "download": ""
+  },
+  "copyright": "© 2026 BDIB Solutions. All rights reserved.",
+  "company": "Big Data in a Box, Inc. Ames, IA"
+}

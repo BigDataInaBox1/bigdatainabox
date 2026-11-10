@@ -1,0 +1,36 @@
+{
+  "eyebrow": "Ag-Tech Roots",
+  "title": "Our Story",
+  "image": {
+    "src": "/assets/home/sunlit-wheat-800.webp",
+    "alt": "Sunlit wheat stalks in a golden field"
+  },
+  "introduction": "Big Data in a Box (BDiB) was founded on a simple insight: small and medium-sized organic farmers spend too much valuable time on paperwork. The inspiration occurred when Dr. Sree Nilakanta listened to an NPR broadcast highlighting the frustrations of organic growers undergoing seed-to-sale certification audits.",
+  "quote": "\"Achieving compliance and record-keeping shouldn't keep you from focusing on your crops. We wanted to build tools that return desk hours back to field hours.\"",
+  "quoteAuthor": "Dr. Sree Nilakanta, Founder",
+  "history": "Leveraging programs at the Iowa State University (ISU) <a href=\"https://www.isupjcenter.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Pappajohn Entrepreneurship Center</a>, the founding team pivoted from hardware storage modules into building SPIDER Ag—an intelligent, cloud-backed voice and OCR tracking system built in Ames, Iowa.",
+  "podcastHeading": "On the Iowa Podcast:",
+  "podcastLinks": [
+    {
+      "link": {
+        "text": "Listen to the episode",
+        "url": "https://iowapodcast.com/sree-nilakanta/",
+        "download": ""
+      }
+    },
+    {
+      "link": {
+        "text": "Watch on YouTube",
+        "url": "https://www.youtube.com/watch?v=m7ix-9VCyv0",
+        "download": ""
+      }
+    },
+    {
+      "link": {
+        "text": "View on X",
+        "url": "https://x.com/IowaPodcast/status/2118297285704720702",
+        "download": ""
+      }
+    }
+  ]
+}

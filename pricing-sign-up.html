@@ -234,67 +234,7 @@
   </footer>
 
   <script type="module" src="/main.js"></script>
-  <script>
-    (function() {
-      const toggle = document.getElementById('pricing-toggle');
-      const priceDisplay = document.getElementById('price-display');
-      const billingPeriodText = document.getElementById('billing-period-text');
-      const billingTitle = document.getElementById('billing-title');
-      const savingsCallout = document.getElementById('savings-callout');
-      const monthlyLabel = document.getElementById('label-monthly');
-      const annualLabel = document.getElementById('label-annual');
-      const ctaButton = document.getElementById('cta-button');
-
-      function updatePricing(isAnnual) {
-        monthlyLabel.setAttribute('aria-pressed', String(!isAnnual));
-        annualLabel.setAttribute('aria-pressed', String(isAnnual));
-        savingsCallout.hidden = !isAnnual;
-        if (isAnnual) {
-          priceDisplay.innerHTML = '$250<span class="price-interval" style="color: #D5EBD3; font-size: 1.1rem; margin-left: 0.2rem;">/year</span>';
-          billingPeriodText.innerHTML = 'Billed once annually. <strong class="billing-savings">Save $230 (48%)</strong>';
-          billingTitle.textContent = 'Annual Plan';
-          savingsCallout.style.visibility = 'visible';
-          savingsCallout.style.opacity = '1';
-          savingsCallout.style.transform = 'translateY(0)';
-          monthlyLabel.classList.remove('active');
-          annualLabel.classList.add('active');
-          ctaButton.textContent = 'Subscribe';
-          ctaButton.href = 'https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=yearly';
-        } else {
-          priceDisplay.innerHTML = '$40<span class="price-interval" style="color: #D5EBD3; font-size: 1.1rem; margin-left: 0.2rem;">/month</span>';
-          billingPeriodText.textContent = 'Billed monthly for 12 months. Total annual cost $480';
-          billingTitle.textContent = 'Monthly Plan';
-          savingsCallout.style.visibility = 'hidden';
-          savingsCallout.style.opacity = '0';
-          savingsCallout.style.transform = 'translateY(5px)';
-          monthlyLabel.classList.add('active');
-          annualLabel.classList.remove('active');
-          ctaButton.textContent = 'Subscribe';
-          ctaButton.href = 'https://spiderag-preprod.bdibsolutions.com/auth/?view=signup&plan=monthly';
-        }
-      }
-
-      // Handle checkbox change
-      toggle.addEventListener('change', () => {
-        updatePricing(toggle.checked);
-      });
-
-      // Handle label clicks to toggle checked state
-      monthlyLabel.addEventListener('click', () => {
-        if (toggle.checked) {
-          toggle.checked = false;
-          updatePricing(false);
-        }
-      });
-
-      annualLabel.addEventListener('click', () => {
-        if (!toggle.checked) {
-          toggle.checked = true;
-          updatePricing(true);
-        }
-      });
-    })();
-  </script>
+  <script type="module" src="/pricing.js"></script>
 </body>
 
 </html>

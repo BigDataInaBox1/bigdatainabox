@@ -1,0 +1,47 @@
+{
+  "eyebrow": "Less Time on Paperwork",
+  "title": "SPIDER Ag in Action",
+  "description": "Say it, snap it, it's recorded. AI helps structure your notes and photos; you review and confirm before saving.",
+  "cards": [
+    {
+      "image": {
+        "src": "/assets/spiderag pics/farm color plots.png",
+        "alt": "SPIDER Ag Field Color Plots Interface"
+      },
+      "title": "Field Boundaries & Color Plot Mapping",
+      "description": "Keep records by farm, field, plot, and subplot, using the boundaries and names you already know."
+    },
+    {
+      "image": {
+        "src": "/assets/spiderag pics/spiderag_tractor_mockup.png",
+        "alt": "In-Cab Tractor Mockup Interface"
+      },
+      "title": "In-Cab Tractor Companion",
+      "description": "Say what happened from the cab and turn it into a dated task, ready for your review."
+    },
+    {
+      "image": {
+        "src": "/assets/spiderag pics/ui in farm.png",
+        "alt": "In-Field Mobile Interface"
+      },
+      "title": "Mobile Field Scouting & Voice Logging",
+      "description": "Capture voice notes and photos offline. Turn handwritten logs into searchable records without retyping them."
+    },
+    {
+      "image": {
+        "src": "/assets/spiderag pics/ui task calendar.png",
+        "alt": "SPIDER Ag task calendar and dated field activities"
+      },
+      "title": "Dated Tasks & Audit Preparation",
+      "description": "Trace planting, applications, and harvest through dated tasks alongside your certification review schedule."
+    },
+    {
+      "image": {
+        "src": "/assets/spiderag pics/spiderag_desk_mockup.png",
+        "alt": "Office Desk Homescreen Interface"
+      },
+      "title": "Field Records & Report Preparation",
+      "description": "Select field records and a template, generate a report, then review and confirm the details for your certification review."
+    }
+  ]
+}

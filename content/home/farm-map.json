@@ -1,0 +1,70 @@
+{
+  "title": "Your Farm Records, Connected",
+  "description": "Explore how notes, photos, and dated records help you keep track of field work and prepare reports.",
+  "image": {
+    "src": "/assets/infographic/infographic.png",
+    "alt": "Connected Farm Data Ecosystem Aerial Map"
+  },
+  "insights": [
+    {
+      "id": 4,
+      "title": "Record What You See in the Field",
+      "label": "Field Observations",
+      "mobileLabel": "Field observations",
+      "category": "Field Observations",
+      "description": "Record field conditions in a voice note or photo, even offline. Sync when connected, then review and confirm the captured details.",
+      "image": {
+        "src": "/assets/infographic/pin4_truth.png",
+        "alt": "Record What You See in the Field"
+      }
+    },
+    {
+      "id": 1,
+      "title": "Trace Records Back to Each Field",
+      "label": "Field Records",
+      "mobileLabel": "Field records",
+      "category": "Field Records",
+      "description": "Keep dated tasks, input records, and receipts linked to the field they belong to, so you can find the record behind each activity.",
+      "image": {
+        "src": "/assets/infographic/pin1_earnings.png",
+        "alt": "Trace Records Back to Each Field"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Preserve the Story Behind the Numbers",
+      "label": "Field Diary & Story",
+      "mobileLabel": "Field diary",
+      "category": "Field Diary & Story",
+      "description": "Say what happened in the field and turn it into a dated task. Review and confirm the details, keeping the context behind the record.",
+      "image": {
+        "src": "/assets/infographic/pin3_story.png",
+        "alt": "Preserve the Story Behind the Numbers"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Prepare Audit-Ready Records",
+      "label": "Audit-Ready Records",
+      "mobileLabel": "Audit-ready records",
+      "category": "Audit Preparation",
+      "description": "Find records linked to your land, select a template, and generate a report. Review and confirm the details before your certification review.",
+      "image": {
+        "src": "/assets/infographic/pin5_decisions.png",
+        "alt": "Prepare Audit-Ready Records"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Built Around Your Farm",
+      "label": "Farm Organization",
+      "mobileLabel": "Farm organization",
+      "category": "Farm Organization",
+      "description": "Organize notes, photos, and paper logs by farm, field, plot, and subplot, using the names and boundaries you already know.",
+      "image": {
+        "src": "/assets/infographic/pin2_connected.png",
+        "alt": "Built Around Your Farm"
+      }
+    }
+  ]
+}

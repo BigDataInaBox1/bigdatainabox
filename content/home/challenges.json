@@ -1,0 +1,31 @@
+{
+  "eyebrow": "The Daily Reality",
+  "title": "When Record-Keeping Becomes a Second Job",
+  "description": "Lost receipts, scattered notes, and audit preparation take hours away from your farm. Explore the everyday gaps SPIDER Ag helps close.",
+  "cards": [
+    {
+      "badge": "Paperwork & Time",
+      "title": "The Cost of Chasing Paperwork",
+      "hint": "Hover to reveal insight",
+      "description": "Hunting for receipts, retyping field notes, and piecing together an audit trail costs hours. Capture records as work happens and get that time back."
+    },
+    {
+      "badge": "Data Fragmentation",
+      "title": "Records Scattered Across Systems",
+      "hint": "Hover to reveal insight",
+      "description": "Keep paper logs, photos, and field notes together by farm, field, plot, and subplot, using the names and boundaries you already know."
+    },
+    {
+      "badge": "Human Intelligence",
+      "title": "Field Notes Left Behind",
+      "hint": "Hover to reveal insight",
+      "description": "Say why a job changed or an application was delayed. Turn that field note into a dated task, then review and confirm the details."
+    },
+    {
+      "badge": "Field Connectivity",
+      "title": "When Cell Service Drops",
+      "hint": "Hover to reveal insight",
+      "description": "Record voice notes and take photos without cell service. The mobile app saves them offline and syncs when you reconnect."
+    }
+  ]
+}

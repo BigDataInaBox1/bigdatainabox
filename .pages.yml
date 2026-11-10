@@ -1,0 +1,2814 @@
+# Pages CMS configuration. Generated from cms/model.mjs.
+# Client content lives in content/. Layout and integration settings are not exposed as CMS fields.
+media:
+  - name: images
+    label: Images and logos
+    input: public
+    output: /
+    extensions:
+      - jpg
+      - jpeg
+      - jfif
+      - png
+      - webp
+      - avif
+      - gif
+    rename: safe
+  - name: documents
+    label: PDF documents
+    input: public/uploads/documents
+    output: /uploads/documents
+    extensions:
+      - pdf
+    rename: safe
+content:
+  - name: shared
+    label: Across the website
+    type: group
+    items:
+      - name: shared-brand
+        label: Company name and logos
+        type: file
+        path: content/shared/brand.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: name
+            label: Company name (two short lines)
+            type: text
+            required: true
+            options:
+              maxlength: 80
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: logo
+            label: Company logo
+            type: object
+            required: true
+            description: The original logo keeps its existing crop. A replacement is displayed in full beside the company
+              name.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: false
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: homeLabel
+            label: Logo link description
+            type: string
+            required: true
+            options:
+              maxlength: 180
+      - name: shared-navigation
+        label: Navigation and header buttons
+        type: file
+        path: content/shared/navigation.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: howItWorks
+            label: How It Works
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: story
+            label: Our Story
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: product
+            label: SPIDER Ag
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: productLogin
+            label: SPIDER Ag dropdown login
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: pricing
+            label: Pricing
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: demo
+            label: Schedule Demo
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: contact
+            label: Contact Us
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: trial
+            label: Free Trial (mobile menu)
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: loginButton
+            label: Login button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: trialButton
+            label: Free Trial button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+      - name: shared-footer
+        label: Footer and contact details
+        type: file
+        path: content/shared/footer.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: summary
+            label: Company summary
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: address
+            label: Postal address
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: navigationHeading
+            label: Navigation heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: links
+            label: Footer navigation
+            type: object
+            required: true
+            fields:
+              - name: link
+                label: Link
+                type: object
+                required: true
+                fields:
+                  - name: text
+                    label: Button or link text
+                    type: string
+                    required: true
+                    options:
+                      maxlength: 60
+                  - name: url
+                    label: Destination
+                    type: string
+                    required: true
+                    options:
+                      maxlength: 1800
+                    pattern:
+                      regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                      message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                        beginning with /."
+            list:
+              min: 1
+              max: 8
+              collapsible:
+                collapsed: true
+                summary: "{fields.link.text} (item {index})"
+          - name: contactHeading
+            label: Contact heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: phone
+            label: Telephone
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: email
+            label: Email address
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: copyright
+            label: Copyright line
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: company
+            label: Company/legal line
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+      - name: shared-mobile-visual
+        label: Mobile app image and offline badge
+        type: file
+        path: content/shared/mobile-visual.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: image
+            label: Phone image
+            type: object
+            required: true
+            description: Use a transparent PNG/WebP phone mockup to keep the existing presentation.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: true
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: badgeTitle
+            label: Badge first line
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: badgeMessage
+            label: Badge second line
+            type: string
+            required: true
+            options:
+              maxlength: 180
+      - name: shared-contact-popup
+        label: Contact popup wording
+        type: file
+        path: content/shared/contact-popup.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Popup title
+            type: string
+            required: true
+            options:
+              maxlength: 80
+          - name: description
+            label: Introduction
+            type: text
+            required: true
+            options:
+              maxlength: 320
+  - name: home
+    label: Homepage
+    type: group
+    items:
+      - name: home-search
+        label: Homepage search listing
+        type: file
+        path: content/home/search.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: title
+            label: Browser/search title
+            type: string
+            required: true
+            options: &a7
+              maxlength: 100
+          - name: description
+            label: Search description
+            type: text
+            required: true
+            options: &a8
+              maxlength: 320
+      - name: home-hero
+        label: Opening headline and images
+        type: file
+        path: content/home/hero.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: lineOne
+            label: Headline first line
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: lineTwo
+            label: Headline second line
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: accent
+            label: Headline accent line
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: description
+            label: Introduction
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: primary
+            label: Main button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+          - name: secondary
+            label: Second button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+          - name: trialNote
+            label: Trial reassurance
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: scrollLabel
+            label: Scroll instruction
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: background
+            label: Faded background photograph
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: false
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: illustration
+            label: Hero illustration
+            type: object
+            required: true
+            description: Replacing this image uses your new static illustration in place of the current animated phone.
+              Use a transparent PNG/WebP.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: false
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+      - name: home-product-introduction
+        label: SPIDER Ag introduction and screenshots
+        type: file
+        path: content/home/product-introduction.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: logo
+            label: SPIDER Ag logo
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: true
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: button
+            label: Feature button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+          - name: slides
+            label: Product screenshots
+            type: object
+            required: true
+            fields:
+              - name: image
+                label: Gallery image
+                type: object
+                required: true
+                description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+                fields:
+                  - name: src
+                    label: Image
+                    type: image
+                    required: true
+                    options: &a1
+                      media: images
+                      path: public/uploads/images
+                      extensions:
+                        - jpg
+                        - jpeg
+                        - jfif
+                        - png
+                        - webp
+                        - avif
+                        - gif
+                  - name: alt
+                    label: Image description (alt text)
+                    type: text
+                    required: true
+                    options: &a2
+                      maxlength: 400
+                    description: Describe what the image shows. Decorative background photos may have an empty description.
+            list:
+              min: 2
+              max: 16
+              collapsible:
+                collapsed: true
+                summary: "{fields.image.alt} (item {index})"
+      - name: home-comparison
+        label: Notebook and SPIDER Ag comparison
+        type: file
+        path: content/home/comparison.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: oldHeading
+            label: Left column heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: logo
+            label: Right column logo
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: true
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: productHeading
+            label: Right column heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: rows
+            label: Comparison rows
+            type: object
+            required: true
+            fields:
+              - name: title
+                label: Comparison topic
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: old
+                label: Notebook description
+                type: text
+                required: true
+                options:
+                  maxlength: 2400
+              - name: product
+                label: SPIDER Ag description
+                type: text
+                required: true
+                options:
+                  maxlength: 2400
+            list:
+              min: 1
+              max: 12
+              collapsible:
+                collapsed: true
+                summary: "{fields.title} (item {index})"
+          - name: expandLabel
+            label: Show comparison button
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: collapseLabel
+            label: Hide comparison button
+            type: string
+            required: true
+            options:
+              maxlength: 180
+      - name: home-partners
+        label: Research and community logos
+        type: file
+        path: content/home/partners.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: logos
+            label: Organizations
+            type: object
+            required: true
+            fields:
+              - name: image
+                label: Logo
+                type: object
+                required: true
+                description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+                fields:
+                  - name: src
+                    label: Image
+                    type: image
+                    required: true
+                    options:
+                      media: images
+                      path: public/uploads/images
+                      extensions:
+                        - jpg
+                        - jpeg
+                        - jfif
+                        - png
+                        - webp
+                        - avif
+                        - gif
+                  - name: alt
+                    label: Image description (alt text)
+                    type: text
+                    required: true
+                    options:
+                      maxlength: 400
+                    description: Describe what the image shows. Decorative background photos may have an empty description.
+              - name: url
+                label: Organization website
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: title
+                label: Organization name
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+            list:
+              min: 1
+              max: 8
+              collapsible:
+                collapsed: true
+                summary: "{fields.title} (item {index})"
+          - name: collage
+            label: Farm collage banner
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: true
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+      - name: home-farm-map
+        label: Interactive farm map
+        type: file
+        path: content/home/farm-map.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Introduction
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: image
+            label: Farm map background
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: true
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: insights
+            label: Five map insights
+            type: object
+            required: true
+            fields:
+              - name: id
+                label: Map position (fixed)
+                type: number
+                required: true
+                readonly: true
+                hidden: true
+              - name: title
+                label: Insight heading
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: label
+                label: Map label
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: mobileLabel
+                label: Mobile button label
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: category
+                label: Detail category
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: description
+                label: Detail description
+                type: text
+                required: true
+                options:
+                  maxlength: 2400
+              - name: image
+                label: Detail image
+                type: object
+                required: true
+                description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+                fields:
+                  - name: src
+                    label: Image
+                    type: image
+                    required: true
+                    options:
+                      media: images
+                      path: public/uploads/images
+                      extensions:
+                        - jpg
+                        - jpeg
+                        - jfif
+                        - png
+                        - webp
+                        - avif
+                        - gif
+                  - name: alt
+                    label: Image description (alt text)
+                    type: text
+                    required: true
+                    options:
+                      maxlength: 400
+                    description: Describe what the image shows. Decorative background photos may have an empty description.
+            list:
+              min: 5
+              max: 5
+              collapsible:
+                collapsed: true
+                summary: "{fields.title} (item {index})"
+      - name: home-paperwork-callout
+        label: Paperwork time callout
+        type: file
+        path: content/home/paperwork-callout.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: primary
+            label: Main button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+          - name: secondary
+            label: Second button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+      - name: home-farm-gallery
+        label: Everyday farm work gallery
+        type: file
+        path: content/home/farm-gallery.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Introduction
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: slides
+            label: Farm photographs
+            type: object
+            required: true
+            fields:
+              - name: image
+                label: Gallery image
+                type: object
+                required: true
+                description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+                fields:
+                  - name: src
+                    label: Image
+                    type: image
+                    required: true
+                    options: *a1
+                  - name: alt
+                    label: Image description (alt text)
+                    type: text
+                    required: true
+                    options: *a2
+                    description: Describe what the image shows. Decorative background photos may have an empty description.
+            list:
+              min: 2
+              max: 20
+              collapsible:
+                collapsed: true
+                summary: "{fields.image.alt} (item {index})"
+      - name: home-mobile
+        label: Built for the field
+        type: file
+        path: content/home/mobile.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: primary
+            label: Main button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+          - name: secondary
+            label: Second button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+          - name: description
+            label: Introduction
+            type: rich-text
+            required: true
+            options:
+              format: html
+              switcher: false
+              media: false
+            description: Use the visual editor for text, emphasis, and links. The website layout stays fixed.
+          - name: background
+            label: Faded background photograph
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: false
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+      - name: home-getting-started
+        label: Three steps to get started
+        type: file
+        path: content/home/getting-started.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: background
+            label: Faded background photograph
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: false
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: steps
+            label: Getting-started steps
+            type: object
+            required: true
+            fields:
+              - name: title
+                label: Step heading
+                type: text
+                required: true
+                options:
+                  maxlength: 180
+                description: Line breaks are kept. Keep headings short so they fit the existing design.
+              - name: description
+                label: Step description
+                type: text
+                required: true
+                options:
+                  maxlength: 2400
+            list:
+              min: 3
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{fields.title} (item {index})"
+      - name: home-challenges
+        label: Everyday challenges
+        type: file
+        path: content/home/challenges.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: cards
+            label: Everyday challenges
+            type: object
+            required: true
+            fields:
+              - name: badge
+                label: Short category
+                type: string
+                required: true
+                options: &a3
+                  maxlength: 180
+              - name: title
+                label: Heading
+                type: string
+                required: true
+                options: &a4
+                  maxlength: 180
+              - name: hint
+                label: Reveal instruction
+                type: text
+                required: true
+                options: &a5
+                  maxlength: 2400
+              - name: description
+                label: Revealed description
+                type: text
+                required: true
+                options: &a6
+                  maxlength: 2400
+            list:
+              min: 1
+              max: 8
+              collapsible:
+                collapsed: true
+                summary: "{fields.title} (item {index})"
+      - name: home-benefits
+        label: Benefits and value
+        type: file
+        path: content/home/benefits.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: cards
+            label: Benefits and value
+            type: object
+            required: true
+            fields:
+              - name: badge
+                label: Short category
+                type: string
+                required: true
+                options: *a3
+              - name: title
+                label: Heading
+                type: string
+                required: true
+                options: *a4
+              - name: hint
+                label: Reveal instruction
+                type: text
+                required: true
+                options: *a5
+              - name: description
+                label: Revealed description
+                type: text
+                required: true
+                options: *a6
+            list:
+              min: 1
+              max: 8
+              collapsible:
+                collapsed: true
+                summary: "{fields.title} (item {index})"
+      - name: home-story
+        label: Our Story and founder quote
+        type: file
+        path: content/home/story.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: image
+            label: Story photograph
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: true
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: introduction
+            label: Opening paragraph
+            type: rich-text
+            required: true
+            options:
+              format: html
+              switcher: false
+              media: false
+            description: Use the visual editor for text, emphasis, and links. The website layout stays fixed.
+          - name: quote
+            label: Founder quotation
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: quoteAuthor
+            label: Quotation attribution
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: history
+            label: Company history paragraph
+            type: rich-text
+            required: true
+            options:
+              format: html
+              switcher: false
+              media: false
+            description: Use the visual editor for text, emphasis, and links. The website layout stays fixed.
+          - name: podcastHeading
+            label: Podcast introduction
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: podcastLinks
+            label: Podcast links
+            type: object
+            required: true
+            fields:
+              - name: link
+                label: Podcast link
+                type: object
+                required: true
+                fields:
+                  - name: text
+                    label: Button or link text
+                    type: string
+                    required: true
+                    options:
+                      maxlength: 60
+                  - name: url
+                    label: Destination
+                    type: string
+                    required: true
+                    options:
+                      maxlength: 1800
+                    pattern:
+                      regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                      message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                        beginning with /."
+                  - name: download
+                    label: Optional PDF download
+                    type: file
+                    required: false
+                    options:
+                      media: documents
+                      extensions:
+                        - pdf
+                    description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+            list:
+              min: 1
+              max: 5
+              collapsible:
+                collapsed: true
+                summary: "{fields.link.text} (item {index})"
+      - name: home-team
+        label: Founding team
+        type: file
+        path: content/home/team.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: members
+            label: Team members
+            type: object
+            required: true
+            fields:
+              - name: name
+                label: Full name
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: photo
+                label: Portrait
+                type: object
+                required: true
+                description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+                fields:
+                  - name: src
+                    label: Image
+                    type: image
+                    required: true
+                    options:
+                      media: images
+                      path: public/uploads/images
+                      extensions:
+                        - jpg
+                        - jpeg
+                        - jfif
+                        - png
+                        - webp
+                        - avif
+                        - gif
+                  - name: alt
+                    label: Image description (alt text)
+                    type: text
+                    required: true
+                    options:
+                      maxlength: 400
+                    description: Describe what the image shows. Decorative background photos may have an empty description.
+              - name: description
+                label: Role and biography
+                type: text
+                required: true
+                options:
+                  maxlength: 2400
+              - name: linkedin
+                label: LinkedIn profile (optional)
+                type: string
+                required: false
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+            list:
+              min: 1
+              max: 12
+              collapsible:
+                collapsed: true
+                summary: "{fields.name} (item {index})"
+      - name: home-questions
+        label: Frequently asked questions
+        type: file
+        path: content/home/questions.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: questions
+            label: Questions and answers
+            type: object
+            required: true
+            fields:
+              - name: question
+                label: Question
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: answer
+                label: Answer
+                type: rich-text
+                required: true
+                options:
+                  format: html
+                  switcher: false
+                  media: false
+                description: Use the visual editor for text, emphasis, and links. The website layout stays fixed.
+            list:
+              min: 1
+              max: 20
+              collapsible:
+                collapsed: true
+                summary: "{fields.question} (item {index})"
+      - name: home-trial-callout
+        label: Closing trial callout
+        type: file
+        path: content/home/trial-callout.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: button
+            label: Plan button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+  - name: product
+    label: SPIDER Ag page
+    type: group
+    items:
+      - name: product-search
+        label: SPIDER Ag search listing
+        type: file
+        path: content/product/search.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: title
+            label: Browser/search title
+            type: string
+            required: true
+            options: *a7
+          - name: description
+            label: Search description
+            type: text
+            required: true
+            options: *a8
+      - name: product-hero
+        label: SPIDER Ag opening section
+        type: file
+        path: content/product/hero.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: logo
+            label: SPIDER Ag logo
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: true
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: background
+            label: Faded background photograph
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: false
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: primary
+            label: Main button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+          - name: secondary
+            label: Second button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+      - name: product-features
+        label: Farm record features
+        type: file
+        path: content/product/features.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Overview heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Overview description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: image
+            label: Overview screenshot
+            type: object
+            required: true
+            description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+            fields:
+              - name: src
+                label: Image
+                type: image
+                required: true
+                options:
+                  media: images
+                  path: public/uploads/images
+                  extensions:
+                    - jpg
+                    - jpeg
+                    - jfif
+                    - png
+                    - webp
+                    - avif
+                    - gif
+              - name: alt
+                label: Image description (alt text)
+                type: text
+                required: true
+                options:
+                  maxlength: 400
+                description: Describe what the image shows. Decorative background photos may have an empty description.
+          - name: features
+            label: Feature descriptions
+            type: object
+            required: true
+            fields:
+              - name: title
+                label: Feature heading
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: description
+                label: Feature description
+                type: text
+                required: true
+                options:
+                  maxlength: 2400
+            list:
+              min: 1
+              max: 8
+              collapsible:
+                collapsed: true
+                summary: "{fields.title} (item {index})"
+      - name: product-mobile
+        label: Built for the field
+        type: file
+        path: content/product/mobile.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Introduction
+            type: rich-text
+            required: true
+            options:
+              format: html
+              switcher: false
+              media: false
+            description: Use the visual editor for text, emphasis, and links. The website layout stays fixed.
+          - name: primary
+            label: Main button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+          - name: secondary
+            label: Second button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+      - name: product-trial-callout
+        label: Farm-sized plans callout
+        type: file
+        path: content/product/trial-callout.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: primary
+            label: Main button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+          - name: secondary
+            label: Second button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+      - name: product-gallery
+        label: SPIDER Ag in Action gallery
+        type: file
+        path: content/product/gallery.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Introduction
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: cards
+            label: Product examples
+            type: object
+            required: true
+            fields:
+              - name: image
+                label: Example image
+                type: object
+                required: true
+                description: Choose a photo or upload a replacement. Keep a similar shape to the existing image.
+                fields:
+                  - name: src
+                    label: Image
+                    type: image
+                    required: true
+                    options:
+                      media: images
+                      path: public/uploads/images
+                      extensions:
+                        - jpg
+                        - jpeg
+                        - jfif
+                        - png
+                        - webp
+                        - avif
+                        - gif
+                  - name: alt
+                    label: Image description (alt text)
+                    type: text
+                    required: true
+                    options:
+                      maxlength: 400
+                    description: Describe what the image shows. Decorative background photos may have an empty description.
+              - name: title
+                label: Heading
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: description
+                label: Description
+                type: text
+                required: true
+                options:
+                  maxlength: 2400
+            list:
+              min: 1
+              max: 12
+              collapsible:
+                collapsed: true
+                summary: "{fields.title} (item {index})"
+      - name: product-report-callout
+        label: Audit-ready records callout
+        type: file
+        path: content/product/report-callout.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Description
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: primary
+            label: Main button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+          - name: secondary
+            label: Second button
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+              - name: download
+                label: Optional PDF download
+                type: file
+                required: false
+                options:
+                  media: documents
+                  extensions:
+                    - pdf
+                description: Choose a PDF to make this a download link. Clear this field to use the Destination above.
+          - name: trialNote
+            label: Trial reassurance
+            type: string
+            required: true
+            options:
+              maxlength: 180
+  - name: pricing
+    label: Pricing page
+    type: group
+    items:
+      - name: pricing-page
+        label: Pricing introduction and search listing
+        type: file
+        path: content/pricing/page.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: searchTitle
+            label: Browser/search title
+            type: string
+            required: true
+            options: *a7
+          - name: searchDescription
+            label: Search description
+            type: text
+            required: true
+            options: *a8
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Page heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Page introduction
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: cardLabel
+            label: Plan card small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: features
+            label: Included features
+            type: object
+            required: true
+            fields:
+              - name: title
+                label: Feature description
+                type: text
+                required: true
+                options:
+                  maxlength: 2400
+            list:
+              min: 1
+              max: 10
+              collapsible:
+                collapsed: true
+                summary: "{fields.title} (item {index})"
+      - name: pricing-plans
+        label: Monthly and annual plans
+        type: file
+        path: content/pricing/plans.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: currency
+            label: Currency symbol
+            type: string
+            required: true
+            options:
+              maxlength: 5
+          - name: monthly
+            label: Monthly plan
+            type: object
+            required: true
+            fields:
+              - name: title
+                label: Plan heading
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: label
+                label: Toggle label
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: amount
+                label: Price
+                type: number
+                required: true
+                options:
+                  min: 0
+                  max: 100000
+              - name: interval
+                label: Price interval
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: billing
+                label: Billing explanation
+                type: text
+                required: true
+                options:
+                  maxlength: 2400
+              - name: button
+                label: Subscribe button
+                type: object
+                required: true
+                fields:
+                  - name: text
+                    label: Button or link text
+                    type: string
+                    required: true
+                    options:
+                      maxlength: 60
+                  - name: url
+                    label: Destination
+                    type: string
+                    required: true
+                    options:
+                      maxlength: 1800
+                    pattern:
+                      regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                      message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                        beginning with /."
+          - name: annual
+            label: Annual plan
+            type: object
+            required: true
+            fields:
+              - name: title
+                label: Plan heading
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: label
+                label: Toggle label
+                type: string
+                required: true
+                options:
+                  maxlength: 180
+              - name: amount
+                label: Price
+                type: number
+                required: true
+                options:
+                  min: 0
+                  max: 100000
+              - name: interval
+                label: Price interval
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: billing
+                label: Billing explanation
+                type: text
+                required: true
+                options:
+                  maxlength: 2400
+              - name: button
+                label: Subscribe button
+                type: object
+                required: true
+                fields:
+                  - name: text
+                    label: Button or link text
+                    type: string
+                    required: true
+                    options:
+                      maxlength: 60
+                  - name: url
+                    label: Destination
+                    type: string
+                    required: true
+                    options:
+                      maxlength: 1800
+                    pattern:
+                      regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                      message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                        beginning with /."
+          - name: savingsPill
+            label: Annual savings callout
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: savingsBadge
+            label: Annual toggle savings label
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: savingsDetail
+            label: Highlighted annual savings text
+            type: string
+            required: true
+            options:
+              maxlength: 180
+  - name: contact
+    label: Contact page
+    type: group
+    items:
+      - name: contact-page
+        label: Contact page wording and search listing
+        type: file
+        path: content/contact/page.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: searchTitle
+            label: Browser/search title
+            type: string
+            required: true
+            options: *a7
+          - name: searchDescription
+            label: Search description
+            type: text
+            required: true
+            options: *a8
+          - name: eyebrow
+            label: Small heading
+            type: string
+            required: true
+            options:
+              maxlength: 180
+          - name: title
+            label: Page heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: description
+            label: Introduction
+            type: rich-text
+            required: true
+            options:
+              format: html
+              switcher: false
+              media: false
+            description: Use the visual editor for text, emphasis, and links. The website layout stays fixed.
+          - name: formTitle
+            label: Form heading
+            type: text
+            required: true
+            options:
+              maxlength: 180
+            description: Line breaks are kept. Keep headings short so they fit the existing design.
+          - name: formDescription
+            label: Form introduction
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: emailIntroduction
+            label: Email invitation
+            type: text
+            required: true
+            options:
+              maxlength: 2400
+          - name: email
+            label: Email link
+            type: object
+            required: true
+            fields:
+              - name: text
+                label: Button or link text
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: url
+                label: Destination
+                type: string
+                required: true
+                options:
+                  maxlength: 1800
+                pattern:
+                  regex: ^(https?://|mailto:|tel:|/|#|[A-Za-z0-9_-]+\.html)
+                  message: "Use a website link, an existing page.html URL, #section, mailto:, tel:, or an uploaded file path
+                    beginning with /."
+settings:
+  hide: true
+  content:
+    merge: true
+  commit:
+    identity: app
+    templates:
+      update: Update {name} content (Pages CMS)
+      create: Add {filename} (Pages CMS)
+      delete: Remove {filename} (Pages CMS)
+      rename: Rename {oldFilename} to {newFilename} (Pages CMS)

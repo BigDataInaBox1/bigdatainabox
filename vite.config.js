@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { cmsPlugin } from './cms/render.mjs';
 
 export default defineConfig({
+  plugins: [cmsPlugin()],
   build: {
     rollupOptions: {
       input: {

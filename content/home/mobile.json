@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Voice Recording, Even Offline",
+  "title": "Built for the Field,\nNot the Office",
+  "primary": {
+    "text": "Explore Mobile App",
+    "url": "spider-ag.html",
+    "download": ""
+  },
+  "secondary": {
+    "text": "Contact Us",
+    "url": "schedule-demo.html",
+    "download": ""
+  },
+  "description": "<strong>No cell service? Keep recording.</strong> Capture voice notes and photos in the field, even offline. Your captures stay on your device and sync when you reconnect. Then review and confirm the AI-generated details before saving.",
+  "background": {
+    "src": "/assets/home/tractor-field-1200.webp",
+    "alt": ""
+  }
+}
